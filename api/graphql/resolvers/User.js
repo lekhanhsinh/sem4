@@ -61,7 +61,9 @@ var userResolvers = {
             if (!user || user.roles && !user.roles.find(function (x) { return x.name === "Admin"; })) {
                 throw new Error("Access Denied.");
             }
-            return index_1.Repositories.userRepository.delete(id);
+            return index_1.Repositories.userRepository.delete(id).then(function () {
+                return "DELETED";
+            });
         },
     }
 };

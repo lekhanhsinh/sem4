@@ -20,11 +20,12 @@ var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var models_1 = require("../models");
 var utils_1 = require("../utils");
 var FolderRepository_1 = require("./FolderRepository");
+var UserRepository_1 = require("./UserRepository");
 var ImageRepository = (function (_super) {
     __extends(ImageRepository, _super);
     function ImageRepository() {
         var _this = _super.call(this, models_1.Image) || this;
-        _this.create = function (folderId, image) {
+        _this.create = function (userId, folderId, image) {
             if (!image.file) {
                 throw new Error("Image not uploaded.");
             }
@@ -32,14 +33,22 @@ var ImageRepository = (function (_super) {
             var newImage = new models_1.Image({
                 description: image.description
             });
-            return FolderRepository_1.folderRepository.getOne(folderId).then(function (folder) {
-                if (!folder) {
-                    throw new Error("Folder don\'t exist.");
+            return UserRepository_1.userRepository.getOne(userId).then(function (user) {
+                if (!user) {
+                    throw new Error("User don\'t exist.");
                 }
-                return utils_1.saveImage(newImage.name, tempFile, "", folder.name).then(function (newName) {
-                    newImage.name = newName;
+                newImage.user = user;
+                return FolderRepository_1.folderRepository.getOne(folderId).then(function (folder) {
+                    if (!folder) {
+                        throw new Error("Folder don\'t exist.");
+                    }
                     newImage.folder = folder;
-                    newImage.save();
+                    return utils_1.saveImage(undefined, undefined, folder.name, image.name, tempFile).then(function (_a) {
+                        var newName = _a.newName, newTempName = _a.newTempName;
+                        newImage.name = newName;
+                        newImage.tempName = newTempName;
+                        return newImage.save();
+                    });
                 });
             });
         };
@@ -49,13 +58,31 @@ var ImageRepository = (function (_super) {
                     throw new Error("Image don\'t exist.");
                 }
                 found.description = image.description || found.description;
-                if (!image.name || !image.file) {
-                    return found.save();
-                }
-                return utils_1.saveImage(image.name, image.file, image.name, found.folder.name).then(function (newName) {
+                return utils_1.saveImage(found.name, found.tempName, found.folder.name, image.name, image.file).then(function (_a) {
+                    var newName = _a.newName, newTempName = _a.newTempName;
                     found.name = newName;
+                    found.tempName = newTempName;
                     return found.save();
                 });
+            });
+        };
+        _this.renameTemp = function (images) {
+            var promises = [];
+            var _loop_1 = function (image) {
+                var promise = utils_1.saveImage(image.name, image.tempName, image.folder.name).then(function (_a) {
+                    var newName = _a.newName, newTempName = _a.newTempName;
+                    image.name = newName;
+                    image.tempName = newTempName;
+                    return image.save();
+                });
+                promises.push(promise);
+            };
+            for (var _i = 0, images_1 = images; _i < images_1.length; _i++) {
+                var image = images_1[_i];
+                _loop_1(image);
+            }
+            return Promise.all(promises).then(function (images) {
+                return images;
             });
         };
         _this.delete = function (id) {
@@ -63,7 +90,7 @@ var ImageRepository = (function (_super) {
                 if (!found) {
                     throw new Error("Image don\'t exist.");
                 }
-                return utils_1.deleteImage(found.name, found.folder.name).then(function () {
+                return utils_1.deleteImage(found.tempName, found.folder.name).then(function () {
                     return found.remove();
                 });
             });

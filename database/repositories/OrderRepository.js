@@ -31,11 +31,12 @@ var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var models_1 = require("../models");
 var ImageRepository_1 = require("./ImageRepository");
 var CouponRepository_1 = require("./CouponRepository");
+var UserRepository_1 = require("./UserRepository");
 var OrderRepository = (function (_super) {
     __extends(OrderRepository, _super);
     function OrderRepository() {
         var _this = _super.call(this, models_1.Order) || this;
-        _this.create = function (order) {
+        _this.create = function (userId, order) {
             if (!order.images || order.images.length == 0) {
                 throw new Error("Cart is empty.");
             }
@@ -56,13 +57,19 @@ var OrderRepository = (function (_super) {
                     _loop_1(image);
                 }
                 return _this.caculatePrice(images, order.coupon).then(function (totalPrice) {
-                    var newOrder = new models_1.Order({
-                        images: images,
-                        totalPrice: totalPrice,
-                        description: order.description,
-                        creditCardNumber: order.creditCardNumber
+                    return UserRepository_1.userRepository.getOne(userId).then(function (user) {
+                        if (!user) {
+                            throw new Error("User don\'t exist.");
+                        }
+                        var newOrder = new models_1.Order({
+                            images: images,
+                            user: user,
+                            totalPrice: totalPrice,
+                            description: order.description,
+                            creditCardNumber: order.creditCardNumber
+                        });
+                        return newOrder.save();
                     });
-                    return newOrder.save();
                 });
             });
         };

@@ -7,7 +7,13 @@ var mongoose_1 = __importDefault(require("mongoose"));
 var schema = new mongoose_1.default.Schema({
     name: {
         type: String,
-        unique: true
+    },
+    tempName: {
+        type: String
+    },
+    user: {
+        type: mongoose_1.default.Types.ObjectId,
+        ref: "User"
     },
     folder: {
         type: mongoose_1.default.Types.ObjectId,

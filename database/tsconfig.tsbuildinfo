@@ -358,12 +358,12 @@
         "signature": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f"
       },
       "../src/models/image/types.d.ts": {
-        "version": "249e97690a3cb92915633b107c2442f5b1980701a392d898484f9cbebb558fc2",
-        "signature": "249e97690a3cb92915633b107c2442f5b1980701a392d898484f9cbebb558fc2"
+        "version": "ee1354b894036abaef2fd2bf341d611ed15f6de0afff31e72958f3f6e9cd6e57",
+        "signature": "ee1354b894036abaef2fd2bf341d611ed15f6de0afff31e72958f3f6e9cd6e57"
       },
       "../src/models/folder/types.d.ts": {
-        "version": "53dec077627a2041a189e586d2aa6de9c6ffb3509518a2510fd15ecb16f222f2",
-        "signature": "53dec077627a2041a189e586d2aa6de9c6ffb3509518a2510fd15ecb16f222f2"
+        "version": "15e6d249c5103541ca4aaad6d98a0a90cfb9b296fdc254183d0418b4a1bfb5ab",
+        "signature": "15e6d249c5103541ca4aaad6d98a0a90cfb9b296fdc254183d0418b4a1bfb5ab"
       },
       "../src/models/role/types.d.ts": {
         "version": "1f5adf97f161f5ac30119c3d791919a5ba1fbd884222a1f8ab8ff0f939cf75b7",
@@ -414,23 +414,39 @@
         "signature": "35ee6dfa3b0de7b7b9162c68a9df98bc5064eec915f8a6afcdb467fb63e12bb0"
       },
       "../src/models/folder/schema.ts": {
-        "version": "ff6d21bb26f872f9e666501a91481ea7ffcfb4fd19ef05d9bde399b717782fbd",
+        "version": "49c62f7a4e4620d0739c8e18cc7ee7b60f4bc7aaf1f3a4b98b306412774995c3",
         "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
       },
       "../src/models/image/schema.ts": {
-        "version": "da1bf4943420c8af8f7b7f5b7eb444d6cad853bf646d5d95c617aeb96206ade0",
+        "version": "479c605e77fe59aec8f5dfd2374a1df95d1892e99e2ff291f28d95fc0220f5ab",
         "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
       },
       "../src/models/image/middlewares.ts": {
-        "version": "8c76561efdb2fbcfbb215fac50d0642fbb9b61864578bf4d2c5a3e84d39b0afa",
+        "version": "dce46cf9cf2b815e95bc2a59c38511ad5a2d997edee6a6a96f24a599aaee0396",
         "signature": "6de9cea87b40ca01081d3609fb62d83ed05a331155726cf2e811c690e4fe9232"
       },
       "../src/models/image/index.ts": {
         "version": "3abe4b468d8e7896666ae15023574a199719778110a0da988acdffac8a2bc8f1",
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
+      "../../node_modules/@types/mime-types/index.d.ts": {
+        "version": "f17dd220e27f33e3f1c5bb6f00999420520a6dd1e7f71ee66c11cfc1c2990f20",
+        "signature": "f17dd220e27f33e3f1c5bb6f00999420520a6dd1e7f71ee66c11cfc1c2990f20"
+      },
+      "../../node_modules/@types/fs-extra/index.d.ts": {
+        "version": "062fd391f70e8816148e3ba09f2aa5b26db4529f3007d6bfad7776526dd828e6",
+        "signature": "062fd391f70e8816148e3ba09f2aa5b26db4529f3007d6bfad7776526dd828e6"
+      },
+      "../src/repositories/types.d.ts": {
+        "version": "c0b8061b124b80768e1c26ac02d53f1f0d27eec84f0886f27938559079e46752",
+        "signature": "c0b8061b124b80768e1c26ac02d53f1f0d27eec84f0886f27938559079e46752"
+      },
+      "../src/utils/index.ts": {
+        "version": "6cf21566fd0fd2fd408e47bec201884c35c6e25229eae2052e0e534b276abee2",
+        "signature": "782dac91e3bd4e395ad3ed3c438ff542c6e8c2a7a9880fb0c1924f5d466e66b8"
+      },
       "../src/models/folder/middlewares.ts": {
-        "version": "7f61870b566cc8f7b9250063f00aec4269e4202da8c13a06ccc43f6be3e87ed1",
+        "version": "0ea80e575e20d6861d98789a1af55d7b80f3845a985301c034267ec40b451ab9",
         "signature": "6de9cea87b40ca01081d3609fb62d83ed05a331155726cf2e811c690e4fe9232"
       },
       "../src/models/folder/index.ts": {
@@ -438,11 +454,11 @@
         "signature": "c1b994d807c9d4d69e28d21ef7b492046f68fea1ec2efb5f563429e8094fe611"
       },
       "../src/models/order/types.d.ts": {
-        "version": "55875ff18f6961a5d70e914cd44c9d79a17ae134cc64bfcc09f63ad7adcef887",
-        "signature": "55875ff18f6961a5d70e914cd44c9d79a17ae134cc64bfcc09f63ad7adcef887"
+        "version": "29be43f451a058930df0c31ea641cb5c200c5f3a909d43904fef398081fdc43d",
+        "signature": "29be43f451a058930df0c31ea641cb5c200c5f3a909d43904fef398081fdc43d"
       },
       "../src/models/order/schema.ts": {
-        "version": "2c32eeabe345f6cb47bb3978f7c6f3992cd01664d1cfede21a7a63d74b4f8064",
+        "version": "a8ee7c0532d6d72d79e96225799dcf510c99f82a681113acef3bc4f83095502c",
         "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
       },
       "../src/models/order/middlewares.ts": {
@@ -461,45 +477,29 @@
         "version": "efeb80e395a0545f9b6b4fe2e3e04bf67b675cdf31a2f8660f5a7c912ce7bbc3",
         "signature": "27a58c87f5fc83bf332195bc48c077ff3b000880f0047ccee69fe7b91741cd4f"
       },
-      "../../node_modules/@types/fs-extra/index.d.ts": {
-        "version": "062fd391f70e8816148e3ba09f2aa5b26db4529f3007d6bfad7776526dd828e6",
-        "signature": "062fd391f70e8816148e3ba09f2aa5b26db4529f3007d6bfad7776526dd828e6"
-      },
-      "../src/repositories/types.d.ts": {
-        "version": "c0b8061b124b80768e1c26ac02d53f1f0d27eec84f0886f27938559079e46752",
-        "signature": "c0b8061b124b80768e1c26ac02d53f1f0d27eec84f0886f27938559079e46752"
-      },
-      "../../node_modules/@types/mime-types/index.d.ts": {
-        "version": "f17dd220e27f33e3f1c5bb6f00999420520a6dd1e7f71ee66c11cfc1c2990f20",
-        "signature": "f17dd220e27f33e3f1c5bb6f00999420520a6dd1e7f71ee66c11cfc1c2990f20"
-      },
-      "../src/utils/index.ts": {
-        "version": "f74640896cebc13f876c6660152506a145f6f1c5a3c1bc1281d7dce0b75b5796",
-        "signature": "133e94bc723b2d554bb43e16899d3281aba96a4cc9a1a5ca9cc8b55762b4e253"
-      },
       "../src/repositories/rolerepository.ts": {
         "version": "935b5e464ef1f40964c8f648e9df23cd5866fcdedece0e6ff1764b7241cf87e2",
         "signature": "f412d4d7353430a3284cfc58c1562cc2e5863b96e77f1d74432eafccd92c58f4"
       },
       "../src/repositories/userrepository.ts": {
         "version": "b1a2071f3eccd414c2e489f71dfb7828f53ecdc8ce09449342dc3b87026db713",
-        "signature": "4131c5f3833a322687e2676d412056e432621e19a6f669a7d4f75ee2d4e8bbb2"
+        "signature": "6bde2207f1296c3848f62f0e42cab386e697a67a50d0ff2bbb4ebc8ae6264f83"
       },
       "../src/repositories/couponrepository.ts": {
         "version": "30de29e8296cf77acf2b75995f540ddfd75c63b3c01e25d6fdf513e2ed45aa48",
         "signature": "fd177d740d887fa7f2b412efeec1fe759126b0ca7f13f35a937d4e818e61462a"
       },
       "../src/repositories/folderrepository.ts": {
-        "version": "fc6ed34293a09a034450b8bb4677b2b6c1c31bab5df63a346adafb641c1d308e",
-        "signature": "9ce071e4483f0cfd0b1ecd53fcad214d6aa8eac1bfabf815d8175212090b4794"
+        "version": "ebb2c89457d90df62e0daa5c2cc151aa4ae4b402298b6436385f90d60fd71c75",
+        "signature": "f8746b7c6d2e623f6ec8aa41d860290b592f3dbbdf0e738dc64ed29b71a86c4d"
       },
       "../src/repositories/imagerepository.ts": {
-        "version": "0be6b99d60d2e5302be236ef27bc9653763ad68557dfd2ca8d047c7ea4b3d2b6",
-        "signature": "c8b2f40d2d4b33e0d9e6d579d026e3c5a51a3cf8526e0c1b61f5f5e8f6dbc61a"
+        "version": "d7b834a9cfe77604aa5c732f52f1592731752c80df12401d6dad7aeeed77e51f",
+        "signature": "7bf296b3574aa90b5dc926d3e86140bba33cdf2b874218eed460a21a91d37ed1"
       },
       "../src/repositories/orderrepository.ts": {
-        "version": "73b1c11217c9f157d34d11b69c29b9b5379d58831645b62986f6b32bb7158ca0",
-        "signature": "b56e4e86c97f7feb78058f393901405d5f98e820b2a7edf0c58c4b7bd189f0f1"
+        "version": "48fb0421252fb4bb9cbf18bcab0038a14575e1c738d0721cd3239208d10776d9",
+        "signature": "4ce060107ee1616047b212c2a04d4626ea967e7a3c309622e9183eab07562030"
       },
       "../src/repositories/index.ts": {
         "version": "474e4bf844d2b15b51e8f2ac2f894d7bddb44a4694f609e7967c979dc77e4a4c",
@@ -1712,6 +1712,7 @@
       ],
       "../src/models/image/types.d.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/user/types.d.ts",
         "../src/models/folder/types.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1721,6 +1722,7 @@
       "../src/models/folder/types.d.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
         "../src/models/image/types.d.ts",
+        "../src/models/user/types.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1860,11 +1862,43 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../../node_modules/@types/mime-types/index.d.ts": [
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../node_modules/@types/fs-extra/index.d.ts": [
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/repositories/types.d.ts": [
+        "../../node_modules/@types/fs-extra/index.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/utils/index.ts": [
+        "../../node_modules/@types/node/path.d.ts",
+        "../../node_modules/@types/mime-types/index.d.ts",
+        "../../node_modules/@types/bcryptjs/index.d.ts",
+        "../../node_modules/@types/fs-extra/index.d.ts",
+        "../src/repositories/types.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/models/folder/middlewares.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
         "../../node_modules/@types/mongodb/index.d.ts",
         "../src/models/folder/types.d.ts",
         "../src/models/image/index.ts",
+        "../src/utils/index.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1883,6 +1917,7 @@
       "../src/models/order/types.d.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
         "../src/models/image/types.d.ts",
+        "../src/models/user/types.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1931,36 +1966,6 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../node_modules/@types/fs-extra/index.d.ts": [
-        "../../node_modules/@types/node/fs.d.ts",
-        "../../node_modules/@types/node/ts3.2/index.d.ts",
-        "../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../node_modules/@types/node/util.d.ts",
-        "../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/repositories/types.d.ts": [
-        "../../node_modules/@types/fs-extra/index.d.ts",
-        "../../node_modules/@types/node/fs.d.ts",
-        "../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../node_modules/@types/node/util.d.ts",
-        "../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../../node_modules/@types/mime-types/index.d.ts": [
-        "../../node_modules/@types/node/fs.d.ts",
-        "../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../node_modules/@types/node/util.d.ts",
-        "../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/utils/index.ts": [
-        "../../node_modules/@types/node/path.d.ts",
-        "../../node_modules/@types/mime-types/index.d.ts",
-        "../../node_modules/@types/fs-extra/index.d.ts",
-        "../src/repositories/types.d.ts",
-        "../../node_modules/@types/node/fs.d.ts",
-        "../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../node_modules/@types/node/util.d.ts",
-        "../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/repositories/rolerepository.ts": [
         "../src/repositories/basicrepository.ts",
         "../src/models/role/types.d.ts",
@@ -2000,6 +2005,7 @@
         "../src/models/index.ts",
         "../src/repositories/types.d.ts",
         "../src/utils/index.ts",
+        "../src/repositories/userrepository.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -2012,6 +2018,7 @@
         "../src/repositories/types.d.ts",
         "../src/utils/index.ts",
         "../src/repositories/folderrepository.ts",
+        "../src/repositories/userrepository.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -2025,6 +2032,7 @@
         "../src/repositories/imagerepository.ts",
         "../src/models/image/types.d.ts",
         "../src/repositories/couponrepository.ts",
+        "../src/repositories/userrepository.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -3707,12 +3715,20 @@
         "../src/repositories/types.d.ts",
         "../src/repositories/basicrepository.ts"
       ],
-      "../src/repositories/types.d.ts": [
-        "../../node_modules/@types/fs-extra/index.d.ts",
-        "../../node_modules/@types/node/fs.d.ts",
-        "../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../node_modules/@types/node/util.d.ts",
-        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      "../src/models/folder/middlewares.ts": [
+        "../../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/models/folder/index.ts": [
+        "../src/models/folder/types.d.ts",
+        "../../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/models/index.ts": [
+        "../src/models/user/index.ts",
+        "../src/models/role/index.ts",
+        "../src/models/coupon/index.ts",
+        "../src/models/folder/index.ts",
+        "../src/models/image/index.ts",
+        "../src/models/order/index.ts"
       ],
       "../src/repositories/couponrepository.ts": [
         "../src/repositories/types.d.ts",
@@ -3723,6 +3739,13 @@
         "../src/repositories/types.d.ts",
         "../src/models/role/types.d.ts",
         "../src/repositories/basicrepository.ts"
+      ],
+      "../src/repositories/types.d.ts": [
+        "../../node_modules/@types/fs-extra/index.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../../node_modules/winston/index.d.ts": [
         "../../node_modules/@types/node/stream.d.ts",
@@ -3798,14 +3821,6 @@
         "../src/models/order/types.d.ts",
         "../../node_modules/@types/mongoose/index.d.ts"
       ],
-      "../src/models/index.ts": [
-        "../src/models/user/index.ts",
-        "../src/models/role/index.ts",
-        "../src/models/coupon/index.ts",
-        "../src/models/folder/index.ts",
-        "../src/models/image/index.ts",
-        "../src/models/order/index.ts"
-      ],
       "../src/models/order/middlewares.ts": [
         "../../node_modules/@types/mongoose/index.d.ts"
       ],
@@ -3815,17 +3830,11 @@
       "../src/models/order/types.d.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
         "../src/models/image/types.d.ts",
+        "../src/models/user/types.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/models/folder/index.ts": [
-        "../src/models/folder/types.d.ts",
-        "../../node_modules/@types/mongoose/index.d.ts"
-      ],
-      "../src/models/folder/middlewares.ts": [
-        "../../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/models/image/index.ts": [
         "../src/models/image/types.d.ts",
@@ -3886,16 +3895,10 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/models/role/types.d.ts": [
-        "../../node_modules/@types/mongoose/index.d.ts",
-        "../../node_modules/@types/node/fs.d.ts",
-        "../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../node_modules/@types/node/util.d.ts",
-        "../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/models/folder/types.d.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
         "../src/models/image/types.d.ts",
+        "../src/models/user/types.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -3903,7 +3906,15 @@
       ],
       "../src/models/image/types.d.ts": [
         "../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/user/types.d.ts",
         "../src/models/folder/types.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/role/types.d.ts": [
+        "../../node_modules/@types/mongoose/index.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -5336,6 +5347,10 @@
       "../src/models/image/schema.ts",
       "../src/models/image/middlewares.ts",
       "../src/models/image/index.ts",
+      "../../node_modules/@types/mime-types/index.d.ts",
+      "../../node_modules/@types/fs-extra/index.d.ts",
+      "../src/repositories/types.d.ts",
+      "../src/utils/index.ts",
       "../src/models/folder/middlewares.ts",
       "../src/models/folder/index.ts",
       "../src/models/order/types.d.ts",
@@ -5344,12 +5359,44 @@
       "../src/models/order/index.ts",
       "../src/models/index.ts",
       "../src/repositories/basicrepository.ts",
-      "../../node_modules/@types/fs-extra/index.d.ts",
-      "../src/repositories/types.d.ts",
-      "../../node_modules/@types/mime-types/index.d.ts",
-      "../src/utils/index.ts",
       "../src/repositories/rolerepository.ts",
-      "../src/repositories/userrepository.ts",
+      [
+        "../src/repositories/userrepository.ts",
+        [
+          {
+            "file": "../src/repositories/userrepository.ts",
+            "start": 1934,
+            "length": 11,
+            "code": 2345,
+            "category": 1,
+            "messageText": "Argument of type 'Promise<IFile>' is not assignable to parameter of type 'string'."
+          },
+          {
+            "file": "../src/repositories/userrepository.ts",
+            "start": 1977,
+            "length": 7,
+            "messageText": "Parameter 'newName' implicitly has an 'any' type.",
+            "category": 1,
+            "code": 7006
+          },
+          {
+            "file": "../src/repositories/userrepository.ts",
+            "start": 2953,
+            "length": 11,
+            "code": 2345,
+            "category": 1,
+            "messageText": "Argument of type 'Promise<IFile>' is not assignable to parameter of type 'string'."
+          },
+          {
+            "file": "../src/repositories/userrepository.ts",
+            "start": 2996,
+            "length": 7,
+            "messageText": "Parameter 'newName' implicitly has an 'any' type.",
+            "category": 1,
+            "code": 7006
+          }
+        ]
+      ],
       "../src/repositories/couponrepository.ts",
       "../src/repositories/folderrepository.ts",
       "../src/repositories/imagerepository.ts",

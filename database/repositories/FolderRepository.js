@@ -19,17 +19,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var models_1 = require("../models");
 var utils_1 = require("../utils");
+var UserRepository_1 = require("./UserRepository");
 var FolderRepository = (function (_super) {
     __extends(FolderRepository, _super);
     function FolderRepository() {
         var _this = _super.call(this, models_1.Folder) || this;
-        _this.create = function (folder) {
+        _this.create = function (userId, folder) {
             var newFolder = new models_1.Folder({
                 description: folder.description
             });
-            return utils_1.saveFolder(folder.name).then(function (newName) {
-                newFolder.name = newName;
-                return newFolder.save();
+            return UserRepository_1.userRepository.getOne(userId).then(function (user) {
+                if (!user) {
+                    throw new Error("User don\'t exist.");
+                }
+                newFolder.user = user;
+                return utils_1.saveFolder(folder.name).then(function (newName) {
+                    newFolder.name = newName;
+                    return newFolder.save();
+                });
             });
         };
         _this.update = function (id, folder) {

@@ -6,14 +6,6 @@ var hookMiddlewares = function (schema) {
         next();
     });
     schema.post("save", function (error, doc, next) {
-        if (error) {
-            if (error.code === 11000) {
-                next(new Error("Image already exist."));
-            }
-            else {
-                next(error);
-            }
-        }
         var image = doc;
         if (!doc.wasNew) {
             next();

@@ -6,8 +6,8 @@ export declare class UserRepository extends BasicRepository<UserDocument> {
     constructor();
     getOneByEmail: (email: string) => mongoose.DocumentQuery<UserDocument | null, UserDocument, {}>;
     create: (user: IUser) => void;
-    update: (id: string, user: IUser) => Promise<UserDocument>;
-    updateDetail: (id: string, user: IUser) => Promise<UserDocument>;
+    update: (id: string, user: IUser) => Promise<any>;
+    updateDetail: (id: string, user: IUser) => Promise<any>;
     updatePassword: (id: string, password: string, newPassword: string) => Promise<UserDocument>;
     delete: (id: string) => Promise<UserDocument>;
 }

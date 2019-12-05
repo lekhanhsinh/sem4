@@ -4,7 +4,7 @@ import { IOrder } from "./types";
 import { ImageDocument } from "../models/Image/types";
 export declare class OrderRepository extends BasicRepository<OrderDocument> {
     constructor();
-    create: (order: IOrder) => Promise<OrderDocument>;
+    create: (userId: string, order: IOrder) => Promise<OrderDocument>;
     update: (id: string, order: IOrder) => Promise<OrderDocument>;
     delete: (id: string) => Promise<OrderDocument>;
     caculatePrice: (images: {
