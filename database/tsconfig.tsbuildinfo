@@ -454,8 +454,8 @@
         "signature": "c1b994d807c9d4d69e28d21ef7b492046f68fea1ec2efb5f563429e8094fe611"
       },
       "../src/models/order/types.d.ts": {
-        "version": "29be43f451a058930df0c31ea641cb5c200c5f3a909d43904fef398081fdc43d",
-        "signature": "29be43f451a058930df0c31ea641cb5c200c5f3a909d43904fef398081fdc43d"
+        "version": "56d284474b5c0e60b716b161fb5493e1d58f697e60950fbd0c36e0a6c0edd36a",
+        "signature": "56d284474b5c0e60b716b161fb5493e1d58f697e60950fbd0c36e0a6c0edd36a"
       },
       "../src/models/order/schema.ts": {
         "version": "a8ee7c0532d6d72d79e96225799dcf510c99f82a681113acef3bc4f83095502c",

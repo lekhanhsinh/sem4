@@ -25,7 +25,7 @@ var folderResolvers = {
                 if (user.id !== folder.user.id || user.roles && !user.roles.find(function (x) { return x.name === "Admin"; })) {
                     throw new Error("Access Denied.");
                 }
-                return index_1.Repositories.imageRepository.renameTemp(folder.files);
+                return folder;
             });
         },
         getFoldersSelf: function (obj, args, context, info) {
@@ -36,17 +36,7 @@ var folderResolvers = {
                 throw new Error("Access Denied.");
             }
             return index_1.Repositories.folderRepository.search(__spreadArrays([{ path: "user", str: user.id, options: "" }], searchs), sort)
-                .populate(["files", "user"]).then(function (folders) {
-                var promises = [];
-                for (var _i = 0, folders_1 = folders; _i < folders_1.length; _i++) {
-                    var folder = folders_1[_i];
-                    var promise = index_1.Repositories.imageRepository.renameTemp(folder.files);
-                    promises.push(promise);
-                }
-                return Promise.all(promises).then(function () {
-                    return folders;
-                });
-            });
+                .populate(["files", "user"]).exec();
         },
         getFolders: function (obj, args, context, info) {
             var req = context.req;
@@ -56,17 +46,7 @@ var folderResolvers = {
                 throw new Error("Access Denied.");
             }
             return index_1.Repositories.folderRepository.getAll(sort)
-                .populate(["files", "user"]).then(function (folders) {
-                var promises = [];
-                for (var _i = 0, folders_2 = folders; _i < folders_2.length; _i++) {
-                    var folder = folders_2[_i];
-                    var promise = index_1.Repositories.imageRepository.renameTemp(folder.files);
-                    promises.push(promise);
-                }
-                return Promise.all(promises).then(function () {
-                    return folders;
-                });
-            });
+                .populate(["files", "user"]).exec();
         }
     },
     Mutation: {

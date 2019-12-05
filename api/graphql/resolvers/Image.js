@@ -25,7 +25,7 @@ var imageResolvers = {
                 if (user.id !== image.user.id || user.roles && !user.roles.find(function (x) { return x.name === "Admin"; })) {
                     throw new Error("Access Denied.");
                 }
-                return index_1.Repositories.imageRepository.renameTemp([image]);
+                return image;
             });
         },
         getImagesSelf: function (obj, args, context, info) {
@@ -36,9 +36,7 @@ var imageResolvers = {
                 throw new Error("Access Denied.");
             }
             return index_1.Repositories.imageRepository.search(__spreadArrays([{ path: "user", str: user.id, options: "" }], searchs), sort)
-                .populate(["user", "folder"]).then(function (images) {
-                return index_1.Repositories.imageRepository.renameTemp(images);
-            });
+                .populate(["user", "folder"]).exec();
         },
         getImages: function (obj, args, context, info) {
             var req = context.req;
@@ -48,9 +46,7 @@ var imageResolvers = {
                 throw new Error("Access Denied.");
             }
             return index_1.Repositories.imageRepository.getAll(sort)
-                .populate(["user", "folder"]).then(function (images) {
-                return index_1.Repositories.imageRepository.renameTemp(images);
-            });
+                .populate(["user", "folder"]).exec();
         }
     },
     Mutation: {

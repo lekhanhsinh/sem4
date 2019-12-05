@@ -1325,8 +1325,12 @@
         "version": "69a7072ef0f6a53d262e08cd1bb9903f68b69e4a9bdf2beca72aac40a6854bc5",
         "signature": "f837becca62d1b7792a7826be4eeab43b0ceb9e4b591ba3ba66177ea2f24d5af"
       },
+      "../src/graphql/typedefs/order.ts": {
+        "version": "0baf716a34410c9958ff896ca7ba9e38355709c3ec63096e23b49d741225e5a7",
+        "signature": "460fe4cf786bbe62efa013080df67ce30b155f84e557c8d5b471fa79b31596ed"
+      },
       "../src/graphql/typedefs/index.ts": {
-        "version": "760444a1231cdb53e1776e8bffde6c284d1555014f27028b33bc754f33da7cac",
+        "version": "7d7ac75cba5daec9119c376ddeab57afdd57cfedeb6028de2eac8894f5503433",
         "signature": "0cf4bea030184fdfb9003b1a3c0162d0b69b0ac951cf0fdcee2f0fb6c3b2fa72"
       },
       "../../node_modules/@types/bson/index.d.ts": {
@@ -1386,8 +1390,8 @@
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
       "../../database/src/models/order/types.d.ts": {
-        "version": "29be43f451a058930df0c31ea641cb5c200c5f3a909d43904fef398081fdc43d",
-        "signature": "29be43f451a058930df0c31ea641cb5c200c5f3a909d43904fef398081fdc43d"
+        "version": "56d284474b5c0e60b716b161fb5493e1d58f697e60950fbd0c36e0a6c0edd36a",
+        "signature": "56d284474b5c0e60b716b161fb5493e1d58f697e60950fbd0c36e0a6c0edd36a"
       },
       "../../database/src/models/order/index.ts": {
         "version": "e3fefdb21b945ac2bea21afb9587bcd34f5e19fa9d26c54a4ee5957826e0c6f8",
@@ -1446,19 +1450,23 @@
         "signature": "bf61ab9f3e6d24f925c61df80c05b62f6fd1f3d5371a1d0494d75e416690c14d"
       },
       "../src/graphql/resolvers/auth.ts": {
-        "version": "aa0693f0ebd2067388f12908dc142de790b538739ecffa8875725b392bbd56cd",
+        "version": "24235838ba88d6c65f66a7ef01439d8610a53f62d536b6774bd3184ab379acf6",
         "signature": "aa525056aa912f024a9e3f993e60612ea276b22f2cc4ee6cb17eeecc6daf4e3b"
       },
       "../src/graphql/resolvers/image.ts": {
-        "version": "86d05c4966a86f5fd52f15ccb64f960ad37933cdf1f66aaeed6366b55908b1cc",
+        "version": "3e6ad1b19d6b0eb02aa60a882eecd105364d67e9b884df189f4c47a6ab7b4c12",
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/folder.ts": {
-        "version": "526bdfd3e9a453fc309a028e846bdf9f1215f31218ddd1ae61ab9efaef84eeee",
+        "version": "24937cba6490481af8f8d306f9d794efb73aae6f56ea97eba053c2082f9d2879",
         "signature": "d7218d3dbc85b2fedfa5a044f291b43dff4338215a57e4022017eea4fb160bfe"
       },
+      "../src/graphql/resolvers/order.ts": {
+        "version": "f535475afd24b2e9e62ec78fbd8e37ad6c898f8fdeef85afc1303b7f3af972e4",
+        "signature": "e6134f172d086ac9973db76251ab6a62294690115b4fbadfe4d6d203e6481959"
+      },
       "../src/graphql/resolvers/index.ts": {
-        "version": "98befcd7723c06978f9c347baa649e63b9c0eae2e15472ce23caab67f6bc4f47",
+        "version": "8fe4c779094a770b30bb7a5c5a6c9345ae9bd702da447c66b11d01c3d002fe47",
         "signature": "737245bd090f144a734c55dd2ee134da2fb672032f13e2d850246a124b73d97d"
       },
       "../src/graphql/index.ts": {
@@ -4437,12 +4445,20 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/graphql/typedefs/order.ts": [
+        "../../node_modules/apollo-server-core/dist/index.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/graphql/typedefs/index.ts": [
         "../../node_modules/apollo-server-core/dist/index.d.ts",
         "../src/graphql/typedefs/user.ts",
         "../src/graphql/typedefs/auth.ts",
         "../src/graphql/typedefs/image.ts",
         "../src/graphql/typedefs/folder.ts",
+        "../src/graphql/typedefs/order.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -4728,12 +4744,22 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/graphql/resolvers/order.ts": [
+        "../../node_modules/graphql-tools/dist/index.d.ts",
+        "../../database/build/index.d.ts",
+        "../../database/src/models/user/types.d.ts",
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/graphql/resolvers/index.ts": [
         "../../node_modules/graphql-tools/dist/index.d.ts",
         "../src/graphql/resolvers/user.ts",
         "../src/graphql/resolvers/auth.ts",
         "../src/graphql/resolvers/image.ts",
         "../src/graphql/resolvers/folder.ts",
+        "../src/graphql/resolvers/order.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -5481,7 +5507,7 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/graphql/resolvers/folder.ts": [
+      "../src/graphql/resolvers/order.ts": [
         "../../node_modules/graphql-tools/dist/index.d.ts"
       ],
       "../src/graphql/resolvers/index.ts": [
@@ -5490,6 +5516,9 @@
       "../src/graphql/index.ts": [
         "../src/graphql/typedefs/index.ts",
         "../src/graphql/resolvers/index.ts"
+      ],
+      "../src/graphql/resolvers/folder.ts": [
+        "../../node_modules/graphql-tools/dist/index.d.ts"
       ],
       "../src/graphql/resolvers/image.ts": [
         "../../node_modules/graphql-tools/dist/index.d.ts"
@@ -5779,6 +5808,9 @@
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/graphql/typedefs/index.ts": [
+        "../../node_modules/graphql/index.d.ts"
+      ],
+      "../src/graphql/typedefs/order.ts": [
         "../../node_modules/graphql/index.d.ts"
       ],
       "../src/graphql/typedefs/folder.ts": [
@@ -8748,6 +8780,7 @@
       "../src/graphql/typedefs/auth.ts",
       "../src/graphql/typedefs/image.ts",
       "../src/graphql/typedefs/folder.ts",
+      "../src/graphql/typedefs/order.ts",
       "../src/graphql/typedefs/index.ts",
       "../../node_modules/@types/bson/index.d.ts",
       "../../node_modules/@types/mongodb/index.d.ts",
@@ -8781,6 +8814,7 @@
       "../src/graphql/resolvers/auth.ts",
       "../src/graphql/resolvers/image.ts",
       "../src/graphql/resolvers/folder.ts",
+      "../src/graphql/resolvers/order.ts",
       "../src/graphql/resolvers/index.ts",
       "../src/graphql/index.ts",
       "../../node_modules/graphql-scalars/dist/esnext/typedefs.d.ts",

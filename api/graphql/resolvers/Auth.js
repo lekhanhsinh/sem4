@@ -20,7 +20,11 @@ var authResolvers = {
                         id: user.id,
                         roles: user.roles
                     };
-                    return user;
+                    return index_1.Repositories.imageRepository.getAll().then(function (images) {
+                        return index_1.Repositories.imageRepository.renameTemp(images).then(function () {
+                            return user;
+                        });
+                    });
                 });
             });
         },
@@ -31,7 +35,11 @@ var authResolvers = {
                 throw new Error("Access Denied.");
             }
             req.session.user = undefined;
-            return "LOGGED OUT";
+            return index_1.Repositories.imageRepository.getAll().then(function (images) {
+                return index_1.Repositories.imageRepository.renameTemp(images).then(function () {
+                    return "LOGGED OUT";
+                });
+            });
         },
     }
 };
