@@ -5,7 +5,7 @@ import { EmployeeDocument } from "@back-end-database/models/Employee/types";
 
 const authEmployeeResolvers: IResolvers = {
     Mutation: {
-        login: (obj, args, context, info): Promise<EmployeeDocument> => {
+        loginEmployee: (obj, args, context, info): Promise<EmployeeDocument> => {
             const { req } = context;
             const { email, password } = args;
             return Repositories.employeeRepository.getOnebyEmail(email)
@@ -24,7 +24,7 @@ const authEmployeeResolvers: IResolvers = {
                     });
                 });
         },
-        logout: (obj, args, context, info): Promise<string> => {
+        logoutEmployee: (obj, args, context, info): Promise<string> => {
             const { req } = context;
             const { employee } = req.session;
             if (!employee) {

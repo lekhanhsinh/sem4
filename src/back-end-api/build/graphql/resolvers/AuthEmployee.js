@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _back_end_database_1 = require("@back-end-database");
 var authEmployeeResolvers = {
     Mutation: {
-        login: function (obj, args, context, info) {
+        loginEmployee: function (obj, args, context, info) {
             var req = context.req;
             var email = args.email, password = args.password;
             return _back_end_database_1.Repositories.employeeRepository.getOnebyEmail(email)
@@ -22,7 +22,7 @@ var authEmployeeResolvers = {
                 });
             });
         },
-        logout: function (obj, args, context, info) {
+        logoutEmployee: function (obj, args, context, info) {
             var req = context.req;
             var employee = req.session.employee;
             if (!employee) {

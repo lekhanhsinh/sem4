@@ -31,7 +31,7 @@ export class EmployeeRepository extends BasicRepository<EmployeeDocument> {
     ): Promise<EmployeeDocument> => {
         const RegisterModel = EmployeeModel.concat(Joi.object({
             email: Joi.string().email().required(),
-            password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+            password: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
             repeatPassword: Joi.ref("password"),
         }));
         return RegisterModel.validateAsync(
@@ -73,7 +73,7 @@ export class EmployeeRepository extends BasicRepository<EmployeeDocument> {
         repeatPassword: string
     ): Promise<EmployeeDocument> => {
         const UpdatePasswordModel = Joi.object({
-            newPassword: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+            newPassword: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
             repeatPassword: Joi.ref("newPassword")
         });
         return UpdatePasswordModel.validateAsync({

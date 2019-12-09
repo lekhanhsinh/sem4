@@ -54,7 +54,7 @@ var EmployeeRepository = (function (_super) {
         _this.register = function (email, password, repeatPassword, detail) {
             var RegisterModel = EmployeeModel.concat(joi_1.default.object({
                 email: joi_1.default.string().email().required(),
-                password: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+                password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
                 repeatPassword: joi_1.default.ref("password"),
             }));
             return RegisterModel.validateAsync(__assign({ email: email,
@@ -78,7 +78,7 @@ var EmployeeRepository = (function (_super) {
         };
         _this.updatePassword = function (id, password, newPassword, repeatPassword) {
             var UpdatePasswordModel = joi_1.default.object({
-                newPassword: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+                newPassword: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
                 repeatPassword: joi_1.default.ref("newPassword")
             });
             return UpdatePasswordModel.validateAsync({

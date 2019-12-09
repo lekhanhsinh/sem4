@@ -1534,7 +1534,7 @@
         "signature": "d2ecd194cfe7ad2e1d8bbdf8bf5ccd9ad10e3ac2502e8291a1398aa44ea9272e"
       },
       "../src/graphql/resolvers/authemployee.ts": {
-        "version": "e207db8704a0920570f82d92014d986fc7087e50707b485e14cdab24391e2c2b",
+        "version": "ba177109f95aaa010b7f2fd254a7b0336a9758271eb280669c38a81d6c8818d8",
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
       "../src/graphql/resolvers/index.ts": {
