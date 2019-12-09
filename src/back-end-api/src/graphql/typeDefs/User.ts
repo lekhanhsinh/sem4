@@ -20,6 +20,11 @@ const UserTypeDefs = gql`
     type UserType {
         id: String
         email: EmailAddress
+        name: String
+        gender: String
+        address: String
+        phoneNumber: String
+        dateOfBirth: DateTime
         createdAt: DateTime
         updatedAt: DateTime
     }

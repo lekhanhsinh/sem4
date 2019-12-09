@@ -1450,7 +1450,7 @@
         "signature": "b5f1a80d4233c020b0d38be06915df6278ba213426e7af048ea6997ee17cf4bc"
       },
       "../src/graphql/typedefs/user.ts": {
-        "version": "0add9ff83d2ccfce718ba3d3ee58f6172f2189265bb502a07ccce058b8faa867",
+        "version": "305df39871629ba8c133d3027850480ab6402113b65e329f4e0d3ec968646ba8",
         "signature": "58e8cb97256fbef1668e50ed52c1034cada81620c45e70cc1e9f83d321da3188"
       },
       "../src/graphql/typedefs/auth.ts": {
@@ -1458,7 +1458,7 @@
         "signature": "3f397d98b06566585a34c760839ac71c6f71c20b74f31ec14e23d8a45f1a233c"
       },
       "../src/graphql/typedefs/employee.ts": {
-        "version": "6c74550968c3ab354ae56111e6106dfec4e034bf4e92eed9d66ca83671876786",
+        "version": "42888455b2a9bda89ed386fe4a045f1cba0dba380334e16030db43f36320d609",
         "signature": "9756d1fb515b3154dbf5541726f79aca8b96dc6a27ff03033abe7e608d52983e"
       },
       "../src/graphql/typedefs/authemployee.ts": {

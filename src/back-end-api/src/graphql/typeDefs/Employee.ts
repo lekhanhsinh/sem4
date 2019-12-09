@@ -20,6 +20,8 @@ const EmployeeTypeDefs = gql`
     type EmployeeType {
         id: String
         email: EmailAddress
+        name: String
+        role: String
         createdAt: DateTime
         updatedAt: DateTime
     }
