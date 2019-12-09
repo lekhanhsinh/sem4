@@ -37,19 +37,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var joi_1 = __importDefault(require("@hapi/joi"));
 var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var Models = __importStar(require("../models"));
-var UserModel = joi_1.default.object({
+var EmployeeModel = joi_1.default.object({
     email: joi_1.default.string().email(),
     password: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/),
-    name: joi_1.default.string().alphanum(),
-    gender: joi_1.default.string().valid("MALE", "FEMALE"),
-    address: joi_1.default.string().alphanum(),
-    phoneNumber: joi_1.default.number(),
-    dateOfBirth: joi_1.default.date().max("now")
 });
-var UserRepository = (function (_super) {
-    __extends(UserRepository, _super);
-    function UserRepository() {
-        var _this = _super.call(this, Models.User) || this;
+var EmployeeRepository = (function (_super) {
+    __extends(EmployeeRepository, _super);
+    function EmployeeRepository() {
+        var _this = _super.call(this, Models.Employee) || this;
         _this.getOnebyEmail = function (email, populate) {
             if (populate === void 0) { populate = []; }
             return _this._collection.findOne({ email: email })
@@ -57,7 +52,7 @@ var UserRepository = (function (_super) {
                 .exec();
         };
         _this.register = function (email, password, repeatPassword, detail) {
-            var RegisterModel = UserModel.concat(joi_1.default.object({
+            var RegisterModel = EmployeeModel.concat(joi_1.default.object({
                 email: joi_1.default.string().email().required(),
                 password: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
                 repeatPassword: joi_1.default.ref("password"),
@@ -71,16 +66,12 @@ var UserRepository = (function (_super) {
             });
         };
         _this.updateDetail = function (id, detail) {
-            return UserModel.validateAsync(__assign({}, detail)).then(function () {
+            return EmployeeModel.validateAsync(__assign({}, detail)).then(function () {
                 return _this.getOnebyId(id).then(function (found) {
                     if (!found) {
-                        throw new Error("User don\'t exist.");
+                        throw new Error("Employee don\'t exist.");
                     }
                     found.name = detail.name || found.name;
-                    found.gender = detail.gender || found.gender;
-                    found.address = detail.address || found.address;
-                    found.phoneNumber = detail.phoneNumber || found.phoneNumber;
-                    found.dateOfBirth = detail.dateOfBirth || found.dateOfBirth;
                     return found.save();
                 });
             });
@@ -96,7 +87,7 @@ var UserRepository = (function (_super) {
             }).then(function () {
                 return _this.getOnebyId(id).then(function (found) {
                     if (!found) {
-                        throw new Error("User don\'t exist.");
+                        throw new Error("Employee don\'t exist.");
                     }
                     return found.comparePassword(password).then(function (isMatch) {
                         if (!isMatch) {
@@ -110,7 +101,7 @@ var UserRepository = (function (_super) {
         };
         return _this;
     }
-    return UserRepository;
+    return EmployeeRepository;
 }(BasicRepository_1.default));
-exports.UserRepository = UserRepository;
-exports.userRepository = new UserRepository();
+exports.EmployeeRepository = EmployeeRepository;
+exports.employeeRepository = new EmployeeRepository();

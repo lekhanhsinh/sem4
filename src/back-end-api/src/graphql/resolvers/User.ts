@@ -58,7 +58,7 @@ const userResolvers: IResolvers = {
             });
         },
         deleteUser: (obj, args, context, info): Promise<string> => {
-            const { id, detail } = args;
+            const { id } = args;
             const { req } = context;
             const { user } = req.session;
             if (!user) {

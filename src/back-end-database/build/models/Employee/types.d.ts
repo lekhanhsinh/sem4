@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
-export declare type User = {
+export declare type Employee = {
     id: string;
     email: string;
     password: string;
     name: string;
-    gender: string;
-    address: string;
-    phoneNumber: string;
-    dateOfBirth: Date;
+    role: string;
 };
-export declare type UserDocument = mongoose.Document & User & {
+export declare type EmployeeDocument = mongoose.Document & Employee & {
     comparePassword: (candidatePassword: string) => Promise<boolean>;
 };

@@ -26,6 +26,10 @@ const UserTypeDefs = gql`
 
     input UserDetailInputType {
         name: String
+        gender: String
+        address: String
+        phoneNumber: String
+        dateOfBirth: DateTime
     }
 `;
 

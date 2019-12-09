@@ -7,12 +7,12 @@ const schema = new mongoose.Schema({
         lowercase: true,
         unique: true
     },
+
+
     password: String,
+
     name: String,
-    gender: String,
-    address: String,
-    phoneNumber: String,
-    dateOfBirth: Date
+    role: String
 
 }, { timestamps: true, autoIndex: true });
 

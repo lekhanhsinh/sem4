@@ -2,6 +2,8 @@ import { gql } from "apollo-server-core";
 import { typeDefs } from "graphql-scalars";
 import UserTypeDefs from "./User";
 import AuthTypeDefs from "./Auth";
+import EmployeeTypeDefs from "./Employee";
+import AuthEmployeeTypeDefs from "./AuthEmployee";
 
 const rootTypeDefs = gql`
 
@@ -34,8 +36,10 @@ const scalarTypeDef = typeDefs.map(str => {
 });
 
 export default [
+    ...scalarTypeDef,
     rootTypeDefs,
     UserTypeDefs,
     AuthTypeDefs,
-    ...scalarTypeDef
+    EmployeeTypeDefs,
+    AuthEmployeeTypeDefs,
 ];

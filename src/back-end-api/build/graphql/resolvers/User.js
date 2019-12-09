@@ -58,7 +58,7 @@ var userResolvers = {
             });
         },
         deleteUser: function (obj, args, context, info) {
-            var id = args.id, detail = args.detail;
+            var id = args.id;
             var req = context.req;
             var user = req.session.user;
             if (!user) {

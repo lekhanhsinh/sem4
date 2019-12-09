@@ -2,27 +2,22 @@ import Joi from "@hapi/joi";
 
 import BasicRepository from "./BasicRepository";
 import * as Models from "../models";
-import { UserDocument, User } from "../models/User/types";
+import { EmployeeDocument, Employee } from "../models/Employee/types";
 
-const UserModel = Joi.object({
+const EmployeeModel = Joi.object({
     email: Joi.string().email(),
     password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/),
-    name: Joi.string().alphanum(),
-    gender: Joi.string().valid("MALE", "FEMALE"),
-    address: Joi.string().alphanum(),
-    phoneNumber: Joi.number(),
-    dateOfBirth: Joi.date().max("now")
 });
 
-export class UserRepository extends BasicRepository<UserDocument> {
+export class EmployeeRepository extends BasicRepository<EmployeeDocument> {
     constructor() {
-        super(Models.User);
+        super(Models.Employee);
     }
 
     getOnebyEmail = (
         email: string,
         populate: string[] = []
-    ): Promise<UserDocument | null> => {
+    ): Promise<EmployeeDocument | null> => {
         return this._collection.findOne({ email })
             .populate(populate)
             .exec();
@@ -33,8 +28,8 @@ export class UserRepository extends BasicRepository<UserDocument> {
         password: string,
         repeatPassword: string,
         detail: unknown
-    ): Promise<UserDocument> => {
-        const RegisterModel = UserModel.concat(Joi.object({
+    ): Promise<EmployeeDocument> => {
+        const RegisterModel = EmployeeModel.concat(Joi.object({
             email: Joi.string().email().required(),
             password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
             repeatPassword: Joi.ref("password"),
@@ -52,24 +47,20 @@ export class UserRepository extends BasicRepository<UserDocument> {
                 password,
                 repeatPassword,
                 ...(detail as object)
-            }) as Promise<UserDocument>;
+            }) as Promise<EmployeeDocument>;
         });
     }
 
     updateDetail = (
         id: string,
         detail: unknown
-    ): Promise<UserDocument> => {
-        return UserModel.validateAsync({
-            ...(detail as object)
+    ): Promise<EmployeeDocument> => {
+        return EmployeeModel.validateAsync({
+            ...(detail as Employee)
         }).then(() => {
             return this.getOnebyId(id).then(found => {
-                if (!found) { throw new Error("User don\'t exist."); }
-                found.name = (detail as User).name || found.name;
-                found.gender = (detail as User).gender || found.gender;
-                found.address = (detail as User).address || found.address;
-                found.phoneNumber = (detail as User).phoneNumber || found.phoneNumber;
-                found.dateOfBirth = (detail as User).dateOfBirth || found.dateOfBirth;
+                if (!found) { throw new Error("Employee don\'t exist."); }
+                found.name = (detail as Employee).name || found.name;
                 return found.save();
             });
         });
@@ -80,7 +71,7 @@ export class UserRepository extends BasicRepository<UserDocument> {
         password: string,
         newPassword: string,
         repeatPassword: string
-    ): Promise<UserDocument> => {
+    ): Promise<EmployeeDocument> => {
         const UpdatePasswordModel = Joi.object({
             newPassword: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
             repeatPassword: Joi.ref("newPassword")
@@ -90,7 +81,7 @@ export class UserRepository extends BasicRepository<UserDocument> {
             repeatPassword
         }).then(() => {
             return this.getOnebyId(id).then(found => {
-                if (!found) { throw new Error("User don\'t exist."); }
+                if (!found) { throw new Error("Employee don\'t exist."); }
                 return found.comparePassword(password).then(isMatch => {
                     if (!isMatch) { throw new Error("Password is incorrect."); }
                     found.password = newPassword;
@@ -101,4 +92,4 @@ export class UserRepository extends BasicRepository<UserDocument> {
     }
 }
 
-export const userRepository = new UserRepository();
+export const employeeRepository = new EmployeeRepository();
