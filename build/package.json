@@ -1,0 +1,43 @@
+{
+    "name": "sem4",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "private": true,
+    "_moduleAliases": {
+        "@api": "api",
+        "@database": "database",
+        "@server": "server"
+    },
+    "workspaces": [
+        "api",
+        "database",
+        "server"
+    ],
+    "scripts": {
+        "start": "node server/index.js",
+        "seed": "node database/seeders/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "faker": "^4.1.0"
+    },
+    "dependencies": {
+        "apollo-server-express": "^2.9.12",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
+        "fs-extra": "^8.1.0",
+        "graphql-scalars": "^1.0.4",
+        "module-alias": "^2.2.2",
+        "vhost-ts": "^4.0.0",
+        "winston": "^3.2.1",
+        "bcryptjs": "^2.4.3",
+        "mime-types": "^2.1.25",
+        "mongo-seeding": "^3.4.0-alpha.1",
+        "mongoose": "^5.7.12",
+        "node-cache": "^4.2.1"
+    }
+}
