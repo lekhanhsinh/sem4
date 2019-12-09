@@ -54,7 +54,7 @@ const userResolvers: IResolvers = {
             }
             return Repositories.userRepository.update(id, detail).then(user => {
                 if (!user) { throw new Error("User don\'t exist."); }
-                return user;
+                return user.save();
             });
         },
         deleteUser: (obj, args, context, info): Promise<string> => {

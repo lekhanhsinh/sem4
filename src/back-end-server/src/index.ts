@@ -3,6 +3,7 @@ require("module-alias/register");
 import express from "express";
 import http from "http";
 import vhost from "vhost-ts";
+import cors from "cors"
 
 import * as Api from "@back-end-api";
 import * as Main from "./server";
@@ -17,6 +18,8 @@ initSession(app);
 
 app.use(vhost(`api.${DOMAIN}`, Api.app));
 app.use(vhost(`${DOMAIN}`, Main.app));
+
+app.use(cors())
 
 const httpServer = http.createServer(app);
 Api.server.installSubscriptionHandlers(httpServer);

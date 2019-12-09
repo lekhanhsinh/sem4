@@ -54,7 +54,7 @@ var userResolvers = {
                 if (!user) {
                     throw new Error("User don\'t exist.");
                 }
-                return user;
+                return user.save();
             });
         },
         deleteUser: function (obj, args, context, info) {

@@ -14,6 +14,7 @@ require("module-alias/register");
 var express_1 = __importDefault(require("express"));
 var http_1 = __importDefault(require("http"));
 var vhost_ts_1 = __importDefault(require("vhost-ts"));
+var cors_1 = __importDefault(require("cors"));
 var Api = __importStar(require("@back-end-api"));
 var Main = __importStar(require("./server"));
 var secrets_1 = require("./utils/secrets");
@@ -24,6 +25,7 @@ exports.app = app;
 session_1.default(app);
 app.use(vhost_ts_1.default("api." + secrets_1.DOMAIN, Api.app));
 app.use(vhost_ts_1.default("" + secrets_1.DOMAIN, Main.app));
+app.use(cors_1.default());
 var httpServer = http_1.default.createServer(app);
 Api.server.installSubscriptionHandlers(httpServer);
 httpServer.listen(secrets_1.PORT, function () {
