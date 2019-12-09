@@ -6,7 +6,7 @@ import { UserDocument, User } from "../models/User/types";
 
 const UserModel = Joi.object({
     email: Joi.string().email(),
-    password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/),
+    password: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
     name: Joi.string().alphanum(),
     gender: Joi.string().valid("MALE", "FEMALE"),
     address: Joi.string().alphanum(),
@@ -36,7 +36,7 @@ export class UserRepository extends BasicRepository<UserDocument> {
     ): Promise<UserDocument> => {
         const RegisterModel = UserModel.concat(Joi.object({
             email: Joi.string().email().required(),
-            password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+            password: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
             repeatPassword: Joi.ref("password"),
         }));
         return RegisterModel.validateAsync(

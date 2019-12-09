@@ -39,7 +39,7 @@ var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var Models = __importStar(require("../models"));
 var EmployeeModel = joi_1.default.object({
     email: joi_1.default.string().email(),
-    password: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/),
+    password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
 });
 var EmployeeRepository = (function (_super) {
     __extends(EmployeeRepository, _super);

@@ -46,8 +46,8 @@ var userResolvers = {
         updateUser: function (obj, args, context, info) {
             var id = args.id, detail = args.detail;
             var req = context.req;
-            var user = req.session.user;
-            if (!user) {
+            var employee = req.session.employee;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.update(id, detail).then(function (user) {
@@ -60,8 +60,8 @@ var userResolvers = {
         deleteUser: function (obj, args, context, info) {
             var id = args.id;
             var req = context.req;
-            var user = req.session.user;
-            if (!user) {
+            var employee = req.session.employee;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.delete(id).then(function (user) {

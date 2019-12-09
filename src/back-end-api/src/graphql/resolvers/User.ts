@@ -48,8 +48,8 @@ const userResolvers: IResolvers = {
         updateUser: (obj, args, context, info): Promise<UserDocument> => {
             const { id, detail } = args;
             const { req } = context;
-            const { user } = req.session;
-            if (!user) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.update(id, detail).then(user => {
@@ -60,8 +60,8 @@ const userResolvers: IResolvers = {
         deleteUser: (obj, args, context, info): Promise<string> => {
             const { id } = args;
             const { req } = context;
-            const { user } = req.session;
-            if (!user) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.delete(id).then(user => {

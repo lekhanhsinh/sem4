@@ -7,28 +7,28 @@ var authEmployeeResolvers = {
             var req = context.req;
             var email = args.email, password = args.password;
             return _back_end_database_1.Repositories.employeeRepository.getOnebyEmail(email)
-                .then(function (Employee) {
-                if (!Employee) {
+                .then(function (employee) {
+                if (!employee) {
                     throw new Error("Access Denied.");
                 }
-                return Employee.comparePassword(password).then(function (isMatch) {
+                return employee.comparePassword(password).then(function (isMatch) {
                     if (!isMatch) {
                         throw new Error("Access Denied.");
                     }
-                    req.session.Employee = {
-                        id: Employee.id,
+                    req.session.employee = {
+                        id: employee.id,
                     };
-                    return Employee;
+                    return employee;
                 });
             });
         },
         logout: function (obj, args, context, info) {
             var req = context.req;
-            var Employee = req.session.Employee;
-            if (!Employee) {
+            var employee = req.session.employee;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            req.session.Employee = undefined;
+            req.session.employee = undefined;
             return Promise.resolve("LOGGED OUT");
         },
     },

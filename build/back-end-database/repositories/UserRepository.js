@@ -39,7 +39,7 @@ var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var Models = __importStar(require("../models"));
 var UserModel = joi_1.default.object({
     email: joi_1.default.string().email(),
-    password: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/),
+    password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
     name: joi_1.default.string().alphanum(),
     gender: joi_1.default.string().valid("MALE", "FEMALE"),
     address: joi_1.default.string().alphanum(),
@@ -59,7 +59,7 @@ var UserRepository = (function (_super) {
         _this.register = function (email, password, repeatPassword, detail) {
             var RegisterModel = UserModel.concat(joi_1.default.object({
                 email: joi_1.default.string().email().required(),
-                password: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+                password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
                 repeatPassword: joi_1.default.ref("password"),
             }));
             return RegisterModel.validateAsync(__assign({ email: email,

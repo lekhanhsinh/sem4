@@ -7,11 +7,11 @@ const employeeResolvers: IResolvers = {
     Query: {
         getSelfEmployee: (obj, args, context, info): Promise<EmployeeDocument | null> => {
             const { req } = context;
-            const { Employee } = req.session;
-            if (!Employee) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.employeeRepository.getOnebyId(Employee.id);
+            return Repositories.employeeRepository.getOnebyId(employee.id);
         },
         getEmployee: (obj, args, context, info): Promise<EmployeeDocument | null> => {
             const { id } = args;
@@ -26,20 +26,20 @@ const employeeResolvers: IResolvers = {
         updateSelfEmployeeDetail: (obj, args, context, info): Promise<EmployeeDocument> => {
             const { detail } = args;
             const { req } = context;
-            const { Employee } = req.session;
-            if (!Employee) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.employeeRepository.updateDetail(Employee.id, detail);
+            return Repositories.employeeRepository.updateDetail(employee.id, detail);
         },
         updateSelfEmployeePassword: (obj, args, context, info): Promise<EmployeeDocument> => {
             const { password, newPassword, repeatPassword } = args;
             const { req } = context;
-            const { Employee } = req.session;
-            if (!Employee) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.employeeRepository.updatePassword(Employee.id, password, newPassword, repeatPassword);
+            return Repositories.employeeRepository.updatePassword(employee.id, password, newPassword, repeatPassword);
         },
         createEmployee: (obj, args, context, info): Promise<EmployeeDocument> => {
             const { email, password, repeatPassword, detail } = args;
@@ -48,24 +48,24 @@ const employeeResolvers: IResolvers = {
         updateEmployee: (obj, args, context, info): Promise<EmployeeDocument> => {
             const { id, detail } = args;
             const { req } = context;
-            const { Employee } = req.session;
-            if (!Employee) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.employeeRepository.update(id, detail).then(Employee => {
-                if (!Employee) { throw new Error("Employee don\'t exist."); }
-                return Employee;
+            return Repositories.employeeRepository.update(id, detail).then(employee => {
+                if (!employee) { throw new Error("Employee don\'t exist."); }
+                return employee;
             });
         },
         deleteEmployee: (obj, args, context, info): Promise<string> => {
             const { id } = args;
             const { req } = context;
-            const { Employee } = req.session;
-            if (!Employee) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.employeeRepository.delete(id).then(Employee => {
-                if (!Employee) { throw new Error("Employee don\'t exist."); }
+            return Repositories.employeeRepository.delete(id).then(employee => {
+                if (!employee) { throw new Error("Employee don\'t exist."); }
                 return "DELETED";
             });
         },

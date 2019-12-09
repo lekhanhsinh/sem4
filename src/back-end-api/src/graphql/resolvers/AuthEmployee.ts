@@ -9,28 +9,28 @@ const authEmployeeResolvers: IResolvers = {
             const { req } = context;
             const { email, password } = args;
             return Repositories.employeeRepository.getOnebyEmail(email)
-                .then(function (Employee) {
-                    if (!Employee) {
+                .then((employee) => {
+                    if (!employee) {
                         throw new Error("Access Denied.");
                     }
-                    return Employee.comparePassword(password).then((isMatch) => {
+                    return employee.comparePassword(password).then((isMatch) => {
                         if (!isMatch) {
                             throw new Error("Access Denied.");
                         }
-                        req.session.Employee = {
-                            id: Employee.id,
+                        req.session.employee = {
+                            id: employee.id,
                         };
-                        return Employee;
+                        return employee;
                     });
                 });
         },
         logout: (obj, args, context, info): Promise<string> => {
             const { req } = context;
-            const { Employee } = req.session;
-            if (!Employee) {
+            const { employee } = req.session;
+            if (!employee) {
                 throw new Error("Access Denied.");
             }
-            req.session.Employee = undefined;
+            req.session.employee = undefined;
             return Promise.resolve("LOGGED OUT");
         },
     },
