@@ -1462,7 +1462,7 @@
         "signature": "9756d1fb515b3154dbf5541726f79aca8b96dc6a27ff03033abe7e608d52983e"
       },
       "../src/graphql/typedefs/authemployee.ts": {
-        "version": "2916aa3afefb9d59b7821067d6467e7106524d3eacf92d8914e7c5aca7b9a6e3",
+        "version": "aaedecb4ef0e85284631226b09de6bb4b35c0b1920e6f5369dee9a0dc08e05db",
         "signature": "94e2d339c11397839a8b1f6d03243b3ae43bccbb6bc1a7bd9383943337d39643"
       },
       "../src/graphql/typedefs/index.ts": {
