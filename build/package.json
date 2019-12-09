@@ -1,0 +1,36 @@
+{
+    "name": "sem4",
+    "version": "1.0.0",
+    "repository": "https://github.com/lekhanhsinh/sem4.git",
+    "author": "lekhanhsinhvn <38658239+lekhanhsinhvn@users.noreply.github.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "start": "node back-end-server/index.js",
+        "seed": "node back-end-database/seeders/index.js"
+    },
+    "_moduleAliases": {
+        "@back-end-api": "back-end-api",
+        "@back-end-database": "back-end-database",
+        "@back-end-server": "back-end-server"
+    },
+    "dependencies": {
+        "apollo-server-express": "^2.9.13",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "fs-extra": "^8.1.0",
+        "graphql-scalars": "^1.0.4",
+        "module-alias": "^2.2.2",
+        "winston": "^3.2.1",
+        "@hapi/joi": "^16.1.8",
+        "bcryptjs": "^2.4.3",
+        "mime-types": "^2.1.25",
+        "mongo-seeding": "^3.4.0-alpha.1",
+        "mongoose": "^5.7.13",
+        "express-session": "^1.17.0",
+        "vhost-ts": "^4.0.0"
+    },
+    "devDependencies": {
+        "faker": "^4.1.0"
+    }
+}

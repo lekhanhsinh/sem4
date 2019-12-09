@@ -1,0 +1,36 @@
+{
+  "name": "back-end-database",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn run build && yarn run serve",
+    "serve": "node build/index.js",
+    "build": "node scripts/removeBuild.js && yarn tsc --build"
+  },
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^8.1.0",
+    "mime-types": "^2.1.25",
+    "mongo-seeding": "^3.4.0-alpha.1",
+    "mongoose": "^5.7.13",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express-session": "^1.15.16",
+    "@types/faker": "^4.1.8",
+    "@types/fs-extra": "^8.0.1",
+    "@types/hapi__joi": "^16.0.4",
+    "@types/mime-types": "^2.1.0",
+    "@types/mongodb": "^3.3.11",
+    "@types/mongoose": "^5.5.32",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "faker": "^4.1.0",
+    "typescript": "^3.7.3"
+  }
+}
