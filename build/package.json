@@ -1,43 +1,36 @@
 {
     "name": "sem4",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "repository": "https://github.com/lekhanhsinh/sem4.git",
+    "author": "lekhanhsinhvn <38658239+lekhanhsinhvn@users.noreply.github.com>",
+    "license": "MIT",
     "private": true,
-    "_moduleAliases": {
-        "@api": "api",
-        "@database": "database",
-        "@server": "server"
-    },
-    "workspaces": [
-        "api",
-        "database",
-        "server"
-    ],
     "scripts": {
-        "start": "node server/index.js",
-        "seed": "node database/seeders/index.js"
+        "start": "node back-end-server/index.js",
+        "seed": "node back-end-database/seeders/index.js"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "faker": "^4.1.0"
+    "_moduleAliases": {
+        "@back-end-api": "back-end-api",
+        "@back-end-database": "back-end-database",
+        "@back-end-server": "back-end-server"
     },
     "dependencies": {
-        "apollo-server-express": "^2.9.12",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "express-session": "^1.17.0",
-        "fs-extra": "^8.1.0",
-        "graphql-scalars": "^1.0.4",
-        "module-alias": "^2.2.2",
-        "vhost-ts": "^4.0.0",
-        "winston": "^3.2.1",
+        "@hapi/joi": "^16.1.8",
         "bcryptjs": "^2.4.3",
+        "dotenv": "^8.2.0",
+        "fs-extra": "^8.1.0",
         "mime-types": "^2.1.25",
         "mongo-seeding": "^3.4.0-alpha.1",
-        "mongoose": "^5.7.12",
-        "node-cache": "^4.2.1"
+        "mongoose": "^5.7.13",
+        "winston": "^3.2.1",
+        "apollo-server-express": "^2.9.13",
+        "express": "^4.17.1",
+        "graphql-scalars": "^1.0.4",
+        "module-alias": "^2.2.2",
+        "express-session": "^1.17.0",
+        "vhost-ts": "^4.0.0"
+    },
+    "devDependencies": {
+        "faker": "^4.1.0"
     }
 }
