@@ -1366,7 +1366,7 @@
         "signature": "4144b5e1d51e83bf98e2f7b79e2229a26eb14e231659a3865cda5828127bc026"
       },
       "../src/index.ts": {
-        "version": "6c11f09fff3f7504827206438c04422b384fa6ea74afc28912071c88d81ed316",
+        "version": "499b1655f0835b259e61fd4906f75ae156f05a551ea0e2e4fb52c145a23f412d",
         "signature": "cadc3fba4074e26c5a9538141c51d3ac7fbed555cf0fee9bf272c858cec303ce"
       },
       "../../../node_modules/@types/bcryptjs/index.d.ts": {

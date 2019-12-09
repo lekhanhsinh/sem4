@@ -28,4 +28,4 @@ var server = new apollo_server_express_1.ApolloServer({
 exports.server = server;
 var app = express_1.default();
 exports.app = app;
-server.applyMiddleware({ app: app });
+server.applyMiddleware({ app: app, cors: true });

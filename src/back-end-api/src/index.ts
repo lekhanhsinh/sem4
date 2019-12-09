@@ -22,6 +22,6 @@ const server = new ApolloServer({
 });
 
 const app = express();
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, cors: true });
 
 export { app, server };

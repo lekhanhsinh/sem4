@@ -25,7 +25,9 @@ exports.app = app;
 session_1.default(app);
 app.use(vhost_ts_1.default("api." + secrets_1.DOMAIN, Api.app));
 app.use(vhost_ts_1.default("" + secrets_1.DOMAIN, Main.app));
-app.use(cors_1.default());
+app.use(cors_1.default({
+    credentials: true,
+}));
 var httpServer = http_1.default.createServer(app);
 Api.server.installSubscriptionHandlers(httpServer);
 httpServer.listen(secrets_1.PORT, function () {
