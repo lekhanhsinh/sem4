@@ -72,7 +72,7 @@ var BasicRepository = (function () {
         };
         this.update = function (id, docs, populate) {
             if (populate === void 0) { populate = []; }
-            return _this._collection.findByIdAndUpdate(id, docs)
+            return _this._collection.findByIdAndUpdate(id, docs, { new: true })
                 .populate(populate)
                 .exec();
         };

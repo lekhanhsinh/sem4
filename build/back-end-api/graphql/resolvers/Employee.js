@@ -50,12 +50,7 @@ var employeeResolvers = {
             if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.employeeRepository.update(id, detail).then(function (employee) {
-                if (!employee) {
-                    throw new Error("Employee don\'t exist.");
-                }
-                return employee;
-            });
+            return _back_end_database_1.Repositories.employeeRepository.update(id, detail);
         },
         deleteEmployee: function (obj, args, context, info) {
             var id = args.id;

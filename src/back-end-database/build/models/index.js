@@ -7,3 +7,5 @@ var User_1 = __importDefault(require("./User"));
 exports.User = User_1.default;
 var Employee_1 = __importDefault(require("./Employee"));
 exports.Employee = Employee_1.default;
+var Image_1 = __importDefault(require("./Image"));
+exports.Image = Image_1.default;

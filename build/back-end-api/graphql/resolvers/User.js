@@ -50,11 +50,11 @@ var userResolvers = {
             if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.userRepository.update(id, detail).then(function (user) {
+            return _back_end_database_1.Repositories.userRepository.updateDetail(id, detail).then(function (user) {
                 if (!user) {
                     throw new Error("User don\'t exist.");
                 }
-                return user.save();
+                return user;
             });
         },
         deleteUser: function (obj, args, context, info) {

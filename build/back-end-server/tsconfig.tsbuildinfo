@@ -1310,7 +1310,7 @@
         "signature": "0747134fc57c8e4a12d6144952ae1f47f54848f1ca110e997bd81ec1cc7b76e6"
       },
       "../src/server/routes/admin.ts": {
-        "version": "7b4079383686d03cabd30a1dcb4ebbbe48df01860493a52f4839b00a28fb21ac",
+        "version": "f1ab08377780388af2aa531c475a26d84016963b9cb1947087f3fe50b27d9e96",
         "signature": "0747134fc57c8e4a12d6144952ae1f47f54848f1ca110e997bd81ec1cc7b76e6"
       },
       "../src/server/routes/index.ts": {

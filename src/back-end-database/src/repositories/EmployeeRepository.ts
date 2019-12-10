@@ -7,6 +7,7 @@ import { EmployeeDocument, Employee } from "../models/Employee/types";
 const EmployeeModel = Joi.object({
     email: Joi.string().email(),
     password: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
+    role: Joi.string()
 });
 
 export class EmployeeRepository extends BasicRepository<EmployeeDocument> {
@@ -48,6 +49,22 @@ export class EmployeeRepository extends BasicRepository<EmployeeDocument> {
                 repeatPassword,
                 ...(detail as object)
             }) as Promise<EmployeeDocument>;
+        });
+    }
+
+    update = (
+        id: string,
+        detail: unknown
+    ): Promise<EmployeeDocument> => {
+        return EmployeeModel.validateAsync({
+            ...(detail as Employee)
+        }).then(() => {
+            return this.getOnebyId(id).then(found => {
+                if (!found) { throw new Error("Employee don\'t exist."); }
+                found.name = (detail as Employee).name || found.name;
+                found.role = (detail as Employee).role || found.role;
+                return found.save();
+            });
         });
     }
 

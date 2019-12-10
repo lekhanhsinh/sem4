@@ -40,6 +40,7 @@ var Models = __importStar(require("../models"));
 var EmployeeModel = joi_1.default.object({
     email: joi_1.default.string().email(),
     password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
+    role: joi_1.default.string()
 });
 var EmployeeRepository = (function (_super) {
     __extends(EmployeeRepository, _super);
@@ -63,6 +64,18 @@ var EmployeeRepository = (function (_super) {
                 return _this.create(__assign({ email: email,
                     password: password,
                     repeatPassword: repeatPassword }, detail));
+            });
+        };
+        _this.update = function (id, detail) {
+            return EmployeeModel.validateAsync(__assign({}, detail)).then(function () {
+                return _this.getOnebyId(id).then(function (found) {
+                    if (!found) {
+                        throw new Error("Employee don\'t exist.");
+                    }
+                    found.name = detail.name || found.name;
+                    found.role = detail.role || found.role;
+                    return found.save();
+                });
             });
         };
         _this.updateDetail = function (id, detail) {

@@ -52,9 +52,9 @@ const userResolvers: IResolvers = {
             if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.userRepository.update(id, detail).then(user => {
+            return Repositories.userRepository.updateDetail(id, detail).then(user => {
                 if (!user) { throw new Error("User don\'t exist."); }
-                return user.save();
+                return user;
             });
         },
         deleteUser: (obj, args, context, info): Promise<string> => {

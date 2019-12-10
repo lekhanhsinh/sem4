@@ -1465,8 +1465,12 @@
         "version": "aaedecb4ef0e85284631226b09de6bb4b35c0b1920e6f5369dee9a0dc08e05db",
         "signature": "94e2d339c11397839a8b1f6d03243b3ae43bccbb6bc1a7bd9383943337d39643"
       },
+      "../src/graphql/typedefs/image.ts": {
+        "version": "297b18f61715055cccf6f833197f3530f567fe305e27e402c7f858f34667ec60",
+        "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
+      },
       "../src/graphql/typedefs/index.ts": {
-        "version": "06fcb3da6970038fb56a042bee39b8d0e0ceba74ab87c6780fcb608f1b709db3",
+        "version": "eba3a3f9254f79058bbd1059db269350222092f24bf73cc7941ca022475afc63",
         "signature": "0cf4bea030184fdfb9003b1a3c0162d0b69b0ac951cf0fdcee2f0fb6c3b2fa72"
       },
       "../../../node_modules/@types/bson/index.d.ts": {
@@ -1497,9 +1501,17 @@
         "version": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4",
         "signature": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4"
       },
+      "../../back-end-database/build/models/image/types.d.ts": {
+        "version": "df84c307590e0f738243c8b28410242dc27ec53ec5dbd0c6ade5f2723d2ba6ac",
+        "signature": "df84c307590e0f738243c8b28410242dc27ec53ec5dbd0c6ade5f2723d2ba6ac"
+      },
+      "../../back-end-database/build/models/image/index.d.ts": {
+        "version": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4",
+        "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
+      },
       "../../back-end-database/build/models/index.d.ts": {
-        "version": "8e874a6b69c9daa07be9ee7f3b00abf71e8d13490a8a07686e28df118488096c",
-        "signature": "8e874a6b69c9daa07be9ee7f3b00abf71e8d13490a8a07686e28df118488096c"
+        "version": "dd1d0086eae3079a12864431e04a3cd3e75b72bd9e1dd7b36c51b2ab349b2f69",
+        "signature": "dd1d0086eae3079a12864431e04a3cd3e75b72bd9e1dd7b36c51b2ab349b2f69"
       },
       "../../back-end-database/build/repositories/basicrepository.d.ts": {
         "version": "32f9aeed4f1a57bcf2ca042f74062ab3094451d672f9b297ed007866289ada9f",
@@ -1510,19 +1522,23 @@
         "signature": "fcc93c9c5a7e8b4909e3e0c3bca48ec153b706b22632bd78f58bc33646d17b4f"
       },
       "../../back-end-database/build/repositories/employeerepository.d.ts": {
-        "version": "066a1caf9fcd4b792149daa47ed9714f485265fac868e0525540a4c96d24e577",
-        "signature": "066a1caf9fcd4b792149daa47ed9714f485265fac868e0525540a4c96d24e577"
+        "version": "fd3bf26350cf52bb1d7622389723ede89cb95ca8222f8084344a4f2ee41671a7",
+        "signature": "fd3bf26350cf52bb1d7622389723ede89cb95ca8222f8084344a4f2ee41671a7"
+      },
+      "../../back-end-database/build/repositories/imagerepository.d.ts": {
+        "version": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca",
+        "signature": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca"
       },
       "../../back-end-database/build/repositories/index.d.ts": {
-        "version": "e13016c6215dc24dfe5c50f8eee6e227e49ffb9f8e9db00312e1900f6448e1e8",
-        "signature": "e13016c6215dc24dfe5c50f8eee6e227e49ffb9f8e9db00312e1900f6448e1e8"
+        "version": "e85d241c2b989ae0067722c93837f1bdf4d5adec0d180efd7187f9c0ad36682a",
+        "signature": "e85d241c2b989ae0067722c93837f1bdf4d5adec0d180efd7187f9c0ad36682a"
       },
       "../../back-end-database/build/index.d.ts": {
         "version": "93bf9c4b992568119d78b97ecc90ce0f68a54c5b73f4c72b8bd312a0842b6357",
         "signature": "93bf9c4b992568119d78b97ecc90ce0f68a54c5b73f4c72b8bd312a0842b6357"
       },
       "../src/graphql/resolvers/user.ts": {
-        "version": "df8e8754947e39ab7bf46ae5ee00010047b4a8b92f084df01c95fa3ab3161974",
+        "version": "d993bf72e1d53d04f0e3b2c857d7a4cfcd624c7985a4b91abc1cfb9e62a1acbf",
         "signature": "bf61ab9f3e6d24f925c61df80c05b62f6fd1f3d5371a1d0494d75e416690c14d"
       },
       "../src/graphql/resolvers/auth.ts": {
@@ -1530,15 +1546,19 @@
         "signature": "aa525056aa912f024a9e3f993e60612ea276b22f2cc4ee6cb17eeecc6daf4e3b"
       },
       "../src/graphql/resolvers/employee.ts": {
-        "version": "7310f44ae91e4573429e4d3ebad7e8632a3d7a1a3d32dd79e76107b1c69898c5",
+        "version": "720c1922c7434f714da4eaccaa45a60b2b7a4bc791567a02a45ca5445be906b5",
         "signature": "d2ecd194cfe7ad2e1d8bbdf8bf5ccd9ad10e3ac2502e8291a1398aa44ea9272e"
       },
       "../src/graphql/resolvers/authemployee.ts": {
         "version": "ba177109f95aaa010b7f2fd254a7b0336a9758271eb280669c38a81d6c8818d8",
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
+      "../src/graphql/resolvers/image.ts": {
+        "version": "0ae63f08653e9793d018c58c886f3254cb6e58d4a0a206b905a5aaf4bbbb0276",
+        "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
+      },
       "../src/graphql/resolvers/index.ts": {
-        "version": "7a12a4a21a04f3cffdc90aff2c1be97040cdda6133489aacc5a9b8af9a273757",
+        "version": "56e6158df6c370280bd5dab5c180917e3cb9c350eb1658d0d6938e63446f027d",
         "signature": "737245bd090f144a734c55dd2ee134da2fb672032f13e2d850246a124b73d97d"
       },
       "../src/graphql/index.ts": {
@@ -4659,6 +4679,13 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/graphql/typedefs/image.ts": [
+        "../../../node_modules/apollo-server-express/dist/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/graphql/typedefs/index.ts": [
         "../../../node_modules/apollo-server-core/dist/index.d.ts",
         "../../../node_modules/graphql-scalars/dist/esnext/index.d.ts",
@@ -4666,6 +4693,7 @@
         "../src/graphql/typedefs/auth.ts",
         "../src/graphql/typedefs/employee.ts",
         "../src/graphql/typedefs/authemployee.ts",
+        "../src/graphql/typedefs/image.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -4730,9 +4758,25 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../../back-end-database/build/models/image/types.d.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../back-end-database/build/models/image/index.d.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../back-end-database/build/models/image/types.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../../back-end-database/build/models/index.d.ts": [
         "../../back-end-database/build/models/user/index.d.ts",
         "../../back-end-database/build/models/employee/index.d.ts",
+        "../../back-end-database/build/models/image/index.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -4761,9 +4805,18 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../../back-end-database/build/repositories/imagerepository.d.ts": [
+        "../../back-end-database/build/repositories/basicrepository.d.ts",
+        "../../back-end-database/build/models/image/types.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../../back-end-database/build/repositories/index.d.ts": [
         "../../back-end-database/build/repositories/userrepository.d.ts",
         "../../back-end-database/build/repositories/employeerepository.d.ts",
+        "../../back-end-database/build/repositories/imagerepository.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -4814,6 +4867,15 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/graphql/resolvers/image.ts": [
+        "../../../node_modules/graphql-tools/dist/index.d.ts",
+        "../../back-end-database/build/index.d.ts",
+        "../../back-end-database/build/models/image/types.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/graphql/resolvers/index.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts",
         "../../../node_modules/graphql-scalars/dist/esnext/index.d.ts",
@@ -4821,6 +4883,7 @@
         "../src/graphql/resolvers/auth.ts",
         "../src/graphql/resolvers/employee.ts",
         "../src/graphql/resolvers/authemployee.ts",
+        "../src/graphql/resolvers/image.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5192,7 +5255,7 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/graphql/resolvers/authemployee.ts": [
+      "../src/graphql/resolvers/image.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts"
       ],
       "../src/graphql/resolvers/index.ts": [
@@ -5206,6 +5269,9 @@
       "../src/index.ts": [
         "../../../node_modules/@types/express-serve-static-core/index.d.ts",
         "../../../node_modules/apollo-server-express/dist/index.d.ts"
+      ],
+      "../src/graphql/resolvers/authemployee.ts": [
+        "../../../node_modules/graphql-tools/dist/index.d.ts"
       ],
       "../src/graphql/resolvers/employee.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts"
@@ -5223,9 +5289,9 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../back-end-database/build/repositories/employeerepository.d.ts": [
+      "../../back-end-database/build/repositories/imagerepository.d.ts": [
         "../../back-end-database/build/repositories/basicrepository.d.ts",
-        "../../back-end-database/build/models/employee/types.d.ts",
+        "../../back-end-database/build/models/image/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5234,6 +5300,15 @@
       "../../back-end-database/build/repositories/index.d.ts": [
         "../../back-end-database/build/repositories/userrepository.d.ts",
         "../../back-end-database/build/repositories/employeerepository.d.ts",
+        "../../back-end-database/build/repositories/imagerepository.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../back-end-database/build/repositories/employeerepository.d.ts": [
+        "../../back-end-database/build/repositories/basicrepository.d.ts",
+        "../../back-end-database/build/models/employee/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5247,9 +5322,9 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../back-end-database/build/models/employee/index.d.ts": [
+      "../../back-end-database/build/models/image/index.d.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
-        "../../back-end-database/build/models/employee/types.d.ts",
+        "../../back-end-database/build/models/image/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5258,6 +5333,22 @@
       "../../back-end-database/build/models/index.d.ts": [
         "../../back-end-database/build/models/user/index.d.ts",
         "../../back-end-database/build/models/employee/index.d.ts",
+        "../../back-end-database/build/models/image/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../back-end-database/build/models/image/types.d.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../back-end-database/build/models/employee/index.d.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../back-end-database/build/models/employee/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5400,6 +5491,9 @@
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/graphql/typedefs/image.ts": [
+        "../../../node_modules/graphql/index.d.ts"
       ],
       "../src/graphql/typedefs/authemployee.ts": [
         "../../../node_modules/graphql/index.d.ts"
@@ -8446,6 +8540,7 @@
       "../src/graphql/typedefs/auth.ts",
       "../src/graphql/typedefs/employee.ts",
       "../src/graphql/typedefs/authemployee.ts",
+      "../src/graphql/typedefs/image.ts",
       "../src/graphql/typedefs/index.ts",
       "../../../node_modules/@types/bson/index.d.ts",
       "../../../node_modules/@types/mongodb/index.d.ts",
@@ -8454,16 +8549,20 @@
       "../../back-end-database/build/models/user/index.d.ts",
       "../../back-end-database/build/models/employee/types.d.ts",
       "../../back-end-database/build/models/employee/index.d.ts",
+      "../../back-end-database/build/models/image/types.d.ts",
+      "../../back-end-database/build/models/image/index.d.ts",
       "../../back-end-database/build/models/index.d.ts",
       "../../back-end-database/build/repositories/basicrepository.d.ts",
       "../../back-end-database/build/repositories/userrepository.d.ts",
       "../../back-end-database/build/repositories/employeerepository.d.ts",
+      "../../back-end-database/build/repositories/imagerepository.d.ts",
       "../../back-end-database/build/repositories/index.d.ts",
       "../../back-end-database/build/index.d.ts",
       "../src/graphql/resolvers/user.ts",
       "../src/graphql/resolvers/auth.ts",
       "../src/graphql/resolvers/employee.ts",
       "../src/graphql/resolvers/authemployee.ts",
+      "../src/graphql/resolvers/image.ts",
       "../src/graphql/resolvers/index.ts",
       "../src/graphql/index.ts",
       "../src/index.ts",

@@ -95,7 +95,7 @@ class BasicRepository<T extends mongoose.Document> {
         docs: unknown,
         populate: string[] = []
     ): Promise<T | null> => {
-        return this._collection.findByIdAndUpdate(id, docs)
+        return this._collection.findByIdAndUpdate(id, docs, { new: true })
             .populate(populate)
             .exec();
     }
