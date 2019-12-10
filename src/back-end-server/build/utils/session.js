@@ -9,8 +9,11 @@ var initSession = function (app) {
     var sess = {
         secret: secrets_1.SESSION_SECRET,
         cookie: {
+            path: "/",
             maxAge: secrets_1.SESSION_MAXAGE,
-            secure: secrets_1.ENVIRONMENT === "production"
+            secure: secrets_1.ENVIRONMENT === "production",
+            domain: "." + secrets_1.DOMAIN,
+            httpOnly: false,
         },
         resave: true,
         saveUninitialized: true
