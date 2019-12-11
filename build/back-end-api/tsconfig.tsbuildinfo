@@ -1594,7 +1594,7 @@
         "signature": "788f282f19696c97e990c864504d75f28d67bbb5390991435427e9a4895e9802"
       },
       "../src/index.ts": {
-        "version": "118a9183f5cd4eefbda57ac9d440c0cfd698d76591fdd3232ac3da92a9608079",
+        "version": "89f60428e45c409a2132a8169e8c2fef9a7b2dd28f4163f0cc836c684ab45d32",
         "signature": "c6104e13c74b7af9f03697e894743a818e48cf27214b1e1db6ade38388af77c7"
       },
       "../../../node_modules/@types/bcryptjs/index.d.ts": {
