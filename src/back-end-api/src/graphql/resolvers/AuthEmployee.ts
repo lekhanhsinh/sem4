@@ -19,6 +19,7 @@ const authEmployeeResolvers: IResolvers = {
                         }
                         req.session.employee = {
                             id: employee.id,
+                            email: employee.email
                         };
                         return employee;
                     });

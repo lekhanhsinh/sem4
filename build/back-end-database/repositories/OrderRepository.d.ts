@@ -7,5 +7,6 @@ export declare class OrderRepository extends BasicRepository<OrderDocument> {
         asc: boolean;
     }, populate?: string[]) => Promise<OrderDocument[]>;
     create: (docs: unknown) => Promise<OrderDocument>;
+    update: (id: string, docs: unknown, populate?: string[]) => Promise<OrderDocument>;
 }
 export declare const orderRepository: OrderRepository;

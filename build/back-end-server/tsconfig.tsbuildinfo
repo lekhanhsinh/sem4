@@ -1408,6 +1408,10 @@
       "../../../node_modules/@types/mongoose/index.d.ts": {
         "version": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d",
         "signature": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d"
+      },
+      "../../../node_modules/@types/stripe/index.d.ts": {
+        "version": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d",
+        "signature": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d"
       }
     },
     "options": {
@@ -4382,6 +4386,14 @@
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../node_modules/@types/stripe/index.d.ts": [
+        "../../../node_modules/@types/node/http.d.ts",
+        "../../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -4640,6 +4652,14 @@
         "../../../node_modules/@types/node/ts3.2/globals.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../node_modules/@types/stripe/index.d.ts": [
+        "../../../node_modules/@types/node/http.d.ts",
+        "../../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../../../node_modules/@types/mongoose/index.d.ts": [
         "../../../node_modules/@types/node/events.d.ts",
@@ -7601,6 +7621,7 @@
       "../../../node_modules/@types/mime-types/index.d.ts",
       "../../../node_modules/@types/mongodb/index.d.ts",
       "../../../node_modules/@types/mongoose/index.d.ts",
+      "../../../node_modules/@types/stripe/index.d.ts",
       "../../../node_modules/typescript/lib/lib.es2015.d.ts",
       "../../../node_modules/typescript/lib/lib.es2016.d.ts",
       "../../../node_modules/typescript/lib/lib.es2017.d.ts",

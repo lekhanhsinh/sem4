@@ -36,7 +36,7 @@ const cartResolvers: IResolvers = {
                     const item = items.find(i => i.image === image.id);
                     if (item) {
                         const size = item.size.split("x");
-                        const price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * 500;
+                        const price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * 0.5;
                         tempItems.push({
                             image,
                             size: item.size,

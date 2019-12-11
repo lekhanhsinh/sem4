@@ -17,7 +17,9 @@ const schema = new mongoose.Schema({
             ref: "Image"
         },
         totalPrice: Number
-    }]
+    }],
+    charge: String,
+    description: String
 
 }, { timestamps: true, autoIndex: true });
 

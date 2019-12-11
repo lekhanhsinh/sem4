@@ -20,6 +20,8 @@ var schema = new mongoose_1.default.Schema({
                 ref: "Image"
             },
             totalPrice: Number
-        }]
+        }],
+    charge: String,
+    description: String
 }, { timestamps: true, autoIndex: true });
 exports.default = schema;

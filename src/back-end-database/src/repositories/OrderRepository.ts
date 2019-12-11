@@ -1,6 +1,10 @@
+import Stripe from "stripe";
 import BasicRepository from "./BasicRepository";
 import * as Models from "../models";
 import { OrderDocument } from "../models/Order/types";
+import { STRIPE_KEY } from "../utils/secrets";
+
+const stripe = new Stripe(STRIPE_KEY);
 
 export class OrderRepository extends BasicRepository<OrderDocument>{
     constructor() {
@@ -21,7 +25,32 @@ export class OrderRepository extends BasicRepository<OrderDocument>{
     create = (
         docs: unknown
     ): Promise<OrderDocument> => {
-        return this._collection.create(docs);
+        return stripe.charges.create({
+            source: (docs as any).creditCardNumber,
+            amount: (docs as any).total,
+            currency: "usd",
+            description: (docs as any).description
+        }).then(charge => {
+            (docs as any).charge = charge.id;
+            return this._collection.create(docs);
+        });
+    }
+
+    update = (
+        id: string,
+        docs: unknown,
+        populate: string[] = []
+    ): Promise<OrderDocument> => {
+        return this._collection.findByIdAndUpdate(id, docs, { new: true })
+            .populate(populate)
+            .exec().then(found => {
+                if (!found) { throw new Error("Order don\'t exist."); }
+                stripe.charges.update(found.charge,
+                    {
+                        description: (docs as any).description ? (docs as any).description : found.description
+                    });
+                return found;
+            });
     }
 }
 

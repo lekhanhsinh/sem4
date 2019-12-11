@@ -1474,7 +1474,7 @@
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {
-        "version": "6d27229f2c1dc68aea39ffea80ff499ae1608e80ff9ab799fd1784be2962a10b",
+        "version": "c515fc9612c00a36798e147e44f517a21500978932807599f40b5f0c5ae6c396",
         "signature": "460fe4cf786bbe62efa013080df67ce30b155f84e557c8d5b471fa79b31596ed"
       },
       "../src/graphql/typedefs/index.ts": {
@@ -1518,8 +1518,8 @@
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
       "../../back-end-database/build/models/order/types.d.ts": {
-        "version": "c53a73e0b90a0fe43cd332b8390d2b86787fd790fdf7d2700f95d43427c2f814",
-        "signature": "c53a73e0b90a0fe43cd332b8390d2b86787fd790fdf7d2700f95d43427c2f814"
+        "version": "27463ac6a2c9d8e8b2fdce11a6cd864d243de979a2b1e0f663f79bf56db8b28f",
+        "signature": "27463ac6a2c9d8e8b2fdce11a6cd864d243de979a2b1e0f663f79bf56db8b28f"
       },
       "../../back-end-database/build/models/order/index.d.ts": {
         "version": "e3fefdb21b945ac2bea21afb9587bcd34f5e19fa9d26c54a4ee5957826e0c6f8",
@@ -1546,8 +1546,8 @@
         "signature": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca"
       },
       "../../back-end-database/build/repositories/orderrepository.d.ts": {
-        "version": "05611cb724b5f7a84852c5a2946eb18fb3eccaa357779d3ba9626968a5265fde",
-        "signature": "05611cb724b5f7a84852c5a2946eb18fb3eccaa357779d3ba9626968a5265fde"
+        "version": "75060b0b3a3b93ec172ad791a83ad8d730745f64cce3fbe9e236ba2d4294218d",
+        "signature": "75060b0b3a3b93ec172ad791a83ad8d730745f64cce3fbe9e236ba2d4294218d"
       },
       "../../back-end-database/build/repositories/index.d.ts": {
         "version": "c89bc9b9b2956dd39a3e1444b0917cf5b71baf7e71ebf6f1fa20447317ec18b0",
@@ -1562,7 +1562,7 @@
         "signature": "bf61ab9f3e6d24f925c61df80c05b62f6fd1f3d5371a1d0494d75e416690c14d"
       },
       "../src/graphql/resolvers/auth.ts": {
-        "version": "848b36b255213ae9262897ae3b2279f743274983c4d91293ea357d986c2b19aa",
+        "version": "e4df8bc8029f9b306b4bc808a4977c60de4344373d3e20ebcc23dc096808bf20",
         "signature": "aa525056aa912f024a9e3f993e60612ea276b22f2cc4ee6cb17eeecc6daf4e3b"
       },
       "../src/graphql/resolvers/employee.ts": {
@@ -1570,7 +1570,7 @@
         "signature": "d2ecd194cfe7ad2e1d8bbdf8bf5ccd9ad10e3ac2502e8291a1398aa44ea9272e"
       },
       "../src/graphql/resolvers/authemployee.ts": {
-        "version": "ba177109f95aaa010b7f2fd254a7b0336a9758271eb280669c38a81d6c8818d8",
+        "version": "de2f0de026e504d4d815e0f4a0c417a4d250accc5371170bcdbbe266db4bc740",
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
       "../src/graphql/resolvers/image.ts": {
@@ -1578,11 +1578,11 @@
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {
-        "version": "7c5520837ee04544616b19241ccac5f38e84654f7e43642460c12f62c373bf99",
+        "version": "3a8b4ae8147c2306445b3c5494f6dc1efe9d1cf267447ed4c4c1435409ce38fe",
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {
-        "version": "18b6fe32c95881434269f0b0fdd9b0feaeb25dd544c2f13255d454b11b713746",
+        "version": "325132dcfd8474e165307478fb79f93c7297ba94b4f000f31c11b1439d6b2ead",
         "signature": "e6134f172d086ac9973db76251ab6a62294690115b4fbadfe4d6d203e6481959"
       },
       "../src/graphql/resolvers/index.ts": {
@@ -1628,6 +1628,10 @@
       "../../../node_modules/@types/mime-types/index.d.ts": {
         "version": "f17dd220e27f33e3f1c5bb6f00999420520a6dd1e7f71ee66c11cfc1c2990f20",
         "signature": "f17dd220e27f33e3f1c5bb6f00999420520a6dd1e7f71ee66c11cfc1c2990f20"
+      },
+      "../../../node_modules/@types/stripe/index.d.ts": {
+        "version": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d",
+        "signature": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d"
       }
     },
     "options": {
@@ -5050,6 +5054,14 @@
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../node_modules/@types/stripe/index.d.ts": [
+        "../../../node_modules/@types/node/http.d.ts",
+        "../../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -5308,6 +5320,14 @@
         "../../../node_modules/@types/node/ts3.2/globals.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../../node_modules/@types/stripe/index.d.ts": [
+        "../../../node_modules/@types/node/http.d.ts",
+        "../../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../../../node_modules/@types/fs-extra/index.d.ts": [
         "../../../node_modules/@types/node/fs.d.ts",
@@ -8710,6 +8730,7 @@
       "../../../node_modules/@types/hapi__joi/index.d.ts",
       "../../../node_modules/@types/json-schema/index.d.ts",
       "../../../node_modules/@types/mime-types/index.d.ts",
+      "../../../node_modules/@types/stripe/index.d.ts",
       "../../../node_modules/typescript/lib/lib.es2015.d.ts",
       "../../../node_modules/typescript/lib/lib.es2016.d.ts",
       "../../../node_modules/typescript/lib/lib.es2017.d.ts",

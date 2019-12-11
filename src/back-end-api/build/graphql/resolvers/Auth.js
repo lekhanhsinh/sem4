@@ -18,6 +18,7 @@ var authResolvers = {
                     req.session.cart = undefined;
                     req.session.user = {
                         id: user.id,
+                        email: user.email
                     };
                     return user;
                 });

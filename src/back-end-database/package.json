@@ -16,6 +16,7 @@
     "mime-types": "^2.1.25",
     "mongo-seeding": "^3.4.0-alpha.1",
     "mongoose": "^5.7.13",
+    "stripe": "^7.14.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "@types/mime-types": "^2.1.0",
     "@types/mongodb": "^3.3.11",
     "@types/mongoose": "^5.5.32",
+    "@types/stripe": "^7.13.16",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "eslint": "^6.7.2",

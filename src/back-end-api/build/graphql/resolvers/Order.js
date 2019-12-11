@@ -38,13 +38,13 @@ var orderResolvers = {
     },
     Mutation: {
         createOrder: function (obj, args, context, info) {
-            var detail = args.detail;
+            var creditCardNumber = args.creditCardNumber, detail = args.detail;
             var req = context.req;
             var _a = req.session, user = _a.user, cart = _a.cart;
             if (!user) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({}, cart), detail));
+            return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({ creditCardNumber: creditCardNumber, user: user.id, email: user.email }, cart), detail));
         },
         updateOrder: function (obj, args, context, info) {
             var id = args.id, detail = args.detail;
@@ -53,12 +53,7 @@ var orderResolvers = {
             if (!order) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.update(id, detail).then(function (order) {
-                if (!order) {
-                    throw new Error("Order don\'t exist.");
-                }
-                return order;
-            });
+            return _back_end_database_1.Repositories.orderRepository.update(id, detail);
         },
         deleteOrder: function (obj, args, context, info) {
             var id = args.id;

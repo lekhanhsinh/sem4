@@ -12,6 +12,8 @@ export declare type Order = {
         image: Image;
         totalPrice: number;
     }];
+    charge: string;
+    description: string;
 };
 export declare type OrderDocument = mongoose.Document & Order & {
     user: UserDocument;

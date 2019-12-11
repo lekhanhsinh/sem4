@@ -13,6 +13,8 @@ export type Order = {
         image: Image;
         totalPrice: number;
     }];
+    charge: string;
+    description: string;
 }
 
 export type OrderDocument = mongoose.Document & Order & {

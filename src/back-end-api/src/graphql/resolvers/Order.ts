@@ -29,13 +29,13 @@ const orderResolvers: IResolvers = {
     },
     Mutation: {
         createOrder: (obj, args, context, info): Promise<OrderDocument> => {
-            const { detail } = args;
+            const { creditCardNumber, detail } = args;
             const { req } = context;
             const { user, cart } = req.session;
             if (!user) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.orderRepository.create({ ...cart, ...detail });
+            return Repositories.orderRepository.create({ creditCardNumber, user: user.id, email: user.email, ...cart, ...detail });
         },
         updateOrder: (obj, args, context, info): Promise<OrderDocument> => {
             const { id, detail } = args;
@@ -44,10 +44,7 @@ const orderResolvers: IResolvers = {
             if (!order) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.orderRepository.update(id, detail).then(order => {
-                if (!order) { throw new Error("Order don\'t exist."); }
-                return order;
-            });
+            return Repositories.orderRepository.update(id, detail);
         },
         deleteOrder: (obj, args, context, info): Promise<string> => {
             const { id } = args;

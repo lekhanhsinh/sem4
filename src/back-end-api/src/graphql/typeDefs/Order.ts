@@ -10,7 +10,7 @@ const OrderTypeDefs = gql`
     }
 
     extend type Mutation {
-        createOrder(detail: OrderDetailInputType!): OrderType
+        createOrder(creditCardNumber: String, detail: OrderDetailInputType!): OrderType
         updateOrder(id: String!, detail: OrderDetailInputType!): OrderType
         deleteOrder(id: String!): OrderType
     }
@@ -22,8 +22,8 @@ const OrderTypeDefs = gql`
     }
 
     input OrderDetailInputType{
-        address:String
-        creditCardNumber: String
+        address: String
+        description: String
     }
 `;
 

@@ -51,7 +51,7 @@ var cartResolvers = {
                     var item = items.find(function (i) { return i.image === image.id; });
                     if (item) {
                         var size = item.size.split("x");
-                        var price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * 500;
+                        var price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * 0.5;
                         tempItems.push({
                             image: image,
                             size: item.size,
