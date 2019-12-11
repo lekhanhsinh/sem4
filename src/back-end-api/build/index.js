@@ -21,11 +21,14 @@ var server = new apollo_server_express_1.ApolloServer({
     },
     playground: secrets_1.ENVIRONMENT === "development" ? {
         settings: {
-            "request.credentials": "include"
+            "request.credentials": "same-origin"
         },
     } : false
 });
 exports.server = server;
 var app = express_1.default();
 exports.app = app;
-server.applyMiddleware({ app: app, cors: true });
+server.applyMiddleware({
+    app: app,
+    cors: true
+});

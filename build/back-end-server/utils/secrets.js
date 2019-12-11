@@ -11,7 +11,7 @@ if (fs_1.default.existsSync(".env")) {
     dotenv_1.default.config({ path: ".env" });
 }
 exports.ENVIRONMENT = process.env.NODE_ENV === "production" ? "production" : "development";
-exports.DOMAIN = process.env["DOMAIN"] + "";
+exports.DOMAIN = process.env["DOMAIN"] ? process.env["DOMAIN"] : "";
 exports.PORT = process.env["PORT"] ? parseInt(process.env["PORT"]) : undefined;
 exports.SESSION_SECRET = process.env["SESSION_SECRET"] + "";
 exports.SESSION_MAXAGE = process.env["SESSION_MAXAGE"] ? parseInt(process.env["SESSION_MAXAGE"]) : undefined;

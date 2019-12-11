@@ -12,7 +12,6 @@ var initSession = function (app) {
             path: "/",
             maxAge: secrets_1.SESSION_MAXAGE,
             secure: secrets_1.ENVIRONMENT === "production",
-            domain: "." + secrets_1.DOMAIN,
             httpOnly: false,
         },
         resave: true,

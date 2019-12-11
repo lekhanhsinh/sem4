@@ -9,6 +9,7 @@ if (fs.existsSync(".env")) {
 }
 
 export const ENVIRONMENT = process.env.NODE_ENV === "production" ? "production" : "development";
+export const DOMAIN = process.env["DOMAIN"] ? process.env["DOMAIN"] : "";
 export const MONGODB_URI = (ENVIRONMENT === "production" ? process.env["MONGODB_URI"] : process.env["MONGODB_URI_LOCAL"]) + "";
 
 if (!process.env["MONGODB_URI"] || !process.env["MONGODB_URI_LOCAL"]) {

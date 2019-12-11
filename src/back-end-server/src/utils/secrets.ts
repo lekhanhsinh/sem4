@@ -9,7 +9,7 @@ if (fs.existsSync(".env")) {
 }
 
 export const ENVIRONMENT = process.env.NODE_ENV === "production" ? "production" : "development";
-export const DOMAIN = process.env["DOMAIN"] + "";
+export const DOMAIN = process.env["DOMAIN"] ? process.env["DOMAIN"] : "";
 export const PORT = process.env["PORT"] ? parseInt(process.env["PORT"]) : undefined;
 export const SESSION_SECRET = process.env["SESSION_SECRET"] + "";
 export const SESSION_MAXAGE = process.env["SESSION_MAXAGE"] ? parseInt(process.env["SESSION_MAXAGE"]) : undefined;

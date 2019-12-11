@@ -1326,8 +1326,8 @@
         "signature": "4b6ee634ad0721383e886ab29b2e500a5c41059c1f5351ef18e168963592e376"
       },
       "../src/utils/secrets.ts": {
-        "version": "c4a8e0f1488eaff0e541184d5fad397beef812458944f74c79f2b6dd00c0e35b",
-        "signature": "78d2722b235949f92eb3709106ba293a8d2cf785a79088af33f77023fb1f5843"
+        "version": "92b091585b4fa3fb36aee9d857e6c59952dcc8c6d13b2cfeb00788e5dcb95662",
+        "signature": "807471840a8792345300c99e147d3356940dbd51d98467ab3632b36390c8e058"
       },
       "../src/utils/middleware.ts": {
         "version": "f769f5cfd7051e7b2399e49ea608db6ee102f8d70773ac006d2deadd7faa99fb",
@@ -1594,7 +1594,7 @@
         "signature": "788f282f19696c97e990c864504d75f28d67bbb5390991435427e9a4895e9802"
       },
       "../src/index.ts": {
-        "version": "6075c47945df66b643e4ac74f3ef7171cefc976d7045847b760fb58213a1bcbe",
+        "version": "0e5ac807b9b98e1043f1b258f8aa0ae28d750783ac92e3fda3254cfcafa18623",
         "signature": "c6104e13c74b7af9f03697e894743a818e48cf27214b1e1db6ade38388af77c7"
       },
       "../../../node_modules/@types/bcryptjs/index.d.ts": {

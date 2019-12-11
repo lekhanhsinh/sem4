@@ -341,10 +341,6 @@
         "version": "e95e95450c318ae69516133857778fbe10a48505f4c42c100d1b34da336a2bb6",
         "signature": "e95e95450c318ae69516133857778fbe10a48505f4c42c100d1b34da336a2bb6"
       },
-      "../../../node_modules/@types/cors/index.d.ts": {
-        "version": "67a79af60f6e0f8eac8156364361915047de18fe367d7e0dd78a91add9f11bad",
-        "signature": "67a79af60f6e0f8eac8156364361915047de18fe367d7e0dd78a91add9f11bad"
-      },
       "../../../node_modules/apollo-server-env/dist/fetch.d.ts": {
         "version": "d0c0df73d616f061b0ad9438b6e714b818af58b26c06e076719859dd7648514f",
         "signature": "d0c0df73d616f061b0ad9438b6e714b818af58b26c06e076719859dd7648514f"
@@ -1293,6 +1289,10 @@
         "version": "1f92cdebe2b1e0e6309ccdb6e8700cfd2d3e7131c7842f91b38ed1e4ff2a7090",
         "signature": "1f92cdebe2b1e0e6309ccdb6e8700cfd2d3e7131c7842f91b38ed1e4ff2a7090"
       },
+      "../../../node_modules/@types/cors/index.d.ts": {
+        "version": "67a79af60f6e0f8eac8156364361915047de18fe367d7e0dd78a91add9f11bad",
+        "signature": "67a79af60f6e0f8eac8156364361915047de18fe367d7e0dd78a91add9f11bad"
+      },
       "../../../node_modules/apollo-server-express/dist/apolloserver.d.ts": {
         "version": "7ed1ffd4ad18be93c7c9b453e5f044a0a6a286171bfa20a22493206e3a5c4f0f",
         "signature": "7ed1ffd4ad18be93c7c9b453e5f044a0a6a286171bfa20a22493206e3a5c4f0f"
@@ -1354,7 +1354,7 @@
         "signature": "4b6ee634ad0721383e886ab29b2e500a5c41059c1f5351ef18e168963592e376"
       },
       "../src/utils/secrets.ts": {
-        "version": "1b41c8cdbe40df32b847bee637730ce12449a5e2858b26c2678f1594b51fb1b3",
+        "version": "10ed2e824cdc57cdcbbd5ee196f1e0c6109baa44f5f76bbab75992339e422a50",
         "signature": "da30fd65dd5016d207f696173628f6e3b0bafeba2aef2cfc5225f95af10d643e"
       },
       "../../../node_modules/@types/express-session/index.d.ts": {
@@ -1362,11 +1362,11 @@
         "signature": "903153d18b0365f1b99d9698f1feda333a65864fac218542f128536b9081c7fe"
       },
       "../src/utils/session.ts": {
-        "version": "fb3922f8329bf6598f7d38ef93214661b56e26f46ab2647a555235163f6f622a",
+        "version": "71280ae1b2ad2c9cebdc267864fcd0de72eceadc5bcf159aabb8ddaeaed44178",
         "signature": "4144b5e1d51e83bf98e2f7b79e2229a26eb14e231659a3865cda5828127bc026"
       },
       "../src/index.ts": {
-        "version": "499b1655f0835b259e61fd4906f75ae156f05a551ea0e2e4fb52c145a23f412d",
+        "version": "ec7d2791d9f756abf2750ff024fc4909514f3f61a01067437043393abbd8e777",
         "signature": "cadc3fba4074e26c5a9538141c51d3ac7fbed555cf0fee9bf272c858cec303ce"
       },
       "../../../node_modules/@types/bcryptjs/index.d.ts": {
@@ -2043,13 +2043,6 @@
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../../../node_modules/vhost-ts/dist/index.d.ts": [
-        "../../../node_modules/@types/express/index.d.ts",
-        "../../../node_modules/@types/node/fs.d.ts",
-        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../../node_modules/@types/node/util.d.ts",
-        "../../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../../../node_modules/@types/cors/index.d.ts": [
         "../../../node_modules/@types/express/index.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4144,6 +4137,13 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../../../node_modules/@types/cors/index.d.ts": [
+        "../../../node_modules/@types/express/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../../../node_modules/apollo-server-express/dist/apolloserver.d.ts": [
         "../../../node_modules/apollo-server-express/node_modules/@types/express/index.d.ts",
         "../../../node_modules/@types/cors/index.d.ts",
@@ -4304,7 +4304,6 @@
         "../../../node_modules/@types/express/index.d.ts",
         "../../../node_modules/@types/node/http.d.ts",
         "../../../node_modules/vhost-ts/dist/index.d.ts",
-        "../../../node_modules/@types/cors/index.d.ts",
         "../../back-end-api/build/index.d.ts",
         "../src/server/index.ts",
         "../src/utils/secrets.ts",
@@ -7354,7 +7353,6 @@
       "../../../node_modules/@types/body-parser/index.d.ts",
       "../../../node_modules/@types/express/index.d.ts",
       "../../../node_modules/vhost-ts/dist/index.d.ts",
-      "../../../node_modules/@types/cors/index.d.ts",
       "../../../node_modules/apollo-server-env/dist/fetch.d.ts",
       "../../../node_modules/apollo-server-env/dist/url.d.ts",
       "../../../node_modules/apollo-server-env/dist/typescript-utility-types.d.ts",
@@ -7592,6 +7590,7 @@
       "../../../node_modules/graphql-subscriptions/dist/with-filter.d.ts",
       "../../../node_modules/graphql-subscriptions/dist/index.d.ts",
       "../../../node_modules/apollo-server-express/node_modules/@types/express/index.d.ts",
+      "../../../node_modules/@types/cors/index.d.ts",
       "../../../node_modules/apollo-server-express/dist/apolloserver.d.ts",
       "../../../node_modules/apollo-server-express/dist/index.d.ts",
       "../../back-end-api/build/index.d.ts",
