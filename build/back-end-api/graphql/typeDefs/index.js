@@ -34,6 +34,7 @@ var Auth_1 = __importDefault(require("./Auth"));
 var Employee_1 = __importDefault(require("./Employee"));
 var AuthEmployee_1 = __importDefault(require("./AuthEmployee"));
 var Image_1 = __importDefault(require("./Image"));
+var Cart_1 = __importDefault(require("./Cart"));
 var rootTypeDefs = apollo_server_core_1.gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n\n    type Query {\n        _empty: String\n    }\n\n    type Mutation {\n        _empty: String\n    }\n\n    type Subscription {\n        _empty: String\n    }\n\n    input SortInputType {\n        sortBy: String\n        asc: Boolean    \n    }\n\n    input SearchInputType {\n        path: String\n        str: String\n        options: String\n    }\n"], ["\n\n    type Query {\n        _empty: String\n    }\n\n    type Mutation {\n        _empty: String\n    }\n\n    type Subscription {\n        _empty: String\n    }\n\n    input SortInputType {\n        sortBy: String\n        asc: Boolean    \n    }\n\n    input SearchInputType {\n        path: String\n        str: String\n        options: String\n    }\n"])));
 var scalarTypeDef = graphql_scalars_1.typeDefs.map(function (str) {
     return apollo_server_core_1.gql(templateObject_2 || (templateObject_2 = __makeTemplateObject(["", ""], ["", ""])), str);
@@ -45,5 +46,6 @@ exports.default = __spread(scalarTypeDef, [
     Employee_1.default,
     AuthEmployee_1.default,
     Image_1.default,
+    Cart_1.default,
 ]);
 var templateObject_1, templateObject_2;

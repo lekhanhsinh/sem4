@@ -1469,8 +1469,12 @@
         "version": "297b18f61715055cccf6f833197f3530f567fe305e27e402c7f858f34667ec60",
         "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
       },
+      "../src/graphql/typedefs/cart.ts": {
+        "version": "4a9354ce7aa1d6f54217cc7392093c7054cd8471529b7b36c293ef2afc72890d",
+        "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
+      },
       "../src/graphql/typedefs/index.ts": {
-        "version": "eba3a3f9254f79058bbd1059db269350222092f24bf73cc7941ca022475afc63",
+        "version": "4ff9b7fe31daecbbd3cdbbc17b45b1a95a9160dedb0a7af79966e01c8c0f9eec",
         "signature": "0cf4bea030184fdfb9003b1a3c0162d0b69b0ac951cf0fdcee2f0fb6c3b2fa72"
       },
       "../../../node_modules/@types/bson/index.d.ts": {
@@ -1557,8 +1561,12 @@
         "version": "0ae63f08653e9793d018c58c886f3254cb6e58d4a0a206b905a5aaf4bbbb0276",
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
+      "../src/graphql/resolvers/cart.ts": {
+        "version": "7c5520837ee04544616b19241ccac5f38e84654f7e43642460c12f62c373bf99",
+        "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
+      },
       "../src/graphql/resolvers/index.ts": {
-        "version": "56e6158df6c370280bd5dab5c180917e3cb9c350eb1658d0d6938e63446f027d",
+        "version": "80b8aa5a1a49b9d8879a4b6a3b7417d6e57848112fbe897eea479327ea1d507d",
         "signature": "737245bd090f144a734c55dd2ee134da2fb672032f13e2d850246a124b73d97d"
       },
       "../src/graphql/index.ts": {
@@ -4686,6 +4694,13 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/graphql/typedefs/cart.ts": [
+        "../../../node_modules/apollo-server-express/dist/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/graphql/typedefs/index.ts": [
         "../../../node_modules/apollo-server-core/dist/index.d.ts",
         "../../../node_modules/graphql-scalars/dist/esnext/index.d.ts",
@@ -4694,6 +4709,7 @@
         "../src/graphql/typedefs/employee.ts",
         "../src/graphql/typedefs/authemployee.ts",
         "../src/graphql/typedefs/image.ts",
+        "../src/graphql/typedefs/cart.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -4876,6 +4892,14 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/graphql/resolvers/cart.ts": [
+        "../../../node_modules/graphql-tools/dist/index.d.ts",
+        "../../back-end-database/build/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/graphql/resolvers/index.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts",
         "../../../node_modules/graphql-scalars/dist/esnext/index.d.ts",
@@ -4884,6 +4908,7 @@
         "../src/graphql/resolvers/employee.ts",
         "../src/graphql/resolvers/authemployee.ts",
         "../src/graphql/resolvers/image.ts",
+        "../src/graphql/resolvers/cart.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5255,7 +5280,7 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/graphql/resolvers/image.ts": [
+      "../src/graphql/resolvers/cart.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts"
       ],
       "../src/graphql/resolvers/index.ts": [
@@ -5269,6 +5294,9 @@
       "../src/index.ts": [
         "../../../node_modules/@types/express-serve-static-core/index.d.ts",
         "../../../node_modules/apollo-server-express/dist/index.d.ts"
+      ],
+      "../src/graphql/resolvers/image.ts": [
+        "../../../node_modules/graphql-tools/dist/index.d.ts"
       ],
       "../src/graphql/resolvers/authemployee.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts"
@@ -5491,6 +5519,9 @@
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/graphql/typedefs/cart.ts": [
+        "../../../node_modules/graphql/index.d.ts"
       ],
       "../src/graphql/typedefs/image.ts": [
         "../../../node_modules/graphql/index.d.ts"
@@ -8541,6 +8572,7 @@
       "../src/graphql/typedefs/employee.ts",
       "../src/graphql/typedefs/authemployee.ts",
       "../src/graphql/typedefs/image.ts",
+      "../src/graphql/typedefs/cart.ts",
       "../src/graphql/typedefs/index.ts",
       "../../../node_modules/@types/bson/index.d.ts",
       "../../../node_modules/@types/mongodb/index.d.ts",
@@ -8563,6 +8595,7 @@
       "../src/graphql/resolvers/employee.ts",
       "../src/graphql/resolvers/authemployee.ts",
       "../src/graphql/resolvers/image.ts",
+      "../src/graphql/resolvers/cart.ts",
       "../src/graphql/resolvers/index.ts",
       "../src/graphql/index.ts",
       "../src/index.ts",

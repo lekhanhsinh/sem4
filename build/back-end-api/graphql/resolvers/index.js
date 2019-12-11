@@ -20,5 +20,6 @@ var Auth_1 = __importDefault(require("./Auth"));
 var Employee_1 = __importDefault(require("./Employee"));
 var AuthEmployee_1 = __importDefault(require("./AuthEmployee"));
 var Image_1 = __importDefault(require("./Image"));
-var resolvers = __assign(__assign({}, graphql_scalars_1.resolvers), { Query: Object.assign({}, User_1.default.Query, Employee_1.default.Query, Image_1.default.Query), Mutation: Object.assign({}, User_1.default.Mutation, Auth_1.default.Mutation, Employee_1.default.Mutation, AuthEmployee_1.default.Mutation, Image_1.default.Mutation), Subscription: Object.assign({}) });
+var Cart_1 = __importDefault(require("./Cart"));
+var resolvers = __assign(__assign({}, graphql_scalars_1.resolvers), { Query: Object.assign({}, User_1.default.Query, Employee_1.default.Query, Image_1.default.Query, Cart_1.default.Query), Mutation: Object.assign({}, User_1.default.Mutation, Auth_1.default.Mutation, Employee_1.default.Mutation, AuthEmployee_1.default.Mutation, Image_1.default.Mutation, Cart_1.default.Mutation), Subscription: Object.assign({}) });
 exports.default = resolvers;

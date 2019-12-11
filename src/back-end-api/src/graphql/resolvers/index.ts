@@ -5,6 +5,7 @@ import authResolvers from "./Auth";
 import employeeResolvers from "./Employee";
 import authEmployeeResolvers from "./AuthEmployee";
 import imageResolvers from "./Image";
+import cartResolvers from "./Cart";
 
 const resolvers: IResolvers = {
     ...scalarsResolvers,
@@ -12,6 +13,7 @@ const resolvers: IResolvers = {
         userResolvers.Query,
         employeeResolvers.Query,
         imageResolvers.Query,
+        cartResolvers.Query,
     ),
     Mutation: Object.assign({},
         userResolvers.Mutation,
@@ -19,6 +21,7 @@ const resolvers: IResolvers = {
         employeeResolvers.Mutation,
         authEmployeeResolvers.Mutation,
         imageResolvers.Mutation,
+        cartResolvers.Mutation,
     ),
     Subscription: Object.assign({}),
 };

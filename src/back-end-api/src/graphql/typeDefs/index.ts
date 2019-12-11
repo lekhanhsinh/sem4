@@ -5,6 +5,7 @@ import AuthTypeDefs from "./Auth";
 import EmployeeTypeDefs from "./Employee";
 import AuthEmployeeTypeDefs from "./AuthEmployee";
 import ImageTypeDefs from "./Image";
+import CartTypeDefs from "./Cart";
 
 const rootTypeDefs = gql`
 
@@ -44,4 +45,5 @@ export default [
     EmployeeTypeDefs,
     AuthEmployeeTypeDefs,
     ImageTypeDefs,
+    CartTypeDefs,
 ];
