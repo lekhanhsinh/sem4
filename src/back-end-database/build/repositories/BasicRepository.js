@@ -20,7 +20,7 @@ var BasicRepository = (function () {
                 .populate(populate)
                 .exec();
         };
-        this.getOne = function (id, conditions, populate) {
+        this.getOne = function (conditions, populate) {
             if (populate === void 0) { populate = []; }
             return _this._collection.findOne(conditions)
                 .populate(populate)

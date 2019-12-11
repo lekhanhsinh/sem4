@@ -386,8 +386,8 @@
         "signature": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4"
       },
       "../src/models/image/types.ts": {
-        "version": "e6cc2294fa8249b1c1c0f84325e055bfb53b262a39bf0885dc76b84a26745c08",
-        "signature": "df84c307590e0f738243c8b28410242dc27ec53ec5dbd0c6ade5f2723d2ba6ac"
+        "version": "e993fe26fbc65c5a0d383733e489cbe7156b989b948bafb710609957cf087382",
+        "signature": "d6a6ac286208c9cf050e75ad348298f3258a22c284dee80f518f1bb4a5e6755a"
       },
       "../src/models/image/schema.ts": {
         "version": "11639fd068209f5ae1ddcd6db707a5bf8ce77248e9a4ceec1abb0f0465763a6a",
@@ -398,20 +398,36 @@
         "signature": "702f4c59b022c36de845798cf58dfca64b57879d7d6d435ce1f16a246b70603f"
       },
       "../src/models/image/index.ts": {
-        "version": "ba574d7664ff8e4c9f510b0d683ff7b7a475a29d6806e851c548db4df3ed1066",
+        "version": "06ad2060fdb89331bf6d1484c86ab77fef0785db364dae5a3d476325c22dd3d4",
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
+      "../src/models/order/types.ts": {
+        "version": "a315f31249616247c8e2a87b744060c91849eba29aa079e0bd68bf749efa565f",
+        "signature": "c53a73e0b90a0fe43cd332b8390d2b86787fd790fdf7d2700f95d43427c2f814"
+      },
+      "../src/models/order/schema.ts": {
+        "version": "31064a811f083ef74bef51a2aed145648fede80b48120462cd564412e4df4589",
+        "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
+      },
+      "../src/models/order/middlewares.ts": {
+        "version": "3aae3c18c925bdb98407419a41d64f6bcd87488176813153a8eb18aeb2e051de",
+        "signature": "702f4c59b022c36de845798cf58dfca64b57879d7d6d435ce1f16a246b70603f"
+      },
+      "../src/models/order/index.ts": {
+        "version": "40689f49cee483fab1e5b8f4551195e55c4ef4373b802fd632ae641445189c2b",
+        "signature": "e3fefdb21b945ac2bea21afb9587bcd34f5e19fa9d26c54a4ee5957826e0c6f8"
+      },
       "../src/models/index.ts": {
-        "version": "dfbdafb6ba00121b395f3cdc1dbee614cbfaa1e9754a29e33d51b4cd21370b23",
-        "signature": "dd1d0086eae3079a12864431e04a3cd3e75b72bd9e1dd7b36c51b2ab349b2f69"
+        "version": "6efde472d3b7443d2d4b47a81c4f693edfb226e8b98c4c093c444186ef85d9e9",
+        "signature": "bc927744cd40078e364270772c838c6dfdc3d94a07b8fec8c47121c6c6b8dbf9"
       },
       "../../../node_modules/@types/hapi__joi/index.d.ts": {
         "version": "4b52ab4f414eeb615e5406400cf657de18e6af79122c4754c1dc4d8594c32d4e",
         "signature": "4b52ab4f414eeb615e5406400cf657de18e6af79122c4754c1dc4d8594c32d4e"
       },
       "../src/repositories/basicrepository.ts": {
-        "version": "c75a08ad332e91d6d996819bd8f6c35d72f087b3e7c80ec16dcb46100b2b7b0b",
-        "signature": "32f9aeed4f1a57bcf2ca042f74062ab3094451d672f9b297ed007866289ada9f"
+        "version": "da59a06108419bb4b3146ce1bcdd1903c44a36300c8e9ea938e3375197a48944",
+        "signature": "14abfa4865211d5bc86304266c819fe5c61f3a9c8487ebd5a0693f20fbd6af7c"
       },
       "../src/repositories/userrepository.ts": {
         "version": "263f5bdef812481b4a132884f17373f4a432403ef628093a25412409134808c0",
@@ -437,9 +453,13 @@
         "version": "fbea163525cce9f933d262a6d098787c9b39291ee72c2245e4ae96ff4003bb6a",
         "signature": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca"
       },
+      "../src/repositories/orderrepository.ts": {
+        "version": "ce80389c8c2dc141e07097fe382f1d62d22df7d906cca7dcb1f63f0041d04682",
+        "signature": "05611cb724b5f7a84852c5a2946eb18fb3eccaa357779d3ba9626968a5265fde"
+      },
       "../src/repositories/index.ts": {
-        "version": "ce995b11eafeb87c574fdbd999a221855094f1998610779c428c7d1f28f33cbe",
-        "signature": "e85d241c2b989ae0067722c93837f1bdf4d5adec0d180efd7187f9c0ad36682a"
+        "version": "c33fabab6af57705eb93b625624e2cf5afcaca408a7857b4d72c4f03409fa51e",
+        "signature": "c89bc9b9b2956dd39a3e1444b0917cf5b71baf7e71ebf6f1fa20447317ec18b0"
       },
       "../src/index.ts": {
         "version": "b7a87a7176bad8d6da98eb3a07e10cdc3f4d21d52324cb6e737b33b44657a6af",
@@ -1714,10 +1734,42 @@
       ],
       "../src/models/image/index.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
-        "../../../node_modules/@types/bcryptjs/index.d.ts",
         "../src/models/image/types.ts",
         "../src/models/image/schema.ts",
         "../src/models/image/middlewares.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/order/types.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/image/types.ts",
+        "../src/models/user/types.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/order/schema.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/order/middlewares.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/order/index.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/order/types.ts",
+        "../src/models/order/schema.ts",
+        "../src/models/order/middlewares.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -1727,6 +1779,7 @@
         "../src/models/user/index.ts",
         "../src/models/employee/index.ts",
         "../src/models/image/index.ts",
+        "../src/models/order/index.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -1799,10 +1852,20 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/repositories/orderrepository.ts": [
+        "../src/repositories/basicrepository.ts",
+        "../src/models/index.ts",
+        "../src/models/order/types.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/repositories/index.ts": [
         "../src/repositories/userrepository.ts",
         "../src/repositories/employeerepository.ts",
         "../src/repositories/imagerepository.ts",
+        "../src/repositories/orderrepository.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -3405,7 +3468,8 @@
       "../src/repositories/index.ts": [
         "../src/repositories/userrepository.ts",
         "../src/repositories/employeerepository.ts",
-        "../src/repositories/imagerepository.ts"
+        "../src/repositories/imagerepository.ts",
+        "../src/repositories/orderrepository.ts"
       ],
       "../src/index.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
@@ -3473,6 +3537,10 @@
       "../src/repositories/basicrepository.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts"
       ],
+      "../src/repositories/orderrepository.ts": [
+        "../src/models/order/types.ts",
+        "../src/repositories/basicrepository.ts"
+      ],
       "../src/repositories/employeerepository.ts": [
         "../src/models/employee/types.ts",
         "../src/repositories/basicrepository.ts"
@@ -3481,14 +3549,30 @@
         "../src/models/user/types.ts",
         "../src/repositories/basicrepository.ts"
       ],
-      "../src/models/image/index.ts": [
-        "../src/models/image/types.ts",
+      "../src/models/order/index.ts": [
+        "../src/models/order/types.ts",
         "../../../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/models/index.ts": [
         "../src/models/user/index.ts",
         "../src/models/employee/index.ts",
-        "../src/models/image/index.ts"
+        "../src/models/image/index.ts",
+        "../src/models/order/index.ts"
+      ],
+      "../src/models/order/middlewares.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/models/order/schema.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/models/order/types.ts": [
+        "../src/models/user/types.ts",
+        "../src/models/image/types.ts",
+        "../../../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/models/image/index.ts": [
+        "../src/models/image/types.ts",
+        "../../../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/models/image/middlewares.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts"
@@ -4951,6 +5035,10 @@
       "../src/models/image/schema.ts",
       "../src/models/image/middlewares.ts",
       "../src/models/image/index.ts",
+      "../src/models/order/types.ts",
+      "../src/models/order/schema.ts",
+      "../src/models/order/middlewares.ts",
+      "../src/models/order/index.ts",
       "../src/models/index.ts",
       "../../../node_modules/@types/hapi__joi/index.d.ts",
       "../src/repositories/basicrepository.ts",
@@ -4960,6 +5048,7 @@
       "../../../node_modules/@types/fs-extra/index.d.ts",
       "../src/utils/etc.ts",
       "../src/repositories/imagerepository.ts",
+      "../src/repositories/orderrepository.ts",
       "../src/repositories/index.ts",
       "../src/index.ts",
       "../../../node_modules/mongo-seeding/dist/common/types.d.ts",

@@ -23,14 +23,13 @@ class BasicRepository<T extends mongoose.Document> {
     }
 
     /**
-     * Gets a single document by its id
-     * @param {string} id - Value of id
+     * Gets a single document
+     * @param {string} conditions - Conditions
      * @param {string[]} populate - Populate paths
      * 
      * @memberof BasicRepository
      */
     getOne = (
-        id: string,
         conditions: unknown,
         populate: string[] = []
     ): Promise<T | null> => {

@@ -17,6 +17,7 @@ const authResolvers: IResolvers = {
                         if (!isMatch) {
                             throw new Error("Access Denied.");
                         }
+                        req.session.cart = undefined;
                         req.session.user = {
                             id: user.id,
                         };
@@ -31,6 +32,7 @@ const authResolvers: IResolvers = {
                 throw new Error("Access Denied.");
             }
             req.session.user = undefined;
+            req.session.cart = undefined;
             return Promise.resolve("LOGGED OUT");
         },
     },

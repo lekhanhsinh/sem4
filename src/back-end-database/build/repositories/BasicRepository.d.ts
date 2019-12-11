@@ -3,7 +3,7 @@ declare class BasicRepository<T extends mongoose.Document> {
     protected _collection: mongoose.Model<T>;
     constructor(collection: mongoose.Model<T>);
     getOnebyId: (id: string, populate?: string[]) => Promise<T | null>;
-    getOne: (id: string, conditions: unknown, populate?: string[]) => Promise<T | null>;
+    getOne: (conditions: unknown, populate?: string[]) => Promise<T | null>;
     getMany: (searchs?: {
         path: string;
         str: string;

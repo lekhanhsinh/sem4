@@ -5,6 +5,4 @@ export declare type Image = {
     path: string;
     description: string;
 };
-export declare type ImageDocument = mongoose.Document & Image & {
-    comparePassword: (candidatePassword: string) => Promise<boolean>;
-};
+export declare type ImageDocument = mongoose.Document & Image & {};

@@ -8,5 +8,4 @@ export type Image = {
 }
 
 export type ImageDocument = mongoose.Document & Image & {
-    comparePassword: (candidatePassword: string) => Promise<boolean>;
 }

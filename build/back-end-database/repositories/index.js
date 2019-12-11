@@ -6,3 +6,5 @@ var EmployeeRepository_1 = require("./EmployeeRepository");
 exports.employeeRepository = EmployeeRepository_1.employeeRepository;
 var ImageRepository_1 = require("./ImageRepository");
 exports.imageRepository = ImageRepository_1.imageRepository;
+var OrderRepository_1 = require("./OrderRepository");
+exports.orderRepository = OrderRepository_1.orderRepository;
