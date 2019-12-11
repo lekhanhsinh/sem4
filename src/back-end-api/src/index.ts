@@ -25,7 +25,10 @@ const app = express();
 
 server.applyMiddleware({
     app,
-    cors: true
+    cors: {
+        origin: `${DOMAIN}, api.${DOMAIN}, http://localhost:3000`,
+        credentials: true
+    }
 });
 
 export { app, server };

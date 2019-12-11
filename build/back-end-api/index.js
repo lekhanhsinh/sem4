@@ -30,5 +30,8 @@ var app = express_1.default();
 exports.app = app;
 server.applyMiddleware({
     app: app,
-    cors: true
+    cors: {
+        origin: secrets_1.DOMAIN + ", api." + secrets_1.DOMAIN + ", http://localhost:3000",
+        credentials: true
+    }
 });
