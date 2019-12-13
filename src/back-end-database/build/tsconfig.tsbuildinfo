@@ -402,11 +402,11 @@
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
       "../src/models/order/types.ts": {
-        "version": "6f268ae57f99f023b644383342e1234f44f5682af13dba7f69ee9157461b88c0",
-        "signature": "27463ac6a2c9d8e8b2fdce11a6cd864d243de979a2b1e0f663f79bf56db8b28f"
+        "version": "4bba1fbee181c9d660a390c0f8bc00594d2a6c1c59c096464e64d10bc9e80435",
+        "signature": "0bd4e801f4b0d7f6a9bbebd836e787e424f42620550b3214b056ad17e8e104f7"
       },
       "../src/models/order/schema.ts": {
-        "version": "bcbca8bb72231eb50ba28f2389f8b2818792c1c50bc89f804ebbc040abc75fcd",
+        "version": "3a91d2c04ebf3333d1157d4616a26d6981fbca61f5445e4224cb9e2fe0ddc714",
         "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
       },
       "../src/models/order/middlewares.ts": {
@@ -434,7 +434,7 @@
         "signature": "fcc93c9c5a7e8b4909e3e0c3bca48ec153b706b22632bd78f58bc33646d17b4f"
       },
       "../src/repositories/employeerepository.ts": {
-        "version": "c7cced95e180fde471a758673cafb0d336d5c34f4dab5bc2f849e4ea5ae90f85",
+        "version": "d78f228f1dff830a4a41be118c3304122527d11a96a34509a610670d0208c319",
         "signature": "fd3bf26350cf52bb1d7622389723ede89cb95ca8222f8084344a4f2ee41671a7"
       },
       "../../../node_modules/@types/mime-types/index.d.ts": {
@@ -453,12 +453,8 @@
         "version": "fbea163525cce9f933d262a6d098787c9b39291ee72c2245e4ae96ff4003bb6a",
         "signature": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca"
       },
-      "../../../node_modules/@types/stripe/index.d.ts": {
-        "version": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d",
-        "signature": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d"
-      },
       "../src/repositories/orderrepository.ts": {
-        "version": "a1ad1583962d32546d8f0f1fdb13546a5cb634518326ca86cd38a22084fb606f",
+        "version": "05b698b66a3bc3ff1f9bcc23899217781254611028530cf6a809c06bf4b5ac4b",
         "signature": "75060b0b3a3b93ec172ad791a83ad8d730745f64cce3fbe9e236ba2d4294218d"
       },
       "../src/repositories/index.ts": {
@@ -984,6 +980,10 @@
       "../../../node_modules/@types/node-fetch/index.d.ts": {
         "version": "27401d471614076257eb419b8cb402dfb856c5160308bd94f60ff5356a53edcf",
         "signature": "27401d471614076257eb419b8cb402dfb856c5160308bd94f60ff5356a53edcf"
+      },
+      "../../../node_modules/@types/stripe/index.d.ts": {
+        "version": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d",
+        "signature": "2169a0dc60c35c5c68de1c44f1ba2a27851fb658afc516dbcae6a45ae841511d"
       },
       "../../../node_modules/@types/ws/index.d.ts": {
         "version": "829c6dfd3224be3b599c64ce7fa9136a3422ac7ab4569cc52469c65574facb23",
@@ -1856,20 +1856,10 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../../node_modules/@types/stripe/index.d.ts": [
-        "../../../node_modules/@types/node/http.d.ts",
-        "../../../node_modules/@types/node/ts3.2/index.d.ts",
-        "../../../node_modules/@types/node/fs.d.ts",
-        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../../node_modules/@types/node/util.d.ts",
-        "../../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/repositories/orderrepository.ts": [
-        "../../../node_modules/@types/stripe/index.d.ts",
         "../src/repositories/basicrepository.ts",
         "../src/models/index.ts",
         "../src/models/order/types.ts",
-        "../src/utils/secrets.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -3056,6 +3046,14 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../../../node_modules/@types/stripe/index.d.ts": [
+        "../../../node_modules/@types/node/http.d.ts",
+        "../../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../../../node_modules/@types/ws/index.d.ts": [
         "../../../node_modules/@types/node/events.d.ts",
         "../../../node_modules/@types/node/http.d.ts",
@@ -3334,6 +3332,14 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../../../node_modules/@types/stripe/index.d.ts": [
+        "../../../node_modules/@types/node/http.d.ts",
+        "../../../node_modules/@types/node/ts3.2/index.d.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../../../node_modules/@types/node-fetch/index.d.ts": [
         "../../../node_modules/@types/node/http.d.ts",
         "../../../node_modules/@types/node/url.d.ts",
@@ -3465,29 +3471,6 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../../node_modules/@types/stripe/index.d.ts": [
-        "../../../node_modules/@types/node/http.d.ts",
-        "../../../node_modules/@types/node/ts3.2/index.d.ts",
-        "../../../node_modules/@types/node/fs.d.ts",
-        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../../node_modules/@types/node/util.d.ts",
-        "../../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/repositories/orderrepository.ts": [
-        "../src/models/order/types.ts",
-        "../src/repositories/basicrepository.ts"
-      ],
-      "../src/repositories/index.ts": [
-        "../src/repositories/userrepository.ts",
-        "../src/repositories/employeerepository.ts",
-        "../src/repositories/imagerepository.ts",
-        "../src/repositories/orderrepository.ts"
-      ],
-      "../src/index.ts": [
-        "../../../node_modules/@types/mongoose/index.d.ts",
-        "../src/models/index.ts",
-        "../src/repositories/index.ts"
-      ],
       "../../../node_modules/@types/fs-extra/index.d.ts": [
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/index.d.ts",
@@ -3501,6 +3484,17 @@
       "../src/repositories/imagerepository.ts": [
         "../src/models/image/types.ts",
         "../src/repositories/basicrepository.ts"
+      ],
+      "../src/repositories/index.ts": [
+        "../src/repositories/userrepository.ts",
+        "../src/repositories/employeerepository.ts",
+        "../src/repositories/imagerepository.ts",
+        "../src/repositories/orderrepository.ts"
+      ],
+      "../src/index.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/index.ts",
+        "../src/repositories/index.ts"
       ],
       "../../../node_modules/winston/index.d.ts": [
         "../../../node_modules/@types/node/stream.d.ts",
@@ -3562,6 +3556,10 @@
       ],
       "../src/repositories/basicrepository.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/repositories/orderrepository.ts": [
+        "../src/models/order/types.ts",
+        "../src/repositories/basicrepository.ts"
       ],
       "../src/repositories/employeerepository.ts": [
         "../src/models/employee/types.ts",
@@ -5070,7 +5068,6 @@
       "../../../node_modules/@types/fs-extra/index.d.ts",
       "../src/utils/etc.ts",
       "../src/repositories/imagerepository.ts",
-      "../../../node_modules/@types/stripe/index.d.ts",
       "../src/repositories/orderrepository.ts",
       "../src/repositories/index.ts",
       "../src/index.ts",
@@ -5203,6 +5200,7 @@
       "../../../node_modules/@types/long/index.d.ts",
       "../../../node_modules/@types/node-fetch/externals.d.ts",
       "../../../node_modules/@types/node-fetch/index.d.ts",
+      "../../../node_modules/@types/stripe/index.d.ts",
       "../../../node_modules/@types/ws/index.d.ts",
       "../../../node_modules/typescript/lib/lib.es2015.d.ts",
       "../../../node_modules/typescript/lib/lib.es2016.d.ts",

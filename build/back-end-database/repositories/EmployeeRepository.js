@@ -40,6 +40,7 @@ var Models = __importStar(require("../models"));
 var EmployeeModel = joi_1.default.object({
     email: joi_1.default.string().email(),
     password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
+    name: joi_1.default.string(),
     role: joi_1.default.string()
 });
 var EmployeeRepository = (function (_super) {

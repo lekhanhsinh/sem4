@@ -13,6 +13,7 @@ export type Order = {
         image: Image;
         totalPrice: number;
     }];
+    status: string;
     charge: string;
     description: string;
 }

@@ -1474,7 +1474,7 @@
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {
-        "version": "c515fc9612c00a36798e147e44f517a21500978932807599f40b5f0c5ae6c396",
+        "version": "82882a1187df3b10cc5d7346d9972ec3d13cc01e073103e811017f51b9aaadf4",
         "signature": "460fe4cf786bbe62efa013080df67ce30b155f84e557c8d5b471fa79b31596ed"
       },
       "../src/graphql/typedefs/index.ts": {
@@ -1518,8 +1518,8 @@
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
       "../../back-end-database/build/models/order/types.d.ts": {
-        "version": "27463ac6a2c9d8e8b2fdce11a6cd864d243de979a2b1e0f663f79bf56db8b28f",
-        "signature": "27463ac6a2c9d8e8b2fdce11a6cd864d243de979a2b1e0f663f79bf56db8b28f"
+        "version": "0bd4e801f4b0d7f6a9bbebd836e787e424f42620550b3214b056ad17e8e104f7",
+        "signature": "0bd4e801f4b0d7f6a9bbebd836e787e424f42620550b3214b056ad17e8e104f7"
       },
       "../../back-end-database/build/models/order/index.d.ts": {
         "version": "e3fefdb21b945ac2bea21afb9587bcd34f5e19fa9d26c54a4ee5957826e0c6f8",

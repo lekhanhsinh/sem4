@@ -7,6 +7,7 @@ import { EmployeeDocument, Employee } from "../models/Employee/types";
 const EmployeeModel = Joi.object({
     email: Joi.string().email(),
     password: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
+    name: Joi.string(),
     role: Joi.string()
 });
 

@@ -23,11 +23,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var stripe_1 = __importDefault(require("stripe"));
 var BasicRepository_1 = __importDefault(require("./BasicRepository"));
 var Models = __importStar(require("../models"));
-var secrets_1 = require("../utils/secrets");
-var stripe = new stripe_1.default(secrets_1.STRIPE_KEY);
 var OrderRepository = (function (_super) {
     __extends(OrderRepository, _super);
     function OrderRepository() {
@@ -42,15 +39,7 @@ var OrderRepository = (function (_super) {
                 .exec();
         };
         _this.create = function (docs) {
-            return stripe.charges.create({
-                source: docs.creditCardNumber,
-                amount: docs.total,
-                currency: "usd",
-                description: docs.description
-            }).then(function (charge) {
-                docs.charge = charge.id;
-                return _this._collection.create(docs);
-            });
+            return _this._collection.create(docs);
         };
         _this.update = function (id, docs, populate) {
             if (populate === void 0) { populate = []; }
@@ -60,9 +49,8 @@ var OrderRepository = (function (_super) {
                 if (!found) {
                     throw new Error("Order don\'t exist.");
                 }
-                stripe.charges.update(found.charge, {
-                    description: docs.description ? docs.description : found.description
-                });
+                found.status = docs.status ? docs.status : found.status;
+                found.description = docs.description ? docs.description : found.description;
                 return found;
             });
         };

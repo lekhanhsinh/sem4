@@ -21,6 +21,10 @@ var schema = new mongoose_1.default.Schema({
             },
             totalPrice: Number
         }],
+    status: {
+        type: String,
+        default: "Ongoing"
+    },
     charge: String,
     description: String
 }, { timestamps: true, autoIndex: true });

@@ -18,6 +18,10 @@ const schema = new mongoose.Schema({
         },
         totalPrice: Number
     }],
+    status: {
+        type: String,
+        default: "Ongoing"
+    },
     charge: String,
     description: String
 
