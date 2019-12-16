@@ -16,11 +16,15 @@ export class ImageRepository extends BasicRepository<ImageDocument>{
         super(Models.Image);
     }
 
+    getManybyUserId = (userId: string): Promise<ImageDocument[]> => {
+        return this._collection.find({ user: userId }).populate(["user"]).exec();
+    }
+
     createWithValidate = (userId: string, detail: unknown): Promise<ImageDocument> => {
         return ImageModel.validateAsync(detail, { allowUnknown: true }).then(() => {
             return userRepository.getOnebyId(userId).then(user => {
                 if (!user) { throw new Error("User don\'t exist."); }
-                const newImage = new this._collection(detail);
+                const newImage = new this._collection({ user, ...(detail as any) });
                 if (!(detail as any).file) { return newImage.save(); }
                 return saveImage((detail as any).file).then(path => {
                     newImage.path = path;
@@ -39,7 +43,9 @@ export class ImageRepository extends BasicRepository<ImageDocument>{
                 if (!(detail as any).file) { return found.save(); }
                 return saveImage((detail as any).file, found.path).then(path => {
                     found.path = path;
-                    return found.save();
+                    return found.populate("user").execPopulate().then(image => {
+                        return image.save();
+                    });
                 });
             });
         });

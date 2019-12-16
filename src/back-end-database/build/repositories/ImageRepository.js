@@ -12,6 +12,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -36,13 +47,16 @@ var ImageRepository = (function (_super) {
     __extends(ImageRepository, _super);
     function ImageRepository() {
         var _this = _super.call(this, Models.Image) || this;
+        _this.getManybyUserId = function (userId) {
+            return _this._collection.find({ user: userId }).populate(["user"]).exec();
+        };
         _this.createWithValidate = function (userId, detail) {
             return ImageModel.validateAsync(detail, { allowUnknown: true }).then(function () {
                 return UserRepository_1.userRepository.getOnebyId(userId).then(function (user) {
                     if (!user) {
                         throw new Error("User don\'t exist.");
                     }
-                    var newImage = new _this._collection(detail);
+                    var newImage = new _this._collection(__assign({ user: user }, detail));
                     if (!detail.file) {
                         return newImage.save();
                     }
@@ -66,7 +80,9 @@ var ImageRepository = (function (_super) {
                     }
                     return etc_1.saveImage(detail.file, found.path).then(function (path) {
                         found.path = path;
-                        return found.save();
+                        return found.populate("user").execPopulate().then(function (image) {
+                            return image.save();
+                        });
                     });
                 });
             });

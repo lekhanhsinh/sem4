@@ -5,6 +5,7 @@ const ImageTypeDefs = gql`
     extend type Query {
         getImage(id: String!): ImageType
         getImages(sort: SortInputType, searchs: [SearchInputType]): [ImageType]
+        getSelfImages: [ImageType]
     }
 
     extend type Mutation {
@@ -18,6 +19,7 @@ const ImageTypeDefs = gql`
         name: String
         description: String
         path: String
+        user: UserType
         createdAt: DateTime
         updatedAt: DateTime
     }

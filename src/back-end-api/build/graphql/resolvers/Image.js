@@ -9,8 +9,22 @@ var imageResolvers = {
         },
         getImages: function (obj, args, context, info) {
             var sort = args.sort, searchs = args.searchs;
+            var req = context.req;
+            var employee = req.session.employee;
+            if (!employee) {
+                throw new Error("Access Denied.");
+            }
             return _back_end_database_1.Repositories.imageRepository.getMany(searchs, sort);
-        }
+        },
+        getSelfImages: function (obj, args, context, info) {
+            var _a = args;
+            var req = context.req;
+            var user = req.session.user;
+            if (!user) {
+                throw new Error("Access Denied.");
+            }
+            return _back_end_database_1.Repositories.imageRepository.getManybyUserId(user.id);
+        },
     },
     Mutation: {
         createImage: function (obj, args, context, info) {

@@ -1466,7 +1466,7 @@
         "signature": "94e2d339c11397839a8b1f6d03243b3ae43bccbb6bc1a7bd9383943337d39643"
       },
       "../src/graphql/typedefs/image.ts": {
-        "version": "297b18f61715055cccf6f833197f3530f567fe305e27e402c7f858f34667ec60",
+        "version": "1ca99f94f87f433357615b0228e79a2e1e9f5ad6cbc5434f76a65e0ec98c2c4a",
         "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
       },
       "../src/graphql/typedefs/cart.ts": {
@@ -1510,8 +1510,8 @@
         "signature": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4"
       },
       "../../back-end-database/build/models/image/types.d.ts": {
-        "version": "d6a6ac286208c9cf050e75ad348298f3258a22c284dee80f518f1bb4a5e6755a",
-        "signature": "d6a6ac286208c9cf050e75ad348298f3258a22c284dee80f518f1bb4a5e6755a"
+        "version": "02531681d84ea43f738083ef7d35360155ab5ad7032107149270d42227131a58",
+        "signature": "02531681d84ea43f738083ef7d35360155ab5ad7032107149270d42227131a58"
       },
       "../../back-end-database/build/models/image/index.d.ts": {
         "version": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4",
@@ -1542,8 +1542,8 @@
         "signature": "fd3bf26350cf52bb1d7622389723ede89cb95ca8222f8084344a4f2ee41671a7"
       },
       "../../back-end-database/build/repositories/imagerepository.d.ts": {
-        "version": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca",
-        "signature": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca"
+        "version": "d220be561d1d4e44eb2f1c019d56fd9683783d7693116ce1dd909de779d69d90",
+        "signature": "d220be561d1d4e44eb2f1c019d56fd9683783d7693116ce1dd909de779d69d90"
       },
       "../../back-end-database/build/repositories/orderrepository.d.ts": {
         "version": "75060b0b3a3b93ec172ad791a83ad8d730745f64cce3fbe9e236ba2d4294218d",
@@ -1574,7 +1574,7 @@
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
       "../src/graphql/resolvers/image.ts": {
-        "version": "0ae63f08653e9793d018c58c886f3254cb6e58d4a0a206b905a5aaf4bbbb0276",
+        "version": "98b5694f11aacd55c641837e8503b8bcad40d6fd91ab6b9dc9aa23c501d3f9fb",
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {
@@ -4808,6 +4808,7 @@
       ],
       "../../back-end-database/build/models/image/types.d.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../back-end-database/build/models/user/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5484,6 +5485,7 @@
       ],
       "../../back-end-database/build/models/image/types.d.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../back-end-database/build/models/user/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",

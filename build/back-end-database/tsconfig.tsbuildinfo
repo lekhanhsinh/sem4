@@ -386,11 +386,11 @@
         "signature": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4"
       },
       "../src/models/image/types.ts": {
-        "version": "e993fe26fbc65c5a0d383733e489cbe7156b989b948bafb710609957cf087382",
-        "signature": "d6a6ac286208c9cf050e75ad348298f3258a22c284dee80f518f1bb4a5e6755a"
+        "version": "8fd396de59e4f04ec364b40d62a478ff938fe5df5f1649f38b71a6ffed4a2f5f",
+        "signature": "02531681d84ea43f738083ef7d35360155ab5ad7032107149270d42227131a58"
       },
       "../src/models/image/schema.ts": {
-        "version": "11639fd068209f5ae1ddcd6db707a5bf8ce77248e9a4ceec1abb0f0465763a6a",
+        "version": "8a3b971cecfc22591fcdf76603b8f2f979b5387d70844bde93d76e85bc3b2aa7",
         "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
       },
       "../src/models/image/middlewares.ts": {
@@ -450,8 +450,8 @@
         "signature": "229960854b7d85e8c782301aa11f375848148b3b81ff7cf3833c6b94b04429bf"
       },
       "../src/repositories/imagerepository.ts": {
-        "version": "fbea163525cce9f933d262a6d098787c9b39291ee72c2245e4ae96ff4003bb6a",
-        "signature": "28f819b85dac9d4be7617a274f68f14841b662d681564c32bbf7ea6718d1f9ca"
+        "version": "e22e6ac3c4a1d2bd3747fe5d681e7c251efdae31e86ac5008457f3924d863be2",
+        "signature": "d220be561d1d4e44eb2f1c019d56fd9683783d7693116ce1dd909de779d69d90"
       },
       "../src/repositories/orderrepository.ts": {
         "version": "05b698b66a3bc3ff1f9bcc23899217781254611028530cf6a809c06bf4b5ac4b",
@@ -1717,6 +1717,7 @@
       ],
       "../src/models/image/types.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/user/types.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -3601,6 +3602,7 @@
         "../../../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/models/image/types.ts": [
+        "../src/models/user/types.ts",
         "../../../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/models/employee/index.ts": [

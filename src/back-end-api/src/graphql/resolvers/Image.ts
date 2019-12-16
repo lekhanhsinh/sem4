@@ -11,8 +11,22 @@ const imageResolvers: IResolvers = {
         },
         getImages: (obj, args, context, info): Promise<ImageDocument[]> => {
             const { sort, searchs } = args;
+            const { req } = context;
+            const { employee } = req.session;
+            if (!employee) {
+                throw new Error("Access Denied.");
+            }
             return Repositories.imageRepository.getMany(searchs, sort);
-        }
+        },
+        getSelfImages: (obj, args, context, info): Promise<ImageDocument[]> => {
+            const { } = args;
+            const { req } = context;
+            const { user } = req.session;
+            if (!user) {
+                throw new Error("Access Denied.");
+            }
+            return Repositories.imageRepository.getManybyUserId(user.id);
+        },
     },
     Mutation: {
         createImage: (obj, args, context, info): Promise<ImageDocument> => {
