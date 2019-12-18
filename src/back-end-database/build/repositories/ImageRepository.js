@@ -47,6 +47,12 @@ var ImageRepository = (function (_super) {
     __extends(ImageRepository, _super);
     function ImageRepository() {
         var _this = _super.call(this, Models.Image) || this;
+        _this.getOnebyId = function (id) {
+            return _this._collection.findById(id).populate(["user"]).exec();
+        };
+        _this.getMany = function () {
+            return _this._collection.find().populate(["user"]).exec();
+        };
         _this.getManybyUserId = function (userId) {
             return _this._collection.find({ user: userId }).populate(["user"]).exec();
         };

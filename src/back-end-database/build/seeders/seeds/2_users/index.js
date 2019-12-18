@@ -21,7 +21,9 @@ if (secrets_1.ENVIRONMENT === "development") {
             gender: faker_1.default.random.arrayElement(["MALE", "FEMALE"]),
             address: faker_1.default.address.streetAddress(true),
             dateOfBirth: faker_1.default.date.past(),
-            phoneNumber: faker_1.default.phone.phoneNumber()
+            phoneNumber: faker_1.default.phone.phoneNumber(),
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
         });
     }
 }

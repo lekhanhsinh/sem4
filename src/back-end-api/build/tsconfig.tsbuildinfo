@@ -1542,8 +1542,8 @@
         "signature": "fd3bf26350cf52bb1d7622389723ede89cb95ca8222f8084344a4f2ee41671a7"
       },
       "../../back-end-database/build/repositories/imagerepository.d.ts": {
-        "version": "d220be561d1d4e44eb2f1c019d56fd9683783d7693116ce1dd909de779d69d90",
-        "signature": "d220be561d1d4e44eb2f1c019d56fd9683783d7693116ce1dd909de779d69d90"
+        "version": "b7dde18c9dbd4ccbada01dc817c4479beee5d3aa58ce7413c23d7687f4e368d4",
+        "signature": "b7dde18c9dbd4ccbada01dc817c4479beee5d3aa58ce7413c23d7687f4e368d4"
       },
       "../../back-end-database/build/repositories/orderrepository.d.ts": {
         "version": "75060b0b3a3b93ec172ad791a83ad8d730745f64cce3fbe9e236ba2d4294218d",
@@ -1574,7 +1574,7 @@
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
       "../src/graphql/resolvers/image.ts": {
-        "version": "98b5694f11aacd55c641837e8503b8bcad40d6fd91ab6b9dc9aa23c501d3f9fb",
+        "version": "2d774697a96f339dab41ee43ef77a2583c218f0cf04cf33ecf8106a9e1f7ac74",
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {

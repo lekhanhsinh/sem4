@@ -450,8 +450,8 @@
         "signature": "229960854b7d85e8c782301aa11f375848148b3b81ff7cf3833c6b94b04429bf"
       },
       "../src/repositories/imagerepository.ts": {
-        "version": "e22e6ac3c4a1d2bd3747fe5d681e7c251efdae31e86ac5008457f3924d863be2",
-        "signature": "d220be561d1d4e44eb2f1c019d56fd9683783d7693116ce1dd909de779d69d90"
+        "version": "661d23c7042256eed846298bc98154068972e2ca034cc11c13c13e41783aedad",
+        "signature": "b7dde18c9dbd4ccbada01dc817c4479beee5d3aa58ce7413c23d7687f4e368d4"
       },
       "../src/repositories/orderrepository.ts": {
         "version": "05b698b66a3bc3ff1f9bcc23899217781254611028530cf6a809c06bf4b5ac4b",
@@ -514,7 +514,7 @@
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "../src/seeders/seeds/1_employees/index.ts": {
-        "version": "43c70713dd24dc74b937182d28a4b1302e24db8d4047556216a01561fde13f85",
+        "version": "b3207053a59bf47f14f3bf2f421a1f65424a90cce30e1b068dac49ea2cf09b5f",
         "signature": "59293218613eb6017242d5e215bd7c10dae34714274be8547a178657e6eff254"
       },
       "../../../node_modules/@types/faker/index.d.ts": {
@@ -522,12 +522,12 @@
         "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
       },
       "../src/seeders/seeds/2_users/index.ts": {
-        "version": "a2550ff96581d13c6845b203c842268d67bd5805f459f95000e233d5856ecaae",
-        "signature": "325971b3eb6b00f607b6090038d832f7db24f333bff399da7d020fce24908141"
+        "version": "b08ab2411bafa2d1b2ce81446c109919f1d5741099a18d708d31d58d35ee883c",
+        "signature": "1f3f9b37b04125b14c08220494d0b4c60bc09293f7a47565dd549eca3b53f8c8"
       },
       "../src/seeders/seeds/3_images/index.ts": {
-        "version": "c3be4afaa2930f88bd9a180f8b6d45bc5037744b882f42c2aa26a849e0c9fc6a",
-        "signature": "d4be40ec388ed4dcc954eede44ca067acd8cf2c360bdccb169abb74c39a4f1c4"
+        "version": "9961b7e46f0ce1786c0cfb730d08af872958bf6a7a63f1828b9bc3bf945a6d61",
+        "signature": "ff68c5fca2c08c1a88bae0c8d9fb789c206e1cb198e54841f56ee3a4baa7c515"
       },
       "../../../node_modules/@types/accepts/index.d.ts": {
         "version": "6738101ae8e56cd3879ab3f99630ada7d78097fc9fd334df7e766216778ca219",

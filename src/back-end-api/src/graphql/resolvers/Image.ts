@@ -16,7 +16,7 @@ const imageResolvers: IResolvers = {
             if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.imageRepository.getMany(searchs, sort);
+            return Repositories.imageRepository.getMany();
         },
         getSelfImages: (obj, args, context, info): Promise<ImageDocument[]> => {
             const { } = args;

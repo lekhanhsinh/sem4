@@ -17,10 +17,12 @@ if (secrets_1.ENVIRONMENT === "development") {
         images.push({
             _id: imageId,
             id: imageId + "",
-            user: faker_1.default.random.arrayElement(_2_users_1.default),
+            user: faker_1.default.random.arrayElement(_2_users_1.default)._id,
             name: fileName,
             path: fileName,
             description: faker_1.default.lorem.lines(2),
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
         });
     }
 }

@@ -14,7 +14,7 @@ var imageResolvers = {
             if (!employee) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.imageRepository.getMany(searchs, sort);
+            return _back_end_database_1.Repositories.imageRepository.getMany();
         },
         getSelfImages: function (obj, args, context, info) {
             var _a = args;

@@ -9,7 +9,11 @@ import { Image } from "../../../models/Image/types";
 
 const fileNames = fs.readdirSync(path.resolve("public/images"));
 
-const images: (Image & { _id: any })[] = [];
+const images: (Image & {
+  _id: any;
+  createdAt: number;
+  updatedAt: number;
+})[] = [];
 
 
 if (ENVIRONMENT === "development") {
@@ -20,10 +24,12 @@ if (ENVIRONMENT === "development") {
       {
         _id: imageId,
         id: imageId + "",
-        user: faker.random.arrayElement(users),
+        user: faker.random.arrayElement(users)._id,
         name: fileName,
         path: fileName,
         description: faker.lorem.lines(2),
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
       }
     );
   }

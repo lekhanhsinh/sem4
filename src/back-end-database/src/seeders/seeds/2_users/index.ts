@@ -8,7 +8,11 @@ import { ENVIRONMENT } from "../../../utils/secrets";
 const salt = bcrypt.genSaltSync(10);
 const hash = bcrypt.hashSync("St@r1234", salt);
 
-const users: (User & { _id: any })[] = [];
+const users: (User & {
+  _id: any;
+  createdAt: number;
+  updatedAt: number;
+})[] = [];
 
 if (ENVIRONMENT === "development") {
   for (let i = 0; i < 100; i++) {
@@ -23,7 +27,9 @@ if (ENVIRONMENT === "development") {
         gender: faker.random.arrayElement(["MALE", "FEMALE"]),
         address: faker.address.streetAddress(true),
         dateOfBirth: faker.date.past(),
-        phoneNumber: faker.phone.phoneNumber()
+        phoneNumber: faker.phone.phoneNumber(),
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
       }
     );
   }

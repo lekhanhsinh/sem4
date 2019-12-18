@@ -16,6 +16,14 @@ export class ImageRepository extends BasicRepository<ImageDocument>{
         super(Models.Image);
     }
 
+    getOnebyId = (id: string): Promise<ImageDocument | null> => {
+        return this._collection.findById(id).populate(["user"]).exec();
+    }
+
+    getMany = (): Promise<ImageDocument[]> => {
+        return this._collection.find().populate(["user"]).exec();
+    }
+
     getManybyUserId = (userId: string): Promise<ImageDocument[]> => {
         return this._collection.find({ user: userId }).populate(["user"]).exec();
     }

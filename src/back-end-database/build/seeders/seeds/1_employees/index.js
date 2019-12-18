@@ -14,7 +14,9 @@ var admin = {
     email: "admin@gmail.com",
     password: hash,
     name: "Admin",
-    role: "Admin"
+    role: "Admin",
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
 };
 employees.push(admin);
 module.exports = employees;
