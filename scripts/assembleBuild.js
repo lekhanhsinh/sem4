@@ -85,6 +85,10 @@ const assembleBuild = new Promise((resolve, reject) => {
             }
             return fs.writeJson("build/package.json", mainPackageJSON, { spaces: 4 }).then(() => {
                 console.log("Generated package.json");
+            }).then(() => {
+                return fs.copy("public", "build/public").then(() => {
+                    console.log("Copy public completed!");
+                });
             });
         }).catch(err => {
             reject(err);

@@ -513,6 +513,22 @@
         "version": "0e61ed69d4528ac77ac5d70c1098b614f852e95b2f90a61963b0e3aae3908e57",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
+      "../src/seeders/seeds/1_employees/index.ts": {
+        "version": "43c70713dd24dc74b937182d28a4b1302e24db8d4047556216a01561fde13f85",
+        "signature": "59293218613eb6017242d5e215bd7c10dae34714274be8547a178657e6eff254"
+      },
+      "../../../node_modules/@types/faker/index.d.ts": {
+        "version": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10",
+        "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
+      },
+      "../src/seeders/seeds/2_users/index.ts": {
+        "version": "a2550ff96581d13c6845b203c842268d67bd5805f459f95000e233d5856ecaae",
+        "signature": "325971b3eb6b00f607b6090038d832f7db24f333bff399da7d020fce24908141"
+      },
+      "../src/seeders/seeds/3_images/index.ts": {
+        "version": "c3be4afaa2930f88bd9a180f8b6d45bc5037744b882f42c2aa26a849e0c9fc6a",
+        "signature": "d4be40ec388ed4dcc954eede44ca067acd8cf2c360bdccb169abb74c39a4f1c4"
+      },
       "../../../node_modules/@types/accepts/index.d.ts": {
         "version": "6738101ae8e56cd3879ab3f99630ada7d78097fc9fd334df7e766216778ca219",
         "signature": "6738101ae8e56cd3879ab3f99630ada7d78097fc9fd334df7e766216778ca219"
@@ -564,10 +580,6 @@
       "../../../node_modules/@types/express-session/index.d.ts": {
         "version": "903153d18b0365f1b99d9698f1feda333a65864fac218542f128536b9081c7fe",
         "signature": "903153d18b0365f1b99d9698f1feda333a65864fac218542f128536b9081c7fe"
-      },
-      "../../../node_modules/@types/faker/index.d.ts": {
-        "version": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10",
-        "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
       },
       "../../../node_modules/@types/fs-capacitor/index.d.ts": {
         "version": "ca106dc27136bcfabaf1e0b261e9721e7c8119c7ff9dfd5c96ec2211cff926bd",
@@ -1979,6 +1991,45 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/seeders/seeds/1_employees/index.ts": [
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../../node_modules/@types/bcryptjs/index.d.ts",
+        "../src/models/employee/types.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../node_modules/@types/faker/index.d.ts": [
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/seeders/seeds/2_users/index.ts": [
+        "../../../node_modules/@types/faker/index.d.ts",
+        "../../../node_modules/@types/bcryptjs/index.d.ts",
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../src/models/user/types.ts",
+        "../src/utils/secrets.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/seeders/seeds/3_images/index.ts": [
+        "../../../node_modules/@types/faker/index.d.ts",
+        "../../../node_modules/@types/mongoose/index.d.ts",
+        "../../../node_modules/@types/fs-extra/index.d.ts",
+        "../../../node_modules/@types/node/path.d.ts",
+        "../src/utils/secrets.ts",
+        "../src/seeders/seeds/2_users/index.ts",
+        "../src/models/image/types.ts",
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../../../node_modules/@types/accepts/index.d.ts": [
         "../../../node_modules/@types/node/http.d.ts",
         "../../../node_modules/@types/node/ts3.2/index.d.ts",
@@ -2077,12 +2128,6 @@
         "../../../node_modules/@types/express/index.d.ts",
         "../../../node_modules/@types/node/events.d.ts",
         "../../../node_modules/@types/node/ts3.2/index.d.ts",
-        "../../../node_modules/@types/node/fs.d.ts",
-        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../../node_modules/@types/node/util.d.ts",
-        "../../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../../../node_modules/@types/faker/index.d.ts": [
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -3479,6 +3524,9 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/seeders/seeds/3_images/index.ts": [
+        "../src/models/image/types.ts"
+      ],
       "../src/utils/etc.ts": [
         "../../../node_modules/@types/fs-extra/index.d.ts"
       ],
@@ -3511,6 +3559,9 @@
       ],
       "../src/utils/logger.ts": [
         "../../../node_modules/winston/index.d.ts"
+      ],
+      "../src/seeders/seeds/2_users/index.ts": [
+        "../src/models/user/types.ts"
       ],
       "../../../node_modules/winston/lib/winston/transports/index.d.ts": [
         "../../../node_modules/@types/node/http.d.ts",
@@ -3554,6 +3605,9 @@
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/seeders/seeds/1_employees/index.ts": [
+        "../src/models/employee/types.ts"
       ],
       "../src/repositories/basicrepository.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts"
@@ -4809,12 +4863,6 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../../node_modules/@types/faker/index.d.ts": [
-        "../../../node_modules/@types/node/fs.d.ts",
-        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../../../node_modules/@types/node/util.d.ts",
-        "../../../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../../../node_modules/@types/eslint-visitor-keys/index.d.ts": [
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4834,6 +4882,12 @@
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../../../node_modules/@types/keygrip/index.d.ts": [
+        "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../../node_modules/@types/node/util.d.ts",
+        "../../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../../../node_modules/@types/faker/index.d.ts": [
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5085,6 +5139,10 @@
       "../../../node_modules/mongo-seeding/dist/helpers/index.d.ts",
       "../../../node_modules/mongo-seeding/dist/index.d.ts",
       "../src/seeders/index.ts",
+      "../src/seeders/seeds/1_employees/index.ts",
+      "../../../node_modules/@types/faker/index.d.ts",
+      "../src/seeders/seeds/2_users/index.ts",
+      "../src/seeders/seeds/3_images/index.ts",
       "../../../node_modules/@types/accepts/index.d.ts",
       "../../../node_modules/@types/connect/index.d.ts",
       "../../../node_modules/@types/body-parser/index.d.ts",
@@ -5098,7 +5156,6 @@
       "../../../node_modules/@types/cors/index.d.ts",
       "../../../node_modules/@types/eslint-visitor-keys/index.d.ts",
       "../../../node_modules/@types/express-session/index.d.ts",
-      "../../../node_modules/@types/faker/index.d.ts",
       "../../../node_modules/@types/fs-capacitor/index.d.ts",
       "../../../node_modules/graphql/version.d.ts",
       "../../../node_modules/graphql/tsutils/maybe.d.ts",
