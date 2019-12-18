@@ -510,7 +510,7 @@
         "signature": "96daac8384e470a73a2fd04762692e3b430c907728d3d4fb435be0f4c525058f"
       },
       "../src/seeders/index.ts": {
-        "version": "0e61ed69d4528ac77ac5d70c1098b614f852e95b2f90a61963b0e3aae3908e57",
+        "version": "357f0946a0276eeef8346c810049b7276061ed8054e171f7c15605ff80c87e8f",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "../src/seeders/seeds/1_employees/index.ts": {

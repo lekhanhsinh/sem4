@@ -12,9 +12,7 @@ const seeder = new Seeder(
 );
 const collectionReadingOptions = {
     extensions: ["js", "json"],
-    transformers: [
-        Seeder.Transformers.replaceDocumentIdWithUnderscoreId,
-    ]
+    transformers: []
 };
 const collections = seeder.readCollectionsFromPath(
     path.resolve(__dirname, "seeds"),

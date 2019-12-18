@@ -13,9 +13,7 @@ var seeder = new mongo_seeding_1.Seeder({
 });
 var collectionReadingOptions = {
     extensions: ["js", "json"],
-    transformers: [
-        mongo_seeding_1.Seeder.Transformers.replaceDocumentIdWithUnderscoreId,
-    ]
+    transformers: []
 };
 var collections = seeder.readCollectionsFromPath(path_1.default.resolve(__dirname, "seeds"), collectionReadingOptions);
 seeder
