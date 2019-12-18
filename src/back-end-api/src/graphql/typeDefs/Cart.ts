@@ -18,12 +18,14 @@ const CartTypeDefs = gql`
     type ItemType {
         quantity: Int
         size: String
+        material: String
         image: ImageType
         totalPrice: Float
     }
 
     input ItemlInputType {
         quantity: Int!
+        material: String
         size: String!
         image: String!
     }

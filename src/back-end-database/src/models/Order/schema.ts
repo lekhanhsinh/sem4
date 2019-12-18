@@ -12,6 +12,7 @@ const schema = new mongoose.Schema({
     items: [{
         quantity: Number,
         size: String,
+        material: String,
         image: {
             type: mongoose.Types.ObjectId,
             ref: "Image"

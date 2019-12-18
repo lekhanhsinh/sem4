@@ -40,6 +40,7 @@ const cartResolvers: IResolvers = {
                         tempItems.push({
                             image,
                             size: item.size,
+                            material: item.material,
                             quantity: item.quantity,
                             totalPrice: price
                         });

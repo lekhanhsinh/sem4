@@ -55,6 +55,7 @@ var cartResolvers = {
                         tempItems.push({
                             image: image,
                             size: item.size,
+                            material: item.material,
                             quantity: item.quantity,
                             totalPrice: price
                         });

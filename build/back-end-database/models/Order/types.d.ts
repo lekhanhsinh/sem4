@@ -9,6 +9,7 @@ export declare type Order = {
     items: [{
         quantity: number;
         size: string;
+        material: string;
         image: Image;
         totalPrice: number;
     }];

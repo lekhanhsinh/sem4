@@ -15,6 +15,7 @@ var schema = new mongoose_1.default.Schema({
     items: [{
             quantity: Number,
             size: String,
+            material: String,
             image: {
                 type: mongoose_1.default.Types.ObjectId,
                 ref: "Image"

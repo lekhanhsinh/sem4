@@ -1470,7 +1470,7 @@
         "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
       },
       "../src/graphql/typedefs/cart.ts": {
-        "version": "4a9354ce7aa1d6f54217cc7392093c7054cd8471529b7b36c293ef2afc72890d",
+        "version": "597ce599aecae31f90639e6a653d02915e6e7b263434d21ee30987816d6c4ec1",
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {
@@ -1518,8 +1518,8 @@
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
       "../../back-end-database/build/models/order/types.d.ts": {
-        "version": "0bd4e801f4b0d7f6a9bbebd836e787e424f42620550b3214b056ad17e8e104f7",
-        "signature": "0bd4e801f4b0d7f6a9bbebd836e787e424f42620550b3214b056ad17e8e104f7"
+        "version": "ad4870ffa497e4b8f291da3300778fa1b8c039d64aa07760338de948a5f47bd6",
+        "signature": "ad4870ffa497e4b8f291da3300778fa1b8c039d64aa07760338de948a5f47bd6"
       },
       "../../back-end-database/build/models/order/index.d.ts": {
         "version": "e3fefdb21b945ac2bea21afb9587bcd34f5e19fa9d26c54a4ee5957826e0c6f8",
@@ -1578,7 +1578,7 @@
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {
-        "version": "3a8b4ae8147c2306445b3c5494f6dc1efe9d1cf267447ed4c4c1435409ce38fe",
+        "version": "6bfe4879967845a6ef7008ebaff508db0c96dd02180db24a0e64990608abe08b",
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {

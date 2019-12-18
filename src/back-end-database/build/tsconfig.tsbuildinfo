@@ -402,11 +402,11 @@
         "signature": "0f637055c354b404f1f4f02fc666ce9286b31b647f317bb8656d57b68456d1a4"
       },
       "../src/models/order/types.ts": {
-        "version": "4bba1fbee181c9d660a390c0f8bc00594d2a6c1c59c096464e64d10bc9e80435",
-        "signature": "0bd4e801f4b0d7f6a9bbebd836e787e424f42620550b3214b056ad17e8e104f7"
+        "version": "11fb0195d54147120777c1ca45d45cb7ac55e450162caa00cccdd80b02dfd207",
+        "signature": "ad4870ffa497e4b8f291da3300778fa1b8c039d64aa07760338de948a5f47bd6"
       },
       "../src/models/order/schema.ts": {
-        "version": "3a91d2c04ebf3333d1157d4616a26d6981fbca61f5445e4224cb9e2fe0ddc714",
+        "version": "3d139813a61e17a81d73774e004e7979142a9d1abdb96f8b45f2eff4239870c5",
         "signature": "ca307e0e4371a98b2c73edc5ec149d58fea13a9c11242d417d8b4cb24c29134e"
       },
       "../src/models/order/middlewares.ts": {
