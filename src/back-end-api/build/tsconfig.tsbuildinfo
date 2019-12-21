@@ -1470,7 +1470,7 @@
         "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
       },
       "../src/graphql/typedefs/cart.ts": {
-        "version": "597ce599aecae31f90639e6a653d02915e6e7b263434d21ee30987816d6c4ec1",
+        "version": "7b8f18e61f10a2a67d979813244e15dd6206840c88ce3e743afe4e28d61e6b8a",
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {

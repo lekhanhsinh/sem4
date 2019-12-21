@@ -7,7 +7,7 @@ const CartTypeDefs = gql`
     }
 
     extend type Mutation {
-        updateCart(items: [ItemlInputType]!): CartType
+        updateCart(items: [ItemInputType]!): CartType
     }
 
     type CartType {
@@ -23,7 +23,7 @@ const CartTypeDefs = gql`
         totalPrice: Float
     }
 
-    input ItemlInputType {
+    input ItemInputType {
         quantity: Int!
         material: String
         size: String!
