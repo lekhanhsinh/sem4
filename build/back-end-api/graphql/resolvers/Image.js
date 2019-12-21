@@ -40,7 +40,7 @@ var imageResolvers = {
             var id = args.id, detail = args.detail;
             var req = context.req;
             var _a = req.session, user = _a.user, employee = _a.employee;
-            if (!user || !user.logged && !employee || !employee.logged) {
+            if (!user && !employee || user && !user.logged || employee && !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.updateWithValidate(id, detail);
@@ -49,7 +49,7 @@ var imageResolvers = {
             var id = args.id;
             var req = context.req;
             var _a = req.session, user = _a.user, employee = _a.employee;
-            if (!user || !user.logged && !employee || !employee.logged) {
+            if (!user && !employee || user && !user.logged || employee && !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.delete(id).then(function (image) {

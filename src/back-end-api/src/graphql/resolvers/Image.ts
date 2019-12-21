@@ -42,7 +42,7 @@ const imageResolvers: IResolvers = {
             const { id, detail } = args;
             const { req } = context;
             const { user, employee } = req.session;
-            if (!user || !user.logged && !employee || !employee.logged) {
+            if (!user && !employee || user && !user.logged || employee && !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.updateWithValidate(id, detail);
@@ -51,7 +51,7 @@ const imageResolvers: IResolvers = {
             const { id } = args;
             const { req } = context;
             const { user, employee } = req.session;
-            if (!user || !user.logged && !employee || !employee.logged) {
+            if (!user && !employee || user && !user.logged || employee && !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.delete(id).then(image => {
