@@ -31,11 +31,15 @@ const orderResolvers: IResolvers = {
         createOrder: (obj, args, context, info): Promise<OrderDocument> => {
             const { creditCardNumber, detail } = args;
             const { req } = context;
-            const { user, cart } = req.session;
+            const { user } = req.session;
+            let { cart } = user;
             if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.orderRepository.create({ creditCardNumber, user: user.id, email: user.email, ...cart, ...detail });
+            return Repositories.orderRepository.create({ creditCardNumber, user: user.id, email: user.email, ...cart, ...detail }).then(order => {
+                cart = { items: [], totalPrice: 0 };
+                return order;
+            });
         },
         updateOrder: (obj, args, context, info): Promise<OrderDocument> => {
             const { id, detail } = args;

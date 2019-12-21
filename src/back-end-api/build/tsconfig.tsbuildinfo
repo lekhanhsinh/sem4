@@ -1582,7 +1582,7 @@
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {
-        "version": "ea614127e877f415220494bce4641790f76bce467df04a2d6dc20e4e7cb41769",
+        "version": "441d48618a2e85a609e681a499c21c2035451a9d6d1c65fcc2785d0599e9c36f",
         "signature": "e6134f172d086ac9973db76251ab6a62294690115b4fbadfe4d6d203e6481959"
       },
       "../src/graphql/resolvers/index.ts": {

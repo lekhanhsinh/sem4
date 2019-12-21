@@ -40,11 +40,15 @@ var orderResolvers = {
         createOrder: function (obj, args, context, info) {
             var creditCardNumber = args.creditCardNumber, detail = args.detail;
             var req = context.req;
-            var _a = req.session, user = _a.user, cart = _a.cart;
+            var user = req.session.user;
+            var cart = user.cart;
             if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({ creditCardNumber: creditCardNumber, user: user.id, email: user.email }, cart), detail));
+            return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({ creditCardNumber: creditCardNumber, user: user.id, email: user.email }, cart), detail)).then(function (order) {
+                cart = { items: [], totalPrice: 0 };
+                return order;
+            });
         },
         updateOrder: function (obj, args, context, info) {
             var id = args.id, detail = args.detail;
