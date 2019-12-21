@@ -23,14 +23,14 @@
         "module-alias": "^2.2.2",
         "vhost-ts": "^4.0.0",
         "winston": "^3.2.1",
+        "apollo-server-express": "^2.9.13",
+        "graphql-scalars": "^1.0.4",
         "@hapi/joi": "^16.1.8",
         "bcryptjs": "^2.4.3",
         "mime-types": "^2.1.25",
         "mongo-seeding": "^3.4.0-alpha.1",
         "mongoose": "^5.7.13",
-        "stripe": "^7.14.0",
-        "apollo-server-express": "^2.9.13",
-        "graphql-scalars": "^1.0.4"
+        "stripe": "^7.14.0"
     },
     "devDependencies": {
         "faker": "^4.1.0"

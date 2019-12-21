@@ -87,7 +87,7 @@ var UserRepository = (function (_super) {
         };
         _this.updatePassword = function (id, password, newPassword, repeatPassword) {
             var UpdatePasswordModel = joi_1.default.object({
-                newPassword: joi_1.default.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+                newPassword: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
                 repeatPassword: joi_1.default.ref("newPassword")
             });
             return UpdatePasswordModel.validateAsync({

@@ -82,7 +82,7 @@ export class UserRepository extends BasicRepository<UserDocument> {
         repeatPassword: string
     ): Promise<UserDocument> => {
         const UpdatePasswordModel = Joi.object({
-            newPassword: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+            newPassword: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/).required(),
             repeatPassword: Joi.ref("newPassword")
         });
         return UpdatePasswordModel.validateAsync({
