@@ -24,7 +24,7 @@ const cartResolvers: IResolvers = {
             if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            let { cart }: { cart: { items: any[]; totalPrice: number } } = user;
+            const { cart }: { cart: { items: any[]; totalPrice: number } } = user;
 
             const imageIds = items.map(i => i.image);
 
@@ -47,7 +47,7 @@ const cartResolvers: IResolvers = {
                         totalPrice += price;
                     }
                 }
-                cart = {
+                user.cart = {
                     items: tempItems,
                     totalPrice
                 };

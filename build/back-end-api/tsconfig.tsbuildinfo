@@ -1578,7 +1578,7 @@
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {
-        "version": "d25309560177eb6e2e5411421454add7b4360509c1a372687753344fd63753a0",
+        "version": "aba87a9b76554737c9c595701c96fbe757ef6a0e380c294bd3b59a75b6a03611",
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {

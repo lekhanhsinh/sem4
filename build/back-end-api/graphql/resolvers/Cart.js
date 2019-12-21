@@ -72,7 +72,7 @@ var cartResolvers = {
                     }
                     finally { if (e_1) throw e_1.error; }
                 }
-                cart = {
+                user.cart = {
                     items: tempItems,
                     totalPrice: totalPrice
                 };
