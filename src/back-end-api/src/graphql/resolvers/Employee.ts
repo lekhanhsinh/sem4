@@ -8,7 +8,7 @@ const employeeResolvers: IResolvers = {
         getSelfEmployee: (obj, args, context, info): Promise<EmployeeDocument | null> => {
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.employeeRepository.getOnebyId(employee.id);
@@ -27,7 +27,7 @@ const employeeResolvers: IResolvers = {
             const { detail } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.employeeRepository.updateDetail(employee.id, detail);
@@ -36,7 +36,7 @@ const employeeResolvers: IResolvers = {
             const { password, newPassword, repeatPassword } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.employeeRepository.updatePassword(employee.id, password, newPassword, repeatPassword);
@@ -49,7 +49,7 @@ const employeeResolvers: IResolvers = {
             const { id, detail } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.employeeRepository.update(id, detail);
@@ -58,7 +58,7 @@ const employeeResolvers: IResolvers = {
             const { id } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.employeeRepository.delete(id).then(employee => {

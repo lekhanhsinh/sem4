@@ -6,7 +6,7 @@ var userResolvers = {
         getSelf: function (obj, args, context, info) {
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.getOnebyId(user.id);
@@ -25,7 +25,7 @@ var userResolvers = {
             var detail = args.detail;
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.updateDetail(user.id, detail);
@@ -34,7 +34,7 @@ var userResolvers = {
             var password = args.password, newPassword = args.newPassword, repeatPassword = args.repeatPassword;
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.updatePassword(user.id, password, newPassword, repeatPassword);
@@ -47,7 +47,7 @@ var userResolvers = {
             var id = args.id, detail = args.detail;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.updateDetail(id, detail).then(function (user) {
@@ -61,7 +61,7 @@ var userResolvers = {
             var id = args.id;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.userRepository.delete(id).then(function (user) {

@@ -15,10 +15,16 @@ var authEmployeeResolvers = {
                     if (!isMatch) {
                         throw new Error("Access Denied.");
                     }
-                    req.session.employee = {
-                        id: employee.id,
-                        email: employee.email
-                    };
+                    if (req.session.employee) {
+                        req.session.employee.logged = true;
+                    }
+                    else {
+                        req.session.employee = {
+                            id: employee.id,
+                            email: employee.email,
+                            logged: true
+                        };
+                    }
                     return employee;
                 });
             });
@@ -26,10 +32,10 @@ var authEmployeeResolvers = {
         logoutEmployee: function (obj, args, context, info) {
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
-            req.session.employee = undefined;
+            employee.logged = false;
             return Promise.resolve("LOGGED OUT");
         },
     },

@@ -11,7 +11,7 @@ var imageResolvers = {
             var sort = args.sort, searchs = args.searchs;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.getMany();
@@ -20,7 +20,7 @@ var imageResolvers = {
             var _a = args;
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.getManybyUserId(user.id);
@@ -31,7 +31,7 @@ var imageResolvers = {
             var detail = args.detail;
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.createWithValidate(user.id, detail);
@@ -40,7 +40,7 @@ var imageResolvers = {
             var id = args.id, detail = args.detail;
             var req = context.req;
             var _a = req.session, user = _a.user, employee = _a.employee;
-            if (!user && !employee) {
+            if (!user || !user.logged && !employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.updateWithValidate(id, detail);
@@ -49,7 +49,7 @@ var imageResolvers = {
             var id = args.id;
             var req = context.req;
             var _a = req.session, user = _a.user, employee = _a.employee;
-            if (!user && !employee) {
+            if (!user || !user.logged && !employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.imageRepository.delete(id).then(function (image) {

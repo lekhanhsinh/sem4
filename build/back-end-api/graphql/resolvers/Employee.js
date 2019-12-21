@@ -6,7 +6,7 @@ var employeeResolvers = {
         getSelfEmployee: function (obj, args, context, info) {
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.employeeRepository.getOnebyId(employee.id);
@@ -25,7 +25,7 @@ var employeeResolvers = {
             var detail = args.detail;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.employeeRepository.updateDetail(employee.id, detail);
@@ -34,7 +34,7 @@ var employeeResolvers = {
             var password = args.password, newPassword = args.newPassword, repeatPassword = args.repeatPassword;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.employeeRepository.updatePassword(employee.id, password, newPassword, repeatPassword);
@@ -47,7 +47,7 @@ var employeeResolvers = {
             var id = args.id, detail = args.detail;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.employeeRepository.update(id, detail);
@@ -56,7 +56,7 @@ var employeeResolvers = {
             var id = args.id;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.employeeRepository.delete(id).then(function (employee) {

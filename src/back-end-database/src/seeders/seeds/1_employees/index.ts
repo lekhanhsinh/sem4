@@ -9,17 +9,17 @@ const hash = bcrypt.hashSync("St@r1234", salt);
 const _id = mongoose.Types.ObjectId();
 const admin: Employee & {
   _id: any;
-  createdAt: number;
-  updatedAt: number;
+  createdAt: Date;
+  updatedAt: Date;
 } = {
   _id,
-  id: _id + "",
+  id: (undefined as any),
   email: "admin@gmail.com",
   password: hash,
   name: "Admin",
   role: "Admin",
-  createdAt: Date.now(),
-  updatedAt: Date.now(),
+  createdAt: new Date(Date.now()),
+  updatedAt: new Date(Date.now()),
 };
 
 employees.push(admin);

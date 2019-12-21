@@ -13,7 +13,7 @@ const imageResolvers: IResolvers = {
             const { sort, searchs } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.getMany();
@@ -22,7 +22,7 @@ const imageResolvers: IResolvers = {
             const { } = args;
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.getManybyUserId(user.id);
@@ -33,7 +33,7 @@ const imageResolvers: IResolvers = {
             const { detail } = args;
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.createWithValidate(user.id, detail);
@@ -42,7 +42,7 @@ const imageResolvers: IResolvers = {
             const { id, detail } = args;
             const { req } = context;
             const { user, employee } = req.session;
-            if (!user && !employee) {
+            if (!user || !user.logged && !employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.updateWithValidate(id, detail);
@@ -51,7 +51,7 @@ const imageResolvers: IResolvers = {
             const { id } = args;
             const { req } = context;
             const { user, employee } = req.session;
-            if (!user && !employee) {
+            if (!user || !user.logged && !employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.imageRepository.delete(id).then(image => {

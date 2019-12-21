@@ -14,16 +14,16 @@ if (secrets_1.ENVIRONMENT === "development") {
         var userId = mongoose_1.default.Types.ObjectId();
         users.push({
             _id: userId,
-            id: userId + "",
-            email: faker_1.default.internet.email(),
+            id: undefined,
+            email: faker_1.default.internet.email().toLowerCase(),
             password: hash,
             name: faker_1.default.name.firstName(),
             gender: faker_1.default.random.arrayElement(["MALE", "FEMALE"]),
             address: faker_1.default.address.streetAddress(true),
             dateOfBirth: faker_1.default.date.past(),
             phoneNumber: faker_1.default.phone.phoneNumber(),
-            createdAt: Date.now(),
-            updatedAt: Date.now(),
+            createdAt: new Date(Date.now()),
+            updatedAt: new Date(Date.now()),
         });
     }
 }

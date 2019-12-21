@@ -514,7 +514,7 @@
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "../src/seeders/seeds/1_employees/index.ts": {
-        "version": "b3207053a59bf47f14f3bf2f421a1f65424a90cce30e1b068dac49ea2cf09b5f",
+        "version": "2ed95216c9a26691a1aa30171c1ce657fa403486d4d5c706f820621449729792",
         "signature": "59293218613eb6017242d5e215bd7c10dae34714274be8547a178657e6eff254"
       },
       "../../../node_modules/@types/faker/index.d.ts": {
@@ -522,12 +522,12 @@
         "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
       },
       "../src/seeders/seeds/2_users/index.ts": {
-        "version": "b08ab2411bafa2d1b2ce81446c109919f1d5741099a18d708d31d58d35ee883c",
-        "signature": "1f3f9b37b04125b14c08220494d0b4c60bc09293f7a47565dd549eca3b53f8c8"
+        "version": "c66667634783ab02e52779b87d61af3b67cfe90478a132fac2b8d965a3407968",
+        "signature": "dfa442bc97bfe3a18152b2e7447236225c6fa09d369a6043ab93f2ad131d1bf3"
       },
       "../src/seeders/seeds/3_images/index.ts": {
-        "version": "9961b7e46f0ce1786c0cfb730d08af872958bf6a7a63f1828b9bc3bf945a6d61",
-        "signature": "ff68c5fca2c08c1a88bae0c8d9fb789c206e1cb198e54841f56ee3a4baa7c515"
+        "version": "ceeaa6e42a4e4d837f25c63d003f5cbdd0e920f605b23bd004f5bc5c6f765150",
+        "signature": "1c916c8c2352fa0e136c46212f116c2099d1b4b249f330b12df60a83bb9951b3"
       },
       "../../../node_modules/@types/accepts/index.d.ts": {
         "version": "6738101ae8e56cd3879ab3f99630ada7d78097fc9fd334df7e766216778ca219",

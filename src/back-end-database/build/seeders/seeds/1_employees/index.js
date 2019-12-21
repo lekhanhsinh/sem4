@@ -10,13 +10,13 @@ var hash = bcryptjs_1.default.hashSync("St@r1234", salt);
 var _id = mongoose_1.default.Types.ObjectId();
 var admin = {
     _id: _id,
-    id: _id + "",
+    id: undefined,
     email: "admin@gmail.com",
     password: hash,
     name: "Admin",
     role: "Admin",
-    createdAt: Date.now(),
-    updatedAt: Date.now(),
+    createdAt: new Date(Date.now()),
+    updatedAt: new Date(Date.now()),
 };
 employees.push(admin);
 module.exports = employees;

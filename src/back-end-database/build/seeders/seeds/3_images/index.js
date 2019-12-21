@@ -16,13 +16,13 @@ if (secrets_1.ENVIRONMENT === "development") {
         var fileName = faker_1.default.random.arrayElement(fileNames);
         images.push({
             _id: imageId,
-            id: imageId + "",
+            id: undefined,
             user: faker_1.default.random.arrayElement(_2_users_1.default)._id,
             name: fileName,
             path: fileName,
             description: faker_1.default.lorem.lines(2),
-            createdAt: Date.now(),
-            updatedAt: Date.now(),
+            createdAt: new Date(Date.now()),
+            updatedAt: new Date(Date.now()),
         });
     }
 }

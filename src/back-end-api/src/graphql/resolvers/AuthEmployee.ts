@@ -17,10 +17,15 @@ const authEmployeeResolvers: IResolvers = {
                         if (!isMatch) {
                             throw new Error("Access Denied.");
                         }
-                        req.session.employee = {
-                            id: employee.id,
-                            email: employee.email
-                        };
+                        if (req.session.employee) {
+                            req.session.employee.logged = true;
+                        } else {
+                            req.session.employee = {
+                                id: employee.id,
+                                email: employee.email,
+                                logged: true
+                            };
+                        }
                         return employee;
                     });
                 });
@@ -28,10 +33,10 @@ const authEmployeeResolvers: IResolvers = {
         logoutEmployee: (obj, args, context, info): Promise<string> => {
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
-            req.session.employee = undefined;
+            employee.logged = false;
             return Promise.resolve("LOGGED OUT");
         },
     },

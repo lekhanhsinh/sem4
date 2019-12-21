@@ -10,8 +10,8 @@ const hash = bcrypt.hashSync("St@r1234", salt);
 
 const users: (User & {
   _id: any;
-  createdAt: number;
-  updatedAt: number;
+  createdAt: Date;
+  updatedAt: Date;
 })[] = [];
 
 if (ENVIRONMENT === "development") {
@@ -20,16 +20,16 @@ if (ENVIRONMENT === "development") {
     users.push(
       {
         _id: userId,
-        id: userId + "",
-        email: faker.internet.email(),
+        id: (undefined as any),
+        email: faker.internet.email().toLowerCase(),
         password: hash,
         name: faker.name.firstName(),
         gender: faker.random.arrayElement(["MALE", "FEMALE"]),
         address: faker.address.streetAddress(true),
         dateOfBirth: faker.date.past(),
         phoneNumber: faker.phone.phoneNumber(),
-        createdAt: Date.now(),
-        updatedAt: Date.now(),
+        createdAt: new Date(Date.now()),
+        updatedAt: new Date(Date.now()),
       }
     );
   }

@@ -1558,31 +1558,31 @@
         "signature": "93bf9c4b992568119d78b97ecc90ce0f68a54c5b73f4c72b8bd312a0842b6357"
       },
       "../src/graphql/resolvers/user.ts": {
-        "version": "d993bf72e1d53d04f0e3b2c857d7a4cfcd624c7985a4b91abc1cfb9e62a1acbf",
+        "version": "ea1d85242250214c57c3e04151fa4cb68873bad5e67aa9e1f86a513829c90aaf",
         "signature": "bf61ab9f3e6d24f925c61df80c05b62f6fd1f3d5371a1d0494d75e416690c14d"
       },
       "../src/graphql/resolvers/auth.ts": {
-        "version": "e4df8bc8029f9b306b4bc808a4977c60de4344373d3e20ebcc23dc096808bf20",
+        "version": "535fb01c377cce238545ed94ed2d625ed0c006bfdee001fd7f6cbaf2adf7f26b",
         "signature": "aa525056aa912f024a9e3f993e60612ea276b22f2cc4ee6cb17eeecc6daf4e3b"
       },
       "../src/graphql/resolvers/employee.ts": {
-        "version": "720c1922c7434f714da4eaccaa45a60b2b7a4bc791567a02a45ca5445be906b5",
+        "version": "987ebe8673b0ddde665a969cbe8ef2525f555052e7c221113ff3f7ef0e3bce3b",
         "signature": "d2ecd194cfe7ad2e1d8bbdf8bf5ccd9ad10e3ac2502e8291a1398aa44ea9272e"
       },
       "../src/graphql/resolvers/authemployee.ts": {
-        "version": "de2f0de026e504d4d815e0f4a0c417a4d250accc5371170bcdbbe266db4bc740",
+        "version": "8e5a202a0392a21b293ded0035ebed88fb24a246f60609a915d859d2e89ef45f",
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
       "../src/graphql/resolvers/image.ts": {
-        "version": "2d774697a96f339dab41ee43ef77a2583c218f0cf04cf33ecf8106a9e1f7ac74",
+        "version": "87fb77e68013a2fb7634859bd694924a3c87aebd0baa2915d4ee38a2891c724e",
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {
-        "version": "6bfe4879967845a6ef7008ebaff508db0c96dd02180db24a0e64990608abe08b",
+        "version": "d25309560177eb6e2e5411421454add7b4360509c1a372687753344fd63753a0",
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {
-        "version": "325132dcfd8474e165307478fb79f93c7297ba94b4f000f31c11b1439d6b2ead",
+        "version": "ea614127e877f415220494bce4641790f76bce467df04a2d6dc20e4e7cb41769",
         "signature": "e6134f172d086ac9973db76251ab6a62294690115b4fbadfe4d6d203e6481959"
       },
       "../src/graphql/resolvers/index.ts": {

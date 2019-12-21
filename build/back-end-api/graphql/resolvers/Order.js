@@ -17,7 +17,7 @@ var orderResolvers = {
         getSelfOrders: function (obj, args, context, info) {
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.orderRepository.getManybyUserId(user.id);
@@ -30,7 +30,7 @@ var orderResolvers = {
             var sort = args.sort, searchs = args.searchs;
             var req = context.req;
             var employee = req.session.employee;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.orderRepository.getMany(searchs, sort);
@@ -41,7 +41,7 @@ var orderResolvers = {
             var creditCardNumber = args.creditCardNumber, detail = args.detail;
             var req = context.req;
             var _a = req.session, user = _a.user, cart = _a.cart;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({ creditCardNumber: creditCardNumber, user: user.id, email: user.email }, cart), detail));

@@ -17,10 +17,10 @@ var cartResolvers = {
         getCart: function (obj, args, context, info) {
             var req = context.req;
             var user = req.session.user;
-            var cart = req.session.cart;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
+            var cart = user.cart;
             if (!cart) {
                 cart = { items: [], totalPrice: 0 };
             }
@@ -32,13 +32,10 @@ var cartResolvers = {
             var items = args.items;
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            var cart = req.session.cart;
-            if (!cart) {
-                cart = { items: [], totalPrice: 0 };
-            }
+            var cart = user.cart;
             var imageIds = items.map(function (i) { return i.image; });
             return _back_end_database_1.Repositories.imageRepository.check(imageIds).then(function (images) {
                 var e_1, _a;

@@ -7,10 +7,11 @@ const cartResolvers: IResolvers = {
         getCart: (obj, args, context, info): Promise<any> => {
             const { req } = context;
             const { user } = req.session;
-            let { cart } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
+
+            let { cart } = user;
             if (!cart) { cart = { items: [], totalPrice: 0 }; }
             return cart;
         }
@@ -20,11 +21,10 @@ const cartResolvers: IResolvers = {
             const { items }: { items: any[] } = args;
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            let { cart }: { cart: { items: any[]; totalPrice: number } } = req.session;
-            if (!cart) { cart = { items: [], totalPrice: 0 }; }
+            let { cart }: { cart: { items: any[]; totalPrice: number } } = user;
 
             const imageIds = items.map(i => i.image);
 

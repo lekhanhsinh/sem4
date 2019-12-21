@@ -8,7 +8,7 @@ const orderResolvers: IResolvers = {
         getSelfOrders: (obj, args, context, info): Promise<OrderDocument[]> => {
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.orderRepository.getManybyUserId(user.id);
@@ -21,7 +21,7 @@ const orderResolvers: IResolvers = {
             const { sort, searchs } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.orderRepository.getMany(searchs, sort);
@@ -32,7 +32,7 @@ const orderResolvers: IResolvers = {
             const { creditCardNumber, detail } = args;
             const { req } = context;
             const { user, cart } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.orderRepository.create({ creditCardNumber, user: user.id, email: user.email, ...cart, ...detail });

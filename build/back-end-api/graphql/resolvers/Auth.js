@@ -15,11 +15,17 @@ var authResolvers = {
                     if (!isMatch) {
                         throw new Error("Access Denied.");
                     }
-                    req.session.cart = undefined;
-                    req.session.user = {
-                        id: user.id,
-                        email: user.email
-                    };
+                    if (req.session.user) {
+                        req.session.user.logged = true;
+                    }
+                    else {
+                        req.session.user = {
+                            id: user.id,
+                            email: user.email,
+                            cart: { items: [], totalPrice: 0 },
+                            logged: true
+                        };
+                    }
                     return user;
                 });
             });
@@ -27,11 +33,10 @@ var authResolvers = {
         logout: function (obj, args, context, info) {
             var req = context.req;
             var user = req.session.user;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            req.session.user = undefined;
-            req.session.cart = undefined;
+            user.logged = false;
             return Promise.resolve("LOGGED OUT");
         },
     },

@@ -8,7 +8,7 @@ const userResolvers: IResolvers = {
         getSelf: (obj, args, context, info): Promise<UserDocument | null> => {
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.getOnebyId(user.id);
@@ -27,7 +27,7 @@ const userResolvers: IResolvers = {
             const { detail } = args;
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.updateDetail(user.id, detail);
@@ -36,7 +36,7 @@ const userResolvers: IResolvers = {
             const { password, newPassword, repeatPassword } = args;
             const { req } = context;
             const { user } = req.session;
-            if (!user) {
+            if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.updatePassword(user.id, password, newPassword, repeatPassword);
@@ -49,7 +49,7 @@ const userResolvers: IResolvers = {
             const { id, detail } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.updateDetail(id, detail).then(user => {
@@ -61,7 +61,7 @@ const userResolvers: IResolvers = {
             const { id } = args;
             const { req } = context;
             const { employee } = req.session;
-            if (!employee) {
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.userRepository.delete(id).then(user => {
