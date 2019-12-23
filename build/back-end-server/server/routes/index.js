@@ -7,6 +7,6 @@ var web_1 = __importDefault(require("./web"));
 var admin_1 = __importDefault(require("./admin"));
 var routing = function (app) {
     app.use("/", web_1.default);
-    app.use("/admin", admin_1.default);
+    app.use("/", admin_1.default);
 };
 exports.default = routing;

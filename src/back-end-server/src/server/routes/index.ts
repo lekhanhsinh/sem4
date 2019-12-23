@@ -6,7 +6,7 @@ import admin from "./admin";
 
 const routing = (app: Express): void => {
     app.use("/", web);
-    app.use("/admin", admin);
+    app.use("/", admin);
 };
 
 export default routing;

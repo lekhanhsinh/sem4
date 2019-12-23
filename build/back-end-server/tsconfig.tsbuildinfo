@@ -1314,7 +1314,7 @@
         "signature": "0747134fc57c8e4a12d6144952ae1f47f54848f1ca110e997bd81ec1cc7b76e6"
       },
       "../src/server/routes/index.ts": {
-        "version": "fe78afcf4d119cfa941e67e68de3923795d70d31a57b2053c61b07a68a0da4d5",
+        "version": "79c0ce58d6e8166fa4c9d85674803dcdcf913bc9b5d020f2c20bee42cfbdf547",
         "signature": "85d15d8b204d7f20f2372d38c081aff9a05da73a65aae6c1ccd6229965db3ccd"
       },
       "../src/server/statics/index.ts": {
