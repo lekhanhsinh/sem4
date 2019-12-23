@@ -73,7 +73,7 @@ class EditableCell extends React.Component<any, any> {
         <div ref={node => (this.input = node)}>
           <img
             style={{ width: "100px", height: "100px" }}
-            src={`images/${record["path"]}`}
+            src={`public/images/${record["path"]}`}
           ></img>
         </div>
       );
