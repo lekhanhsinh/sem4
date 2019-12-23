@@ -1,6 +1,7 @@
 import { IResolvers } from "graphql-tools";
 
 import { Repositories } from "@back-end-database";
+import { ImageDocument } from "../../../../back-end-database/src/models/Image/types";
 
 const cartResolvers: IResolvers = {
     Query: {
@@ -13,7 +14,26 @@ const cartResolvers: IResolvers = {
 
             let { cart } = user;
             if (!cart) { cart = { items: [], totalPrice: 0 }; }
-            return cart;
+            const promises = [];
+            const temp = {
+                items: [] as ImageDocument[],
+                totalPrice: cart.totalPrice
+            };
+            for (const item of cart.items) {
+                const promise = Repositories.imageRepository.getOnebyId(item.image).then(image => {
+                    if (!image) throw new Error("Error.");
+                    temp.items.push(
+                        {
+                            ...item,
+                            image,
+                        }
+                    );
+                });
+                promises.push(promise);
+            }
+            return Promise.all(promises).then(() => {
+                return temp;
+            });
         }
     },
     Mutation: {

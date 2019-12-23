@@ -1493,7 +1493,7 @@
         "version": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d",
         "signature": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d"
       },
-      "../../back-end-database/build/models/user/types.d.ts": {
+      "../../back-end-database/src/models/user/types.ts": {
         "version": "99e4133aaa233e31cee82c5e051913aa4db4df76971b34619cfe7f2d5f0433f7",
         "signature": "99e4133aaa233e31cee82c5e051913aa4db4df76971b34619cfe7f2d5f0433f7"
       },
@@ -1509,7 +1509,7 @@
         "version": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4",
         "signature": "ae55a9faa4ef24b05f3402775540c9f79064f7b8da88f3ae2a7c47fa6ad8ecd4"
       },
-      "../../back-end-database/build/models/image/types.d.ts": {
+      "../../back-end-database/src/models/image/types.ts": {
         "version": "02531681d84ea43f738083ef7d35360155ab5ad7032107149270d42227131a58",
         "signature": "02531681d84ea43f738083ef7d35360155ab5ad7032107149270d42227131a58"
       },
@@ -1578,7 +1578,7 @@
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {
-        "version": "5cb356983c361d128b6090fdf08e0772d3afe4352dd1cbd85ae6e627e20183c9",
+        "version": "9455215cb7f34f99b01cd3e45de10ecbb7295e3da391a6176e3aa926fbdbbe60",
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {
@@ -4920,7 +4920,7 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../back-end-database/build/models/user/types.d.ts": [
+      "../../back-end-database/src/models/user/types.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4950,7 +4950,7 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../back-end-database/build/models/image/types.d.ts": [
+      "../../back-end-database/src/models/image/types.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
         "../../back-end-database/build/models/user/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
@@ -5099,6 +5099,7 @@
       "../src/graphql/resolvers/cart.ts": [
         "../../../node_modules/graphql-tools/dist/index.d.ts",
         "../../back-end-database/build/index.d.ts",
+        "../../back-end-database/build/models/image/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../../node_modules/@types/node/util.d.ts",
@@ -5883,7 +5884,7 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../back-end-database/build/models/image/types.d.ts": [
+      "../../back-end-database/src/models/image/types.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
         "../../back-end-database/build/models/user/types.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
@@ -5914,7 +5915,7 @@
         "../../../node_modules/@types/node/util.d.ts",
         "../../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../../back-end-database/build/models/user/types.d.ts": [
+      "../../back-end-database/src/models/user/types.ts": [
         "../../../node_modules/@types/mongoose/index.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
         "../../../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -9354,11 +9355,11 @@
       "../../../node_modules/@types/bson/index.d.ts",
       "../../../node_modules/@types/mongodb/index.d.ts",
       "../../../node_modules/@types/mongoose/index.d.ts",
-      "../../back-end-database/build/models/user/types.d.ts",
+      "../../back-end-database/src/models/user/types.ts",
       "../../back-end-database/build/models/user/index.d.ts",
       "../../back-end-database/build/models/employee/types.d.ts",
       "../../back-end-database/build/models/employee/index.d.ts",
-      "../../back-end-database/build/models/image/types.d.ts",
+      "../../back-end-database/src/models/image/types.ts",
       "../../back-end-database/build/models/image/index.d.ts",
       "../../back-end-database/build/models/order/types.d.ts",
       "../../back-end-database/build/models/order/index.d.ts",
