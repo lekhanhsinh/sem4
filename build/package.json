@@ -12,9 +12,22 @@
     "_moduleAliases": {
         "@back-end-api": "back-end-api",
         "@back-end-database": "back-end-database",
-        "@back-end-server": "back-end-server"
+        "@back-end-server": "back-end-server",
+        "@front-end-admin": "front-end-admin"
     },
     "dependencies": {
+        "antd": "^3.24.3",
+        "apollo-boost": "^0.4.4",
+        "apollo-client": "^2.6.4",
+        "apollo-link-context": "^1.0.19",
+        "libphonenumber-js": "^1.7.26",
+        "rc-queue-anim": "^1.8.2",
+        "react": "^16.9.0",
+        "react-cookie": "^4.0.1",
+        "react-cookies": "^0.1.1",
+        "react-dom": "^16.9.0",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.1.2",
         "apollo-server-express": "^2.9.13",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
@@ -33,6 +46,8 @@
         "stripe": "^7.14.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.6.2",
+        "babel-loader": "^8.0.6",
         "faker": "^4.1.0"
     }
 }

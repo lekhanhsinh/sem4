@@ -1,0 +1,27 @@
+.header {
+  background-color: blue;
+  padding: 0 20px;
+}
+
+.button-blog {
+  height: 100%;
+  width: 150px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.button-block {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-block-loggedin {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

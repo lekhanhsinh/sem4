@@ -1,0 +1,60 @@
+{
+  "name": "front-end-admin",
+  "version": "0.0.1",
+  "description": "> Front-end Admin for He be Dragon",
+  "author": "lekhanhsinhvn <38658239+lekhanhsinhvn@users.noreply.github.com>",
+  "homepage": "front-end-admin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lekhanhsinh/front-end-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lekhanhsinh/front-end-admin/issues"
+  },
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.7",
+    "@types/react": "16.9.3",
+    "@types/react-dom": "16.9.1",
+    "@types/react-router-dom": "^5.1.0",
+    "antd": "^3.24.3",
+    "apollo-boost": "^0.4.4",
+    "apollo-client": "^2.6.4",
+    "apollo-link-context": "^1.0.19",
+    "libphonenumber-js": "^1.7.26",
+    "rc-queue-anim": "^1.8.2",
+    "react": "^16.9.0",
+    "react-cookie": "^4.0.1",
+    "react-cookies": "^0.1.1",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.1.2",
+    "typescript": "3.6.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "babel-loader": "^8.0.6"
+  }
+}
