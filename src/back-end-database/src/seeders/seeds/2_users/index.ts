@@ -27,7 +27,7 @@ if (ENVIRONMENT === "development") {
         gender: faker.random.arrayElement(["MALE", "FEMALE"]),
         address: faker.address.streetAddress(true),
         dateOfBirth: faker.date.past(),
-        phoneNumber: faker.phone.phoneNumber(),
+        phoneNumber: Math.floor(Math.random() * 1000000000).toString(),
         createdAt: new Date(Date.now()),
         updatedAt: new Date(Date.now()),
       }

@@ -430,7 +430,7 @@
         "signature": "14abfa4865211d5bc86304266c819fe5c61f3a9c8487ebd5a0693f20fbd6af7c"
       },
       "../src/repositories/userrepository.ts": {
-        "version": "fabc8f9e71b589eaab69bf4404f9c3260d7b744fc075d25f2e0e4dc47dff6bc9",
+        "version": "5de16b7956f7c1fc3741382726c779f85ab0c910f3dc4da385d3c1a641536951",
         "signature": "fcc93c9c5a7e8b4909e3e0c3bca48ec153b706b22632bd78f58bc33646d17b4f"
       },
       "../src/repositories/employeerepository.ts": {
@@ -522,7 +522,7 @@
         "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
       },
       "../src/seeders/seeds/2_users/index.ts": {
-        "version": "c66667634783ab02e52779b87d61af3b67cfe90478a132fac2b8d965a3407968",
+        "version": "80d3e2565fc5069b659d74c8f1d6100cb2c58e59f61f18c66a0e219902841c79",
         "signature": "dfa442bc97bfe3a18152b2e7447236225c6fa09d369a6043ab93f2ad131d1bf3"
       },
       "../src/seeders/seeds/3_images/index.ts": {

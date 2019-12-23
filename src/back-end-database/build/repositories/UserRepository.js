@@ -40,9 +40,9 @@ var Models = __importStar(require("../models"));
 var UserModel = joi_1.default.object({
     email: joi_1.default.string().email(),
     password: joi_1.default.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
-    name: joi_1.default.string().alphanum(),
+    name: joi_1.default.string(),
     gender: joi_1.default.string().valid("MALE", "FEMALE"),
-    address: joi_1.default.string().alphanum(),
+    address: joi_1.default.string(),
     phoneNumber: joi_1.default.number(),
     dateOfBirth: joi_1.default.date().max("now")
 });

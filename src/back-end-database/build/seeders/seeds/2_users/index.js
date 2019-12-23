@@ -21,7 +21,7 @@ if (secrets_1.ENVIRONMENT === "development") {
             gender: faker_1.default.random.arrayElement(["MALE", "FEMALE"]),
             address: faker_1.default.address.streetAddress(true),
             dateOfBirth: faker_1.default.date.past(),
-            phoneNumber: faker_1.default.phone.phoneNumber(),
+            phoneNumber: Math.floor(Math.random() * 1000000000).toString(),
             createdAt: new Date(Date.now()),
             updatedAt: new Date(Date.now()),
         });

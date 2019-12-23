@@ -7,9 +7,9 @@ import { UserDocument, User } from "../models/User/types";
 const UserModel = Joi.object({
     email: Joi.string().email(),
     password: Joi.string().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,15}$/),
-    name: Joi.string().alphanum(),
+    name: Joi.string(),
     gender: Joi.string().valid("MALE", "FEMALE"),
-    address: Joi.string().alphanum(),
+    address: Joi.string(),
     phoneNumber: Joi.number(),
     dateOfBirth: Joi.date().max("now")
 });
