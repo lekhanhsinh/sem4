@@ -76,7 +76,7 @@ var cartResolvers = {
                     items: tempItems,
                     totalPrice: totalPrice
                 };
-                return cart;
+                return user.cart;
             });
         },
     },

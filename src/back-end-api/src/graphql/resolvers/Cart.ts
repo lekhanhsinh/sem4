@@ -17,7 +17,7 @@ const cartResolvers: IResolvers = {
         }
     },
     Mutation: {
-        updateCart: (obj, args, context, info): Promise<any> => {
+        updateCart: (obj, args, context, info) => {
             const { items }: { items: any[] } = args;
             const { req } = context;
             const { user } = req.session;
@@ -51,7 +51,7 @@ const cartResolvers: IResolvers = {
                     items: tempItems,
                     totalPrice
                 };
-                return cart;
+                return user.cart;
             });
         },
     },
