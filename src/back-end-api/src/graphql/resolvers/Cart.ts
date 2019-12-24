@@ -23,13 +23,17 @@ const cartResolvers: IResolvers = {
             };
             for (const item of cart.items) {
                 const promise = Repositories.imageRepository.getOnebyId(item.image).then(image => {
-                    if (!image) throw new Error("Error.");
-                    temp.items.push(
-                        {
-                            ...item,
-                            image,
-                        }
-                    );
+                    if (!image) {
+                        cart.items.splice(cart.items.indexOf(item), 1);
+                    }
+                    if (image) {
+                        temp.items.push(
+                            {
+                                ...item,
+                                image,
+                            }
+                        );
+                    }
                 });
                 promises.push(promise);
             }

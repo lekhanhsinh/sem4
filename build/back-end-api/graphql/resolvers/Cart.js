@@ -44,9 +44,12 @@ var cartResolvers = {
             };
             var _loop_1 = function (item) {
                 var promise = _back_end_database_1.Repositories.imageRepository.getOnebyId(item.image).then(function (image) {
-                    if (!image)
-                        throw new Error("Error.");
-                    temp.items.push(__assign(__assign({}, item), { image: image }));
+                    if (!image) {
+                        cart.items.splice(cart.items.indexOf(item), 1);
+                    }
+                    if (image) {
+                        temp.items.push(__assign(__assign({}, item), { image: image }));
+                    }
                 });
                 promises.push(promise);
             };
