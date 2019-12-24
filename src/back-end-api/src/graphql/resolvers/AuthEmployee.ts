@@ -2,6 +2,7 @@ import { IResolvers } from "graphql-tools";
 
 import { Repositories } from "@back-end-database";
 import { EmployeeDocument } from "@back-end-database/models/Employee/types";
+import { myCache } from "../../index";
 
 const authEmployeeResolvers: IResolvers = {
     Mutation: {
@@ -38,6 +39,21 @@ const authEmployeeResolvers: IResolvers = {
             }
             employee.logged = false;
             return Promise.resolve("LOGGED OUT");
+        },
+        setPrice: (obj, args, context, info): Promise<string> => {
+            const { req } = context;
+            const { method, price } = args;
+            const { employee } = req.session;
+            if (!employee || !employee.logged) {
+                throw new Error("Access Denied.");
+            }
+            myCache.set("method", method);
+            if (method === "PERCM") {
+                myCache.set("pricePerCm", price);
+            } else {
+                myCache.set("pricePerPic", price);
+            }
+            return Promise.resolve("SUCCESS");
         },
     },
 };

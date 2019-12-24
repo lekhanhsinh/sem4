@@ -3,7 +3,7 @@ import path from "path";
 
 const router = express.Router();
 
-router.get("/admin", (req, res) => {
+router.get("*", (req, res) => {
     res.sendFile(path.resolve("front-end-admin/index.html"));
 });
 

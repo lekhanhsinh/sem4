@@ -26,6 +26,15 @@ var orderResolvers = {
             var id = args.id;
             return _back_end_database_1.Repositories.orderRepository.getOnebyId(id);
         },
+        getOrdersbyUserId: function (obj, args, context, info) {
+            var userId = args.userId;
+            var req = context.req;
+            var employee = req.session.employee;
+            if (!employee || !employee.logged) {
+                throw new Error("Access Denied.");
+            }
+            return _back_end_database_1.Repositories.orderRepository.getManybyUserId(userId);
+        },
         getOrders: function (obj, args, context, info) {
             var sort = args.sort, searchs = args.searchs;
             var req = context.req;

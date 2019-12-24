@@ -3,6 +3,8 @@ import { IResolvers } from "graphql-tools";
 import { Repositories } from "@back-end-database";
 import { ImageDocument } from "../../../../back-end-database/src/models/Image/types";
 
+import { myCache } from "../../index";
+
 const cartResolvers: IResolvers = {
     Query: {
         getCart: (obj, args, context, info): Promise<any> => {
@@ -56,7 +58,12 @@ const cartResolvers: IResolvers = {
                     const item = items.find(i => i.image === image.id);
                     if (item) {
                         const size = item.size.split("x");
-                        const price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * 0.5;
+                        let price = 0;
+                        if (myCache.get("method") === "PERCM") {
+                            price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * parseFloat(myCache.get("pricePerCm") + "");
+                        } else {
+                            price = item.quantity * parseFloat(myCache.get("pricePerPic") + "");
+                        }
                         tempItems.push({
                             image,
                             size: item.size,

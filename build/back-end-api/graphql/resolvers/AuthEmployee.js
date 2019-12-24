@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var _back_end_database_1 = require("@back-end-database");
+var index_1 = require("../../index");
 var authEmployeeResolvers = {
     Mutation: {
         loginEmployee: function (obj, args, context, info) {
@@ -37,6 +38,22 @@ var authEmployeeResolvers = {
             }
             employee.logged = false;
             return Promise.resolve("LOGGED OUT");
+        },
+        setPrice: function (obj, args, context, info) {
+            var req = context.req;
+            var method = args.method, price = args.price;
+            var employee = req.session.employee;
+            if (!employee || !employee.logged) {
+                throw new Error("Access Denied.");
+            }
+            index_1.myCache.set("method", method);
+            if (method === "PERCM") {
+                index_1.myCache.set("pricePerCm", price);
+            }
+            else {
+                index_1.myCache.set("pricePerPic", price);
+            }
+            return Promise.resolve("SUCCESS");
         },
     },
 };

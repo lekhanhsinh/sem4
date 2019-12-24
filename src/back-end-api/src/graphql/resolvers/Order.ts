@@ -17,6 +17,15 @@ const orderResolvers: IResolvers = {
             const { id } = args;
             return Repositories.orderRepository.getOnebyId(id);
         },
+        getOrdersbyUserId: (obj, args, context, info): Promise<OrderDocument[]> => {
+            const { userId } = args;
+            const { req } = context;
+            const { employee } = req.session;
+            if (!employee || !employee.logged) {
+                throw new Error("Access Denied.");
+            }
+            return Repositories.orderRepository.getManybyUserId(userId);
+        },
         getOrders: (obj, args, context, info): Promise<OrderDocument[]> => {
             const { sort, searchs } = args;
             const { req } = context;

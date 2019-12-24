@@ -11,6 +11,7 @@ if (fs_1.default.existsSync(".env")) {
     dotenv_1.default.config({ path: ".env" });
 }
 exports.ENVIRONMENT = process.env.NODE_ENV === "production" ? "production" : "development";
+exports.PORT = process.env["PORT"] ? parseInt(process.env["PORT"]) : undefined;
 exports.DOMAIN = process.env["DOMAIN"] ? process.env["DOMAIN"] : "";
 exports.MONGODB_URI = (exports.ENVIRONMENT === "production" ? process.env["MONGODB_URI"] : process.env["MONGODB_URI_LOCAL"]) + "";
 if (!process.env["MONGODB_URI"] || !process.env["MONGODB_URI_LOCAL"]) {

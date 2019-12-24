@@ -23,6 +23,7 @@ var __values = (this && this.__values) || function(o) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _back_end_database_1 = require("@back-end-database");
+var index_1 = require("../../index");
 var cartResolvers = {
     Query: {
         getCart: function (obj, args, context, info) {
@@ -88,7 +89,13 @@ var cartResolvers = {
                     var item = items.find(function (i) { return i.image === image.id; });
                     if (item) {
                         var size = item.size.split("x");
-                        var price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * 0.5;
+                        var price = 0;
+                        if (index_1.myCache.get("method") === "PERCM") {
+                            price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * parseFloat(index_1.myCache.get("pricePerCm") + "");
+                        }
+                        else {
+                            price = item.quantity * parseFloat(index_1.myCache.get("pricePerPic") + "");
+                        }
                         tempItems.push({
                             image: image,
                             size: item.size,

@@ -1,11 +1,17 @@
 require("module-alias/register");
 
 import express from "express";
+import NodeCache from "node-cache";
 
 import { ApolloServer } from "apollo-server-express";
-import { ENVIRONMENT, DOMAIN } from "./utils/secrets";
+import { ENVIRONMENT, DOMAIN, PORT } from "./utils/secrets";
 import { middleware, subscriptionOnConnect } from "./utils/middleware";
 import { typeDefs, resolvers } from "./graphql";
+
+export const myCache = new NodeCache();
+myCache.set("pricePerCm", 0.5);
+myCache.set("pricePerPic", 2);
+myCache.set("method", "PERCM");
 
 const server = new ApolloServer({
     typeDefs: typeDefs,
@@ -26,7 +32,7 @@ const app = express();
 server.applyMiddleware({
     app,
     cors: {
-        origin: [`${DOMAIN}`, `api.${DOMAIN}`, "http://localhost:3000"],
+        origin: [`http://${DOMAIN}${PORT ? `:${PORT}` : ""}`, `http://api.${DOMAIN}${PORT ? `:${PORT}` : ""}`, "http://localhost:3000"],
         credentials: true
     }
 });

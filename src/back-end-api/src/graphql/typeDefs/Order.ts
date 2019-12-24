@@ -7,6 +7,7 @@ const OrderTypeDefs = gql`
 
         getOrder(id: String!): OrderType
         getOrders(sort: SortInputType, searchs: [SearchInputType]): [OrderType]
+        getOrdersbyUserId(userId: String!): [OrderType]
     }
 
     extend type Mutation {

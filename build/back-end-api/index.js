@@ -5,10 +5,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("module-alias/register");
 var express_1 = __importDefault(require("express"));
+var node_cache_1 = __importDefault(require("node-cache"));
 var apollo_server_express_1 = require("apollo-server-express");
 var secrets_1 = require("./utils/secrets");
 var middleware_1 = require("./utils/middleware");
 var graphql_1 = require("./graphql");
+exports.myCache = new node_cache_1.default();
+exports.myCache.set("pricePerCm", 0.5);
+exports.myCache.set("pricePerPic", 2);
+exports.myCache.set("method", "PERCM");
 var server = new apollo_server_express_1.ApolloServer({
     typeDefs: graphql_1.typeDefs,
     resolvers: graphql_1.resolvers,
@@ -31,7 +36,7 @@ exports.app = app;
 server.applyMiddleware({
     app: app,
     cors: {
-        origin: ["" + secrets_1.DOMAIN, "api." + secrets_1.DOMAIN, "http://localhost:3000"],
+        origin: ["http://" + secrets_1.DOMAIN + (secrets_1.PORT ? ":" + secrets_1.PORT : ""), "http://api." + secrets_1.DOMAIN + (secrets_1.PORT ? ":" + secrets_1.PORT : ""), "http://localhost:3000"],
         credentials: true
     }
 });
