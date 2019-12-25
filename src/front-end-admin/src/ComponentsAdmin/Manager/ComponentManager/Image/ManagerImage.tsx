@@ -7,6 +7,7 @@ import deleteUser from "../../../../Service/DeleteUser";
 import { Link } from "react-router-dom";
 import getImages from "../../../../Service/GetImages";
 import updateImage from "../../../../Service/UpdateImage";
+import deleteImage from "../../../../Service/DeleteImage";
 interface Props extends FormComponentProps, ColumnProps<any> { }
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
@@ -53,7 +54,7 @@ class EditableCell extends React.Component<any, any> {
         <div ref={node => (this.input = node)}>
           <img
             style={{ width: "80px", height: "80px" }}
-            src={`public/images/${record["path"]}`}
+            src={`/public/images/${record["path"]}`}
           ></img>
         </div>
       );
@@ -204,7 +205,7 @@ class EditableTable extends React.Component<any, any> {
     });
   }
   handleDelete = (key: any, id: string) => {
-    deleteUser(id);
+    deleteImage(id);
     const dataSource = [...this.state.dataSource];
     this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
   };

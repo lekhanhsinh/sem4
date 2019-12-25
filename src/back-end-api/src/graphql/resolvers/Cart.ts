@@ -51,8 +51,6 @@ const cartResolvers: IResolvers = {
             }
             const { cart }: { cart: { items: any[]; totalPrice: number } } = user;
 
-            const imageIds = items.map(i => i.image);
-
             const promises: Promise<any>[] = [];
             const tempItems: any[] = [];
             let totalPrice = 0;
@@ -78,13 +76,36 @@ const cartResolvers: IResolvers = {
                         totalPrice += price;
                     }
                 });
+                promises.push(promise);
             }
             return Promise.all(promises).then(() => {
                 user.cart = {
                     items: tempItems,
                     totalPrice
                 };
-                return user.cart;
+                const promises = [];
+                const temp = {
+                    items: [] as ImageDocument[],
+                    totalPrice: user.cart.totalPrice
+                };
+                for (const item of user.cart.items) {
+                    const promise = Repositories.imageRepository.getOnebyId(item.image).then(image => {
+                        if (!image) {
+                            cart.items.splice(user.cart.items.indexOf(item), 1);
+                        } else {
+                            temp.items.push(
+                                {
+                                    ...item,
+                                    image,
+                                }
+                            );
+                        }
+                    });
+                    promises.push(promise);
+                }
+                return Promise.all(promises).then(() => {
+                    return temp;
+                });
             });
         }
     },

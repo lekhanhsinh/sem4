@@ -81,7 +81,6 @@ var cartResolvers = {
                 throw new Error("Access Denied.");
             }
             var cart = user.cart;
-            var imageIds = items.map(function (i) { return i.image; });
             var promises = [];
             var tempItems = [];
             var totalPrice = 0;
@@ -109,6 +108,7 @@ var cartResolvers = {
                         totalPrice += price;
                     }
                 });
+                promises.push(promise);
             };
             try {
                 for (var items_1 = __values(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
@@ -124,11 +124,43 @@ var cartResolvers = {
                 finally { if (e_2) throw e_2.error; }
             }
             return Promise.all(promises).then(function () {
+                var e_3, _a;
                 user.cart = {
                     items: tempItems,
                     totalPrice: totalPrice
                 };
-                return user.cart;
+                var promises = [];
+                var temp = {
+                    items: [],
+                    totalPrice: user.cart.totalPrice
+                };
+                var _loop_3 = function (item) {
+                    var promise = _back_end_database_1.Repositories.imageRepository.getOnebyId(item.image).then(function (image) {
+                        if (!image) {
+                            cart.items.splice(user.cart.items.indexOf(item), 1);
+                        }
+                        else {
+                            temp.items.push(__assign(__assign({}, item), { image: image }));
+                        }
+                    });
+                    promises.push(promise);
+                };
+                try {
+                    for (var _b = __values(user.cart.items), _c = _b.next(); !_c.done; _c = _b.next()) {
+                        var item = _c.value;
+                        _loop_3(item);
+                    }
+                }
+                catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                finally {
+                    try {
+                        if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+                    }
+                    finally { if (e_3) throw e_3.error; }
+                }
+                return Promise.all(promises).then(function () {
+                    return temp;
+                });
             });
         }
     },
