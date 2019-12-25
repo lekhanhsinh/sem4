@@ -47,7 +47,7 @@ var cartResolvers = {
                     if (!image) {
                         cart.items.splice(cart.items.indexOf(item), 1);
                     }
-                    if (image) {
+                    else {
                         temp.items.push(__assign(__assign({}, item), { image: image }));
                     }
                 });
@@ -73,6 +73,7 @@ var cartResolvers = {
     },
     Mutation: {
         updateCart: function (obj, args, context, info) {
+            var e_2, _a;
             var items = args.items;
             var req = context.req;
             var user = req.session.user;
@@ -81,54 +82,55 @@ var cartResolvers = {
             }
             var cart = user.cart;
             var imageIds = items.map(function (i) { return i.image; });
-            return _back_end_database_1.Repositories.imageRepository.check(imageIds).then(function (images) {
-                var e_2, _a;
-                var tempItems = [];
-                var totalPrice = 0;
-                if (!images) {
-                    return cart;
-                }
-                var _loop_2 = function (image) {
-                    var item = items.find(function (i) { return i.image === image.id; });
-                    if (item) {
-                        var size = item.size.split("x");
+            var promises = [];
+            var tempItems = [];
+            var totalPrice = 0;
+            var _loop_2 = function (i) {
+                var promise = _back_end_database_1.Repositories.imageRepository.getOnebyId(i.image).then(function (image) {
+                    if (!image) {
+                        items.splice(cart.items.indexOf(i), 1);
+                    }
+                    else {
+                        var size = i.size.split("x");
                         var price = 0;
                         if (index_1.myCache.get("method") === "PERCM") {
-                            price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * parseFloat(index_1.myCache.get("pricePerCm") + "");
+                            price = (parseInt(size[0]) * parseInt(size[1])) * i.quantity * parseFloat(index_1.myCache.get("pricePerCm") + "");
                         }
                         else {
-                            price = item.quantity * parseFloat(index_1.myCache.get("pricePerPic") + "");
+                            price = i.quantity * parseFloat(index_1.myCache.get("pricePerPic") + "");
                         }
                         tempItems.push({
-                            image: image,
-                            size: item.size,
-                            material: item.material,
-                            quantity: item.quantity,
+                            image: i.image,
+                            size: i.size,
+                            material: i.material,
+                            quantity: i.quantity,
                             totalPrice: price
                         });
                         totalPrice += price;
                     }
-                };
+                });
+            };
+            try {
+                for (var items_1 = __values(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
+                    var i = items_1_1.value;
+                    _loop_2(i);
+                }
+            }
+            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            finally {
                 try {
-                    for (var images_1 = __values(images), images_1_1 = images_1.next(); !images_1_1.done; images_1_1 = images_1.next()) {
-                        var image = images_1_1.value;
-                        _loop_2(image);
-                    }
+                    if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
                 }
-                catch (e_2_1) { e_2 = { error: e_2_1 }; }
-                finally {
-                    try {
-                        if (images_1_1 && !images_1_1.done && (_a = images_1.return)) _a.call(images_1);
-                    }
-                    finally { if (e_2) throw e_2.error; }
-                }
+                finally { if (e_2) throw e_2.error; }
+            }
+            return Promise.all(promises).then(function () {
                 user.cart = {
                     items: tempItems,
                     totalPrice: totalPrice
                 };
                 return user.cart;
             });
-        },
+        }
     },
 };
 exports.default = cartResolvers;

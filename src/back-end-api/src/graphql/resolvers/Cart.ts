@@ -25,8 +25,7 @@ const cartResolvers: IResolvers = {
                 const promise = Repositories.imageRepository.getOnebyId(item.image).then(image => {
                     if (!image) {
                         cart.items.splice(cart.items.indexOf(item), 1);
-                    }
-                    if (image) {
+                    } else {
                         temp.items.push(
                             {
                                 ...item,
@@ -54,37 +53,40 @@ const cartResolvers: IResolvers = {
 
             const imageIds = items.map(i => i.image);
 
-            return Repositories.imageRepository.check(imageIds).then(images => {
-                const tempItems = [];
-                let totalPrice = 0;
-                if (!images) { return cart; }
-                for (const image of images) {
-                    const item = items.find(i => i.image === image.id);
-                    if (item) {
-                        const size = item.size.split("x");
+            const promises: Promise<any>[] = [];
+            const tempItems: any[] = [];
+            let totalPrice = 0;
+            for (const i of items) {
+                const promise = Repositories.imageRepository.getOnebyId(i.image).then(image => {
+                    if (!image) {
+                        items.splice(cart.items.indexOf(i), 1);
+                    } else {
+                        const size = i.size.split("x");
                         let price = 0;
                         if (myCache.get("method") === "PERCM") {
-                            price = (parseInt(size[0]) * parseInt(size[1])) * item.quantity * parseFloat(myCache.get("pricePerCm") + "");
+                            price = (parseInt(size[0]) * parseInt(size[1])) * i.quantity * parseFloat(myCache.get("pricePerCm") + "");
                         } else {
-                            price = item.quantity * parseFloat(myCache.get("pricePerPic") + "");
+                            price = i.quantity * parseFloat(myCache.get("pricePerPic") + "");
                         }
                         tempItems.push({
-                            image,
-                            size: item.size,
-                            material: item.material,
-                            quantity: item.quantity,
+                            image: i.image,
+                            size: i.size,
+                            material: i.material,
+                            quantity: i.quantity,
                             totalPrice: price
                         });
                         totalPrice += price;
                     }
-                }
+                });
+            }
+            return Promise.all(promises).then(() => {
                 user.cart = {
                     items: tempItems,
                     totalPrice
                 };
                 return user.cart;
             });
-        },
+        }
     },
 };
 export default cartResolvers;
