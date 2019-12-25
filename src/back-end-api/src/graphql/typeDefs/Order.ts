@@ -20,6 +20,7 @@ const OrderTypeDefs = gql`
         items: [ItemType]
         totalPrice: Float
         address: String
+        description: String
         status: String
     }
 

@@ -27,6 +27,12 @@
         "cors": "^2.8.5",
         "express-session": "^1.17.0",
         "vhost-ts": "^4.0.0",
+        "@hapi/joi": "^16.1.8",
+        "bcryptjs": "^2.4.3",
+        "mime-types": "^2.1.25",
+        "mongo-seeding": "^3.4.0-alpha.1",
+        "mongoose": "^5.7.13",
+        "stripe": "^7.14.0",
         "antd": "^3.24.3",
         "apollo-boost": "^0.4.4",
         "apollo-client": "^2.6.4",
@@ -38,17 +44,11 @@
         "react-cookies": "^0.1.1",
         "react-dom": "^16.9.0",
         "react-router-dom": "^5.1.2",
-        "react-scripts": "3.1.2",
-        "@hapi/joi": "^16.1.8",
-        "bcryptjs": "^2.4.3",
-        "mime-types": "^2.1.25",
-        "mongo-seeding": "^3.4.0-alpha.1",
-        "mongoose": "^5.7.13",
-        "stripe": "^7.14.0"
+        "react-scripts": "3.1.2"
     },
     "devDependencies": {
+        "faker": "^4.1.0",
         "@babel/core": "^7.6.2",
-        "babel-loader": "^8.0.6",
-        "faker": "^4.1.0"
+        "babel-loader": "^8.0.6"
     }
 }

@@ -1478,7 +1478,7 @@
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {
-        "version": "671922f123eb380d138a387a09b6e56073cfdc311f65ca1fb6c8655cffdded6c",
+        "version": "c4f8345bca19c4f9c3072d6058dea0b9147eda8918374a1a2a9acd0776ab9cac",
         "signature": "460fe4cf786bbe62efa013080df67ce30b155f84e557c8d5b471fa79b31596ed"
       },
       "../src/graphql/typedefs/index.ts": {
