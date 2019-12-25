@@ -4,29 +4,21 @@ import {
   Button,
   Popconfirm,
   Form,
-  Modal,
   Select,
-  Checkbox,
-  Radio,
-  DatePicker,
   Icon,
   Menu
 } from "antd";
+import { withRouter } from "react-router-dom";
 import React from "react";
 import { ColumnProps } from "antd/es/table";
 import { FormComponentProps } from "antd/lib/form";
 import "antd/dist/antd.css";
-import getUsers from "../../../../Service/GetUsers";
-import deleteUser from "../../../../Service/DeleteUser";
-import updateUser from "../../../../Service/UpdateUsers";
-import getRoles from "../../../../Service/GetRoles";
 import { Link } from "react-router-dom";
-import deleteOder from "../../../../Service/DeleteOrder";
 import deleteOrder from "../../../../Service/DeleteOrder";
 import getOders from "../../../../Service/GetOrders";
 import updateOrder from "../../../../Service/UpdateOrder";
+import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
 interface Props extends FormComponentProps, ColumnProps<any> {}
-const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -36,9 +28,6 @@ const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
 
 const EditableFormRow = Form.create()(EditableRow);
 class EditableCell extends React.Component<any, any> {
-  constructor(props: Props) {
-    super(props);
-  }
   input: any;
   form: any;
   state = {
@@ -187,26 +176,48 @@ class EditableTable extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    getOders().then(items => {
-      const arr = [];
-      console.log(items);
+    const userId = this.props.match.params.id;
+    if (userId) {
+      getOrdersbyUserId(userId).then(items => {
+        const arr = [];
 
-      for (const str in items) {
-        arr.push({
-          key: parseInt(str, 10),
-          image: items[str].items[0].image.path,
-          quantity: items[str].items[0].quantity,
-          size: items[str].items[0].size,
-          totalPrice: items[str].items[0].totalPrice,
-          status: items[str].items[0].status,
-          material: items[str].items[0].material
+        for (const str in items) {
+          arr.push({
+            key: parseInt(str, 10),
+            image: items[str].items[0].image.path,
+            quantity: items[str].items[0].quantity,
+            size: items[str].items[0].size,
+            totalPrice: items[str].items[0].totalPrice,
+            status: items[str].items[0].status,
+            material: items[str].items[0].material
+          });
+        }
+        this.setState({
+          dataSource: arr,
+          count: arr.length
         });
-      }
-      this.setState({
-        dataSource: arr,
-        count: arr.length
       });
-    });
+    } else {
+      getOders().then(items => {
+        const arr = [];
+
+        for (const str in items) {
+          arr.push({
+            key: parseInt(str, 10),
+            image: items[str].items[0].image.path,
+            quantity: items[str].items[0].quantity,
+            size: items[str].items[0].size,
+            totalPrice: items[str].items[0].totalPrice,
+            status: items[str].items[0].status,
+            material: items[str].items[0].material
+          });
+        }
+        this.setState({
+          dataSource: arr,
+          count: arr.length
+        });
+      });
+    }
   }
   handleDelete = (key: any, id: string) => {
     deleteOrder(id);
@@ -265,19 +276,6 @@ class EditableTable extends React.Component<any, any> {
     return (
       <div>
         <h1 style={{ textAlign: "center" }}>OrderInfo</h1>
-        {/* <Button type="primary">
-          <Link to="/ManagerUser">{`ManagerUser`}</Link>
-        </Button>
-        <Button type="primary" style={{ alignItems: "center" }}>
-          <Link to="/ManagerImage">{`ManagerImage`}</Link>
-        </Button>
-        <br></br>
-        <Button type="primary">
-          <Link to="/RegisterEmployee">{`CreateEmployee`}</Link>
-        </Button>
-        <Button type="primary" style={{ alignItems: "center" }}>
-          <Link to="/ManagerEmployee">{`ManagerEmployee`}</Link>
-        </Button> */}
         <Menu
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
@@ -309,6 +307,11 @@ class EditableTable extends React.Component<any, any> {
             <span>ManagerImage</span>
             <Link to="/ManagerImage"></Link>
           </Menu.Item>
+          <Menu.Item key="6">
+            <Icon type="file-image" />
+            <span>ManagerService</span>
+            <Link to="/ManagerService"></Link>
+          </Menu.Item>
         </Menu>
         <Table
           components={components}
@@ -322,4 +325,4 @@ class EditableTable extends React.Component<any, any> {
   }
 }
 
-export default EditableTable;
+export default withRouter<any, any>(EditableTable);

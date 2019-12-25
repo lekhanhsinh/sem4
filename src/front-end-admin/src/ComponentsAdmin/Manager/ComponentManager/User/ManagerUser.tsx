@@ -5,12 +5,10 @@ import {
   Popconfirm,
   Form,
   Modal,
-  Select,
-  Checkbox,
-  Radio,
   DatePicker,
   Icon,
-  Menu
+  Menu,
+  Radio
 } from "antd";
 import React from "react";
 import { ColumnProps } from "antd/es/table";
@@ -19,12 +17,11 @@ import "antd/dist/antd.css";
 import getUsers from "../../../../Service/GetUsers";
 import deleteUser from "../../../../Service/DeleteUser";
 import updateUser from "../../../../Service/UpdateUsers";
-import getRoles from "../../../../Service/GetRoles";
-import { Link } from "react-router-dom";
 import moment from "moment";
-import deleteEmployee from "../../../../Service/DeleteEmployee";
+import { Link } from "react-router-dom";
+import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
+import getOrders from "../../../../Service/GetOrders";
 interface Props extends FormComponentProps, ColumnProps<any> {}
-const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -34,9 +31,6 @@ const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
 
 const EditableFormRow = Form.create()(EditableRow);
 class EditableCell extends React.Component<any, any> {
-  constructor(props: Props) {
-    super(props);
-  }
   input: any;
   form: any;
   state = {
@@ -45,9 +39,6 @@ class EditableCell extends React.Component<any, any> {
   };
   onChange = (e: any, record: any) => {
     const { handleSave } = this.props;
-    // this.setState({
-    //   value: e.target.value
-    // });
     record["gender"] = e.target.value;
     handleSave(record);
   };
@@ -77,7 +68,7 @@ class EditableCell extends React.Component<any, any> {
     const { editing } = this.state;
     this.form = form;
     const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY"];
-    if (title == "Gender") {
+    if (title === "Gender") {
       return (
         <div ref={node => (this.input = node)}>
           <Radio.Group
@@ -92,7 +83,16 @@ class EditableCell extends React.Component<any, any> {
         </div>
       );
     }
-    if (title == "DateOfBirth") {
+    if (title === "Id") {
+      return (
+        <div ref={node => (this.input = node)}>
+          <Link to={`/ManagerOrder/${record["id"]}`}>
+            <p>{record["id"]}</p>
+          </Link>
+        </div>
+      );
+    }
+    if (title === "DateOfBirth") {
       return (
         <div ref={node => (this.input = node)}>
           <DatePicker
@@ -170,7 +170,7 @@ class EditableTableUser extends React.Component<any, any> {
       {
         title: "Id",
         dataIndex: "id",
-        editable: false
+        editable: true
       },
       {
         title: "Name",
@@ -208,18 +208,21 @@ class EditableTableUser extends React.Component<any, any> {
           return this.state.dataSource.length > 0 ? (
             <>
               <Popconfirm
-                style={{}}
                 title="Sure to delete?"
                 onConfirm={() => this.handleDelete(record.key, record.id)}
               >
                 <Button type="danger">Delete</Button>
               </Popconfirm>
+              <Button type="primary" onClick={this.showModal}>
+                Detail
+              </Button>
             </>
           ) : null;
         }
       }
     ];
     this.state = {
+      visible: false,
       current: "1",
       dataSource: [],
       count: 0,
@@ -283,6 +286,23 @@ class EditableTableUser extends React.Component<any, any> {
       current: e.key
     });
   };
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
+  handleOk = (e: any) => {
+    this.setState({
+      visible: false
+    });
+  };
+
+  handleCancel = (e: any) => {
+    this.setState({
+      visible: false
+    });
+  };
   render() {
     const { dataSource } = this.state;
 
@@ -307,22 +327,16 @@ class EditableTableUser extends React.Component<any, any> {
         })
       };
     });
+
     return (
       <div>
         <h1 style={{ textAlign: "center" }}>UserInfo</h1>
-        {/* <Button type="primary">
-          <Link to="/ManagerImage">{`ManagerImage`}</Link>
-        </Button>
-        <Button type="primary" style={{ alignItems: "center" }}>
-          <Link to="/ManagerOrder">{`ManagerOder`}</Link>
-        </Button>
-        <br></br>
-        <Button type="primary">
-          <Link to="/RegisterEmployee">{`CreateEmployee`}</Link>
-        </Button>
-        <Button type="primary" style={{ alignItems: "center" }}>
-          <Link to="/ManagerEmployee">{`ManagerEmployee`}</Link>
-        </Button> */}
+        <Modal
+          title="Detail"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        ></Modal>
         <Menu
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
@@ -353,6 +367,11 @@ class EditableTableUser extends React.Component<any, any> {
             <Icon type="file-image" />
             <span>ManagerImage</span>
             <Link to="/ManagerImage"></Link>
+          </Menu.Item>
+          <Menu.Item key="6">
+            <Icon type="file-image" />
+            <span>ManagerService</span>
+            <Link to="/ManagerService"></Link>
           </Menu.Item>
         </Menu>
         <Table

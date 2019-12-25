@@ -1,13 +1,4 @@
-import {
-  Table,
-  Input,
-  Button,
-  Popconfirm,
-  Form,
-  Select,
-  Icon,
-  Menu
-} from "antd";
+import { Table, Input, Button, Popconfirm, Form, Icon, Menu } from "antd";
 import React from "react";
 import { ColumnProps } from "antd/es/table";
 import { FormComponentProps } from "antd/lib/form";
@@ -17,7 +8,6 @@ import getEmployees from "../../../../Service/GetEmployees";
 import updateEmployee from "../../../../Service/UpdateEmployee";
 import deleteEmployee from "../../../../Service/DeleteEmployee";
 interface Props extends FormComponentProps, ColumnProps<any> {}
-const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -27,9 +17,6 @@ const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
 
 const EditableFormRow = Form.create()(EditableRow);
 class EditableCell extends React.Component<any, any> {
-  constructor(props: Props) {
-    super(props);
-  }
   input: any;
   form: any;
   state = {
@@ -61,7 +48,6 @@ class EditableCell extends React.Component<any, any> {
     const { children, dataIndex, record, title } = this.props;
     const { editing } = this.state;
     this.form = form;
-    const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY"];
     return editing ? (
       <Form.Item style={{ margin: 0 }}>
         {form.getFieldDecorator(dataIndex, {
@@ -245,19 +231,6 @@ class EditableTable extends React.Component<any, any> {
     return (
       <div>
         <h1 style={{ textAlign: "center" }}>EmployeeInfo</h1>
-        {/* <Button type="primary">
-          <Link to="/ManagerUser">{`ManagerUser`}</Link>
-        </Button>
-        <Button type="primary" style={{ alignItems: "center" }}>
-          <Link to="/ManagerOrder">{`ManagerOrder`}</Link>
-        </Button>
-        <br></br>
-        <Button type="primary">
-          <Link to="/RegisterEmployee">{`CreateEmployee`}</Link>
-        </Button>
-        <Button type="primary" style={{ alignItems: "center" }}>
-          <Link to="/ManagerImage">{`ManagerImage`}</Link>
-        </Button> */}
         <Menu
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
@@ -288,6 +261,11 @@ class EditableTable extends React.Component<any, any> {
             <Icon type="file-image" />
             <span>ManagerImage</span>
             <Link to="/ManagerImage"></Link>
+          </Menu.Item>
+          <Menu.Item key="6">
+            <Icon type="file-image" />
+            <span>ManagerService</span>
+            <Link to="/ManagerService"></Link>
           </Menu.Item>
         </Menu>
         <Table

@@ -14,6 +14,9 @@ const ManagerEmployee = lazy(() =>
 const ManagerOrder = lazy(() =>
   import("../ComponentsAdmin/Manager/ComponentManager/Order")
 );
+const ManagerService = lazy(() =>
+  import("../ComponentsAdmin/Manager/ComponentManager/Service")
+);
 const routes = [
   {
     path: "/LoginAdmin",
@@ -40,8 +43,17 @@ const routes = [
     component: ManagerEmployee
   },
   {
+    path: "/ManagerOrder/:id",
+    component: ManagerOrder
+  },
+  {
     path: "/ManagerOrder",
     component: ManagerOrder
+  },
+
+  {
+    path: "/ManagerService",
+    component: ManagerService
   }
 ];
 

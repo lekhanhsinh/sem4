@@ -1,30 +1,13 @@
-import {
-  Table,
-  Input,
-  Button,
-  Popconfirm,
-  Form,
-  Modal,
-  Select,
-  Checkbox,
-  Radio,
-  DatePicker,
-  Icon,
-  Menu
-} from "antd";
+import { Table, Input, Button, Popconfirm, Form, Icon, Menu } from "antd";
 import React from "react";
 import { ColumnProps } from "antd/es/table";
 import { FormComponentProps } from "antd/lib/form";
 import "antd/dist/antd.css";
-import getUsers from "../../../../Service/GetUsers";
 import deleteUser from "../../../../Service/DeleteUser";
-import updateUser from "../../../../Service/UpdateUsers";
-import getRoles from "../../../../Service/GetRoles";
 import { Link } from "react-router-dom";
 import getImages from "../../../../Service/GetImages";
 import updateImage from "../../../../Service/UpdateImage";
 interface Props extends FormComponentProps, ColumnProps<any> { }
-const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -34,9 +17,6 @@ const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
 
 const EditableFormRow = Form.create()(EditableRow);
 class EditableCell extends React.Component<any, any> {
-  constructor(props: Props) {
-    super(props);
-  }
   input: any;
   form: any;
   state = {
@@ -68,11 +48,11 @@ class EditableCell extends React.Component<any, any> {
     const { children, dataIndex, record, title } = this.props;
     const { editing } = this.state;
     this.form = form;
-    if (title == "Path") {
+    if (title === "Path") {
       return (
         <div ref={node => (this.input = node)}>
           <img
-            style={{ width: "100px", height: "100px" }}
+            style={{ width: "80px", height: "80px" }}
             src={`public/images/${record["path"]}`}
           ></img>
         </div>
@@ -313,6 +293,11 @@ class EditableTable extends React.Component<any, any> {
             <Icon type="file-image" />
             <span>ManagerImage</span>
             <Link to="/ManagerImage"></Link>
+          </Menu.Item>
+          <Menu.Item key="6">
+            <Icon type="file-image" />
+            <span>ManagerService</span>
+            <Link to="/ManagerService"></Link>
           </Menu.Item>
         </Menu>
         <Table

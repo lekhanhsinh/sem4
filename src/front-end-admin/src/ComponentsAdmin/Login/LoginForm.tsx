@@ -25,18 +25,15 @@ const Login: FunctionComponent<Props> = props => {
       if (!err) {
         getLogin(values.email, values.password)
           .then(loginEmployee => {
-            console.log(`login resut`, loginEmployee);
-            console.log();
-
             if (loginEmployee) {
               notification.success({
-                message: `Đăng nhập thành công`,
+                message: `Login Successfull`,
                 description: `Wellcome ${loginEmployee.name}`
               });
               push("/ManagerUser");
             } else {
               notification.error({
-                message: "Đăng nhập thất bại",
+                message: "Login Fail",
                 description: `Something wrong`
               });
             }

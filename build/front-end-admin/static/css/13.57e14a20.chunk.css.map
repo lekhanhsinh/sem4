@@ -1,0 +1,1 @@
+{"version":3,"sources":["Login.css"],"names":[],"mappings":"AAIA,+BACE,UACF,CAEA,OACE,iBACF","file":"13.57e14a20.chunk.css","sourcesContent":[".login-form {\r\n  width: 100%;\r\n}\r\n\r\n.login-form-button {\r\n  width: 100%;\r\n}\r\n\r\n.title {\r\n  text-align: center;\r\n}\r\n"]}

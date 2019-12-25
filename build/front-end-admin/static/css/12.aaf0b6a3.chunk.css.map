@@ -1,1 +1,0 @@
-{"version":3,"sources":["CreateEmployee.css"],"names":[],"mappings":"AAAA,OACE,iBACF,CAEA,YACE,eACF,CACA,QACE,gBACF","file":"12.aaf0b6a3.chunk.css","sourcesContent":[".title {\r\n  text-align: center;\r\n}\r\n\r\n.form-block {\r\n  margin-top: 20px;\r\n}\r\n.button {\r\n  margin-left: 40px;\r\n}\r\n"]}
