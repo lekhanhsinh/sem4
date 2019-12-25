@@ -47,7 +47,7 @@ const orderResolvers: IResolvers = {
             }
             return Repositories.orderRepository.create({ creditCardNumber, user: user.id, email: user.email, ...cart, ...detail }).then(order => {
                 cart = { items: [], totalPrice: 0 };
-                return order;
+                return order.populate("items.image").execPopulate();
             });
         },
         updateOrder: (obj, args, context, info): Promise<OrderDocument> => {
@@ -57,7 +57,9 @@ const orderResolvers: IResolvers = {
             if (!order) {
                 throw new Error("Access Denied.");
             }
-            return Repositories.orderRepository.update(id, detail);
+            return Repositories.orderRepository.update(id, detail).then(order => {
+                return order.populate("items.image").execPopulate();
+            });
         },
         deleteOrder: (obj, args, context, info): Promise<string> => {
             const { id } = args;

@@ -56,7 +56,7 @@ var orderResolvers = {
             }
             return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({ creditCardNumber: creditCardNumber, user: user.id, email: user.email }, cart), detail)).then(function (order) {
                 cart = { items: [], totalPrice: 0 };
-                return order;
+                return order.populate("items.image").execPopulate();
             });
         },
         updateOrder: function (obj, args, context, info) {
@@ -66,7 +66,9 @@ var orderResolvers = {
             if (!order) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.update(id, detail);
+            return _back_end_database_1.Repositories.orderRepository.update(id, detail).then(function (order) {
+                return order.populate("items.image").execPopulate();
+            });
         },
         deleteOrder: function (obj, args, context, info) {
             var id = args.id;
