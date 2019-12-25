@@ -34,7 +34,7 @@ var OrderRepository = (function (_super) {
             if (sort === void 0) { sort = { sortBy: "updatedAt", asc: false }; }
             if (populate === void 0) { populate = []; }
             return _this._collection.find({ user: userId })
-                .populate(populate)
+                .populate("user", "items.image")
                 .sort((_a = {}, _a[sort.sortBy] = sort.asc ? 1 : -1, _a))
                 .exec();
         };
@@ -44,7 +44,7 @@ var OrderRepository = (function (_super) {
         _this.update = function (id, docs, populate) {
             if (populate === void 0) { populate = []; }
             return _this._collection.findByIdAndUpdate(id, docs, { new: true })
-                .populate(populate)
+                .populate("user", "items.image")
                 .exec().then(function (found) {
                 if (!found) {
                     throw new Error("Order don\'t exist.");
