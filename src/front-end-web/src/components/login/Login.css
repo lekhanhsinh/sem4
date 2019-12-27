@@ -1,0 +1,19 @@
+.page-login {
+    padding: 100px 0;
+
+  }
+  
+  .login-form {
+      width: 100%;
+    }
+    
+    .login-form-button {
+      width: 100%;
+    }
+    
+    .title {
+      text-align: center;
+      font-weight: 600;
+      color : #1890ff;
+    }
+    

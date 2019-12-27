@@ -1,0 +1,76 @@
+.slide-show {
+}
+
+.slide-show img {
+    height: 450px;
+}
+
+.header-home h3 {
+    margin: 50px 0;
+    text-align: center;
+}
+.header-home p {
+    font-size: 18px;
+    font-weight: 450;
+    text-align: justify;
+}
+
+.service .img-animation {
+    margin-bottom: 20px;
+}
+
+.service .img-animation>div{
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 5px black;
+    
+}
+
+.service img {
+    max-width: 100%;
+    transition: transform 1s;
+}
+
+.service img:hover {
+    transform: scale(1.7) rotate(35deg);
+
+}
+
+.service h4 {
+    margin: 30px 0;
+    text-align: center;
+    color : blue;
+}
+
+.service p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.content img {
+    height: 300px;
+}
+
+.content h5 {
+    text-align: center;
+    margin : 20px 0;
+}
+
+.content p {
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 450;
+}
+
+.footer-home h3 {
+    text-align: center;
+}
+
+.footer-home p {
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 470;
+}

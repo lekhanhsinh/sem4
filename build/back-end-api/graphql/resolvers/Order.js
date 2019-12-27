@@ -20,11 +20,11 @@ var orderResolvers = {
             if (!user || !user.logged) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.getManybyUserId(user.id);
+            return _back_end_database_1.Repositories.orderRepository.getManybyUserId(user.id, undefined, ["user", "items.image"]);
         },
         getOrder: function (obj, args, context, info) {
             var id = args.id;
-            return _back_end_database_1.Repositories.orderRepository.getOnebyId(id);
+            return _back_end_database_1.Repositories.orderRepository.getOnebyId(id, ["user", "items.image"]);
         },
         getOrdersbyUserId: function (obj, args, context, info) {
             var userId = args.userId;
@@ -33,7 +33,7 @@ var orderResolvers = {
             if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.getManybyUserId(userId);
+            return _back_end_database_1.Repositories.orderRepository.getManybyUserId(userId, undefined, ["user", "items.image"]);
         },
         getOrders: function (obj, args, context, info) {
             var sort = args.sort, searchs = args.searchs;
@@ -42,7 +42,7 @@ var orderResolvers = {
             if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
-            return _back_end_database_1.Repositories.orderRepository.getMany(searchs, sort);
+            return _back_end_database_1.Repositories.orderRepository.getMany(searchs, sort, ["user", "items.image"]);
         }
     },
     Mutation: {
@@ -56,7 +56,7 @@ var orderResolvers = {
             }
             return _back_end_database_1.Repositories.orderRepository.create(__assign(__assign({ creditCardNumber: creditCardNumber, user: user.id, email: user.email }, cart), detail)).then(function (order) {
                 cart = { items: [], totalPrice: 0 };
-                return order.populate("items.image").execPopulate();
+                return order.populate("user", "items.image").execPopulate();
             });
         },
         updateOrder: function (obj, args, context, info) {

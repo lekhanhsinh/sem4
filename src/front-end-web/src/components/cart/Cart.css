@@ -1,0 +1,10 @@
+.cart-div {
+    display: flex;
+    justify-content: right;
+}
+
+.cart-div p  {
+    font-size: 18px;
+    font-weight: 600;
+
+}

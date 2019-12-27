@@ -18,7 +18,7 @@ const authEmployeeResolvers: IResolvers = {
                         if (!isMatch) {
                             throw new Error("Access Denied.");
                         }
-                        if (req.session.employee) {
+                        if (req.session.employee && employee.id === req.session.employee.id) {
                             req.session.employee.logged = true;
                         } else {
                             req.session.employee = {

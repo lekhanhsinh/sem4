@@ -13,7 +13,7 @@ export class OrderRepository extends BasicRepository<OrderDocument>{
         populate: string[] = []
     ): Promise<OrderDocument[]> => {
         return this._collection.find({ user: userId })
-            .populate("user", "items.image")
+            .populate(populate)
             .sort({ [sort.sortBy]: sort.asc ? 1 : -1 })
             .exec();
     }
@@ -30,7 +30,7 @@ export class OrderRepository extends BasicRepository<OrderDocument>{
         populate: string[] = []
     ): Promise<OrderDocument> => {
         return this._collection.findByIdAndUpdate(id, docs, { new: true })
-            .populate("user", "items.image")
+            .populate(populate)
             .exec().then(found => {
                 if (!found) { throw new Error("Order don\'t exist."); }
                 found.status = (docs as any).status ? (docs as any).status : found.status;

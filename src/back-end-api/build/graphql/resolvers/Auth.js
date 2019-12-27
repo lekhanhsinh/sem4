@@ -15,7 +15,7 @@ var authResolvers = {
                     if (!isMatch) {
                         throw new Error("Access Denied.");
                     }
-                    if (req.session.user) {
+                    if (req.session.user && user.id === req.session.user.id) {
                         req.session.user.logged = true;
                     }
                     else {

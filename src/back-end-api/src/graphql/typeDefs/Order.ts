@@ -19,6 +19,7 @@ const OrderTypeDefs = gql`
     type OrderType {
         items: [ItemType]
         totalPrice: Float
+        user: UserType
         address: String
         description: String
         status: String

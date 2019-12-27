@@ -1,0 +1,63 @@
+@import '~antd/dist/antd.css';
+
+
+.mg-right {
+    margin-right : 5px ;
+}
+
+.container {
+    
+    margin-bottom: 10px;
+}
+
+.ant-layout-header {
+    height: 0;
+}
+
+.code-box-demo {
+  text-align: center;
+}
+.ant-layout-header,
+.ant-layout-footer {
+  background: #7dbcea;
+  color: #fff;
+}
+.ant-layout-footer {
+  line-height: 0.1;
+}
+.ant-layout-sider {
+  background: #3ba0e9;
+  color: #fff;
+  line-height: 120px;
+}
+.ant-layout-content {
+  min-height: 120px;
+  line-height: 120px;
+}
+
+
+
+.fix-footer-to-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.navbar-mg-bt {
+}
+
+
+.content-page {
+    min-height: 555px;
+
+}
+h1 {
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  color : #3ba0e9;
+}

@@ -1,0 +1,33 @@
+.contact-page{
+    padding: 12px;
+    
+    
+    
+}
+.contact-page h2 {
+    text-align: center;
+    color : Red;
+}
+
+.contact-page p {
+    font-size: 19px;
+    font-weight: 600px;
+    text-align:  center;
+    
+}
+
+.contact-page span {
+    color : blue;
+}
+.contact-page img {
+    max-width: 100%;
+}
+
+.contact-text {
+    text-align: center;
+    font-size: 12px;
+}
+
+.contact-page i {
+    font-size: 60px;
+}

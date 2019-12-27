@@ -1,0 +1,15 @@
+.about-page {
+    margin-top: 50px;
+}
+.about-page img {
+    margin-bottom: 20px;
+}
+.about-page p {
+    text-align: center;
+    font-weight: 450;
+    font-size: 18px;
+}
+
+.about-page span {
+    font-weight: 600;
+}
