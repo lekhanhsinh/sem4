@@ -1474,7 +1474,7 @@
         "signature": "94e2d339c11397839a8b1f6d03243b3ae43bccbb6bc1a7bd9383943337d39643"
       },
       "../src/graphql/typedefs/image.ts": {
-        "version": "cf297dc7971e1d36428327fb7304c27dd133185bbb488383eb685f12cb7d0639",
+        "version": "1c3ec80fe24eda1f942259695a637e2f3012e354106c773c0c431c16b55f773c",
         "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
       },
       "../src/graphql/typedefs/cart.ts": {
