@@ -1,6 +1,9 @@
 import React from 'react';
 import './About.css';
-import img from '../img/bg.jpg';
+import Sinh from '../img/sinh.jpg';
+import Hoang from '../img/hoang.jpg';
+import Thang from '../img/thang.jpg';
+import img from '../img/sinh.jpg';
 
 
 
@@ -13,21 +16,21 @@ const members = [
         position: 'Instructor'
     },
     {
-        img: img,
+        img: Sinh,
         name: 'Le Khanh Sinh',
         age: 22,
         gender: 'Male',
         position: 'Leader'
     },
     {
-        img: img,
+        img: Thang,
         name: 'Bui Nguyen Thang',
         age: 22,
         gender: 'Male',
         position: 'Member'
     },
     {
-        img: img,
+        img: Hoang,
         name: 'Nguyen Tien Hoang',
         age: 25,
         gender: 'Male',
@@ -39,7 +42,7 @@ class About extends React.Component {
         const showMembers = members.map((member: any, index: any) => {
             return <div key={index} className="col-md-3 img-animation">
                 <div>
-                    <img src={img} alt="" />
+                    <img src={member.img} alt="" />
                     <p><span>Name : </span>{member.name}</p>
                     <p><span>Age : </span>{member.age}</p>
                     <p><span>Gender : </span>{member.gender}</p>

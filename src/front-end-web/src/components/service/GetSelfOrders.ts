@@ -4,30 +4,40 @@ import { message } from 'antd';
 
 
 const GETSELFORDERDETAIL = gql`
-query{
-  getSelfOrders {
-    items {
+query {
+  getSelfOrders{
+    id
+    items{
       quantity
       size
       material
+      image{
+        id
+        name
+        description
+        path
+        createdAt
+        updatedAt
+      }
       totalPrice
     }
     totalPrice
-    description
     address
+    description
     status
   }
-  }
+}
 `
 
 const getSelfOrders = () => {
-    return client.query({
-        query : GETSELFORDERDETAIL
-    }).then(res => {
-        return res.data.getSelfOrders
-    }).catch(err => {
-        message.error(err.message)
-    })
+  return client.query({
+    query: GETSELFORDERDETAIL,
+    fetchPolicy: "no-cache"
+  }).then(res => {
+    return res.data.getSelfOrders
+  }).catch(err => {
+    message.error(err.message)
+  })
 }
 
 

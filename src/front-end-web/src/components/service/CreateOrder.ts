@@ -10,14 +10,6 @@ mutation CreateOrder($creditCardNumber:String, $detail : OrderDetailInputType!){
             quantity
             size
             material
-            image{
-              id
-              name
-              description
-              path
-              createdAt
-              updatedAt
-            }
             totalPrice
           }
           totalPrice

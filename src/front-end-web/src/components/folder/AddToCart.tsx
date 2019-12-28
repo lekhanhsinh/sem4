@@ -60,7 +60,7 @@ const CollectionCreateForm = Form.create<any>({ name: 'form_in_modal' })(
                   <Option value="PAPER">PAPER</Option>
                   <Option value="WOOD">WOOD</Option>
                   <Option value="ROCK">ROCK</Option>
-                  <Option value="SILK">SILK</Option>
+                  <Option value="GLASS">GLASS</Option>
                 </Select>,
               )}
             </Form.Item>

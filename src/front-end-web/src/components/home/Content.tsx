@@ -13,51 +13,61 @@ class Content extends React.Component {
 
         return (
             <div className="container">
-                <div className="content py-5" >
-                    <h5>LÝ DO WEBSITE CỦA CHÚNG TÔI LÀ ĐỊA ĐIỂM QUEN THUỘC ĐƯỢC KHÁCH HÀNG TÌM TỚI </h5>
+                <div className="content-home py-5" >
+                    <h3>THE REASON FOR OUR WEBSITE IS A FAMILY PLACE UNDERSTANDED BY CUSTOMERS </h3>
                     <div className="container">
                         <div className="row py-4">
                             <div className="col-md-6">
                                 <img src={content1} alt="" />
-                                <h5>Màu ảnh tinh tế</h5>
-                                <p>Printaphy sẽ khiến bạn trầm trồ ngạc nhiên với chất lượng hình ảnh vô cùng nghệ thuật và đẹp mắt.
-                                     Ảnh in không phai màu và không thấm nước.</p>
+                                <h5>Exquisite picture color</h5>
+                                <p>
+                                    Printaphy will surprise you with its incredibly artistic and beautiful picture quality.
+                                    Photo prints do not fade and are waterproof.
+                                </p>
                             </div>
                             <div className="col-md-6">
                                 <img src={content2} alt="" />
-                                <h5>Không quy định số lượng ảnh in tối thiểu</h5>
-                                <p>Bạn chỉ cần in số lượng ít và giao tận nơi trong thời gian ngắn. 
-                                    Chúng tôi không quy định số lượng ảnh in tối thiểu,
-                                     tất cả vì sự thuận tiện của khách hàng.</p>
+                                <h5>No minimum number of printed images specified</h5>
+                                <p>
+                                    You only need to print small quantities and delivery in a short time.
+                                    We do not specify the minimum number of printed images all for customer convenience.
+                                </p>
                             </div>
                         </div>
                         <div className="row py-4">
                             <div className="col-md-6">
                                 <img src={content3} alt="" />
-                                <h5>Giao hàng siêu nhanh toàn quốc</h5>
-                                <p>Chúng tôi có dịch vụ giao hàng chuyển phát nhanh trên toàn quốc nữa đấy. Dù đơn bạn có giá trị nhỏ hay lơn,
-                                     Chúng tôi nhận chuyển phát.
-                                    Bạn có thể thanh toán bằng chuyển khoản ngân hàng hoặc thanh toán trực tiếp (COD) khi nhận sản phẩm.</p>
+                                <h5>Super-fast delivery nationwide</h5>
+                                <p>
+                                    We have express delivery service across the country as well.
+                                     Whether your application isF small or large, we accept delivery.
+                                    You can pay by bank transfer or direct payment (COD) upon receipt of the product.
+                                </p>
                             </div>
                             <div className="col-md-6">
                                 <img src={content4} alt="" />
-                                <h5>Đặt hàng trực tuyến</h5>
-                                <p>Đã qua rồi việc bạn phải đem hình ra tiệm để rửa. Chỉ cần vài cú click chuột,
-                                     ảnh xinh ảnh đẹp đã sẵn sàng được giao tới bạn.</p>
+                                <h5>Order online</h5>
+                                <p>
+                                    Gone are you who have to take pictures to the store to wash.
+                                     Just a few mouse clicks,
+                                     Beautiful photos beautiful photos are ready to be delivered to you.
+                                </p>
                             </div>
                         </div>
                         <div className="row py-4">
                             <div className="col-md-6">
                                 <img src={content5} alt="" />
-                                <h5>Thông tin khách hàng được bảo mật</h5>
-                                <p>Bạn đang muốn in những tấm ảnh có tính riêng tư cao?
-                                    Chúng tôi có trách nhiệm bảo vệ quyền riêng tư về thông tin và ảnh của khách hàng.
-                                    Chúng tôi sẽ không cung cấp thông tin của khách hàng cho bất kỳ đơn vị thứ 3.</p>
+                                <h5>Customer information is confidential</h5>
+                                <p>
+                                    Are you looking to print highly personal photos?
+                                    We are responsible for protecting the privacy of customer information and photos.
+                                    We will not provide customer information to any 3rd party.
+                                </p>
                             </div>
                             <div className="col-md-6">
                                 <img src={content6} alt="" />
-                                <h5>Hỗ trợ trực tuyến nhanh chóng</h5>
-                                <p>Chúng tôi cam kết phản hồi sớm nhất cho các bạn.</p>
+                                <h5>Quick online support</h5>
+                                <p>We promise to give you the earliest feedback.</p>
                             </div>
                         </div>
                     </div>

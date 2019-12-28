@@ -1,6 +1,6 @@
-.slide-show {
+.home-page {
+    padding-bottom: 25px;
 }
-
 .slide-show img {
     height: 450px;
 }
@@ -8,6 +8,7 @@
 .header-home h3 {
     margin: 50px 0;
     text-align: center;
+    color : blue;
 }
 .header-home p {
     font-size: 18px;
@@ -49,17 +50,20 @@
     font-size: 15px;
     font-weight: 500;
 }
+.content-home h3 {
+    color : blue
+}
 
-.content img {
+.content-home img {
     height: 300px;
 }
 
-.content h5 {
+.content-home h5 {
     text-align: center;
     margin : 20px 0;
 }
 
-.content p {
+.content-home p {
     text-align: justify;
     font-size: 15px;
     font-weight: 450;
@@ -67,6 +71,8 @@
 
 .footer-home h3 {
     text-align: center;
+    color : blue;
+    margin-bottom: 50px;
 }
 
 .footer-home p {

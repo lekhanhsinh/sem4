@@ -99,6 +99,11 @@ class Cart extends React.Component<any, any> {
     super(props);
     this.columns = [
       {
+        title: 'Id',
+        dataIndex: 'id',
+
+      },
+      {
         title: 'Name',
         dataIndex: 'name',
 
@@ -125,10 +130,10 @@ class Cart extends React.Component<any, any> {
         render: (text: any, record: any) =>
           this.state.dataSource.length >= 1 ? (
             <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
-              <a>Delete</a>
+              <Button type="danger">delete</Button>
             </Popconfirm>
           ) : null,
-      },
+      }
     ];
 
     this.state = {
@@ -136,13 +141,13 @@ class Cart extends React.Component<any, any> {
       count: 0
     };
   }
-  componentWillMount(){
+  componentWillMount() {
     this.initCart(this.props)
   }
-  componentWillReceiveProps(nextProps:any){
+  componentWillReceiveProps(nextProps: any) {
     this.initCart(nextProps)
   }
-  initCart=(nextProps:any) =>{
+  initCart = (nextProps: any) => {
     const { self, cart } = nextProps
     if (!self || !cart) {
       return
@@ -152,6 +157,7 @@ class Cart extends React.Component<any, any> {
     for (const str in items) {
       arr.push({
         key: parseInt(str, 10),
+        id: parseInt(str) + 1,
         name: items[str].image.name,
         quantity: items[str].quantity,
         material: items[str].material,
@@ -174,14 +180,13 @@ class Cart extends React.Component<any, any> {
     }
     const { items, totalPrice } = cart;
     items.splice(key, 1);
-    const temp = items.map((value:any) => {
+    const temp = items.map((value: any) => {
       return ({
         ...value,
-        image: value.image.id, totalPrice : undefined, __typename : undefined
+        image: value.image.id, totalPrice: undefined, __typename: undefined
       })
     })
-    updateCart(temp).then(i=> {
-      console.log(i);
+    updateCart(temp).then(i => {
       setCart(i)
     })
 
@@ -246,6 +251,6 @@ export default connect((state: any) => {
   }
 }, dispatch => {
   return {
-      setCart: (cart: any) => dispatch(setCart(cart))
+    setCart: (cart: any) => dispatch(setCart(cart))
   }
 })(withRouter(Cart));

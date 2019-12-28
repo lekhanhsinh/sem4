@@ -2,6 +2,10 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { Button, Modal, Form, Select, Input, notification } from 'antd';
 import createOrder from '../service/CreateOrder';
+import getSelfOrders from '../service/GetSelfOrders';
+import { connect } from 'react-redux';
+import { setOrders } from '../../redux/actions/order';
+import { setCart } from '../../redux/actions/cart';
 
 const { Option } = Select;
 
@@ -73,8 +77,8 @@ const CollectionCreateForm = Form.create<any>({ name: 'form_in_modal' })(
                             )}
                         </Form.Item> */}
                         <div>
-                                <p>Total Price : {totalPriceAll}</p>
-                            
+                            <p>Total Price : {totalPriceAll}</p>
+
                         </div>
 
 
@@ -106,19 +110,27 @@ class Order extends React.Component<any, any> {
             if (err) {
                 return;
             }
-            const detail ={
-                address : values.address,
-                description : values.description
+            const detail = {
+                address: values.address,
+                description: values.description
             }
             console.log(values);
             createOrder(values.creditCardNumber, detail).then(add => {
-                this.setState({visible : false});
-                notification.success({
-                    message:'Success'
+                getSelfOrders().then(orders => {
+                    console.log(orders);
+                    if (orders) {
+                        this.props.setOrders(orders)
+                    }
+                    this.props.setCart({ items: [], totalPrice: 0 })
                 })
+                this.setState({ visible: false });
+                notification.success({
+                    message: 'Success'
+                })
+
             }).catch(err => {
                 notification.error({
-                    message : 'Fail'
+                    message: 'Fail'
                 })
             })
         });
@@ -133,7 +145,7 @@ class Order extends React.Component<any, any> {
     render() {
         return (
             <div style={{
-                marginTop : 10
+                marginTop: 10
             }}>
                 <Button type="primary" onClick={this.showModal}>
                     Check out
@@ -151,4 +163,9 @@ class Order extends React.Component<any, any> {
     }
 }
 
-export default Order;
+export default connect(null, dispatch => {
+    return {
+        setOrders: (orders: any) => dispatch(setOrders(orders)),
+        setCart: (cart: any) => dispatch(setCart(cart))
+    }
+})(Order);

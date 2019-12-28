@@ -47,7 +47,6 @@ class Folder extends React.Component<any, any> {
           <img src={`/public/images/${data.path}`} />
           <p className="text-folder">{data.name}</p>
           <AddToCart item={data} fetchImage={this.fetchImage} />
-
         </div>
       </div>;
     })

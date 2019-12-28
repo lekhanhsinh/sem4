@@ -8,15 +8,25 @@ class Header extends React.Component {
 
         return (
             <div className="header-home container" >
-                <h3>DỊCH VỤ IN ẢNH</h3>
+                <h3>IMAGE PRINTING SERVICE</h3>
                 <p>
-                    Nhận thấy được xu hướng cập nhật công nghệ nhanh chóng của giới trẻ , Chúng tôi với mong muốn đem lại những trải nghiệm mới lạ, độc đáo cho mọi người với dịch vụ chụp hình lấy liền và in ảnh lấy liền tại tiệc cưới và sự kiện. Không chỉ cung cấp dịch vụ về hình ảnh, Chúng tôi sẽ giúp bạn lưu giữ những khoảnh khắc vui vẻ và trao tặng món quà đó đến tận tay từng khách mời thay cho việc hình ảnh chỉ đăng lên mạng và bị lãng quên nhanh chóng.
+                    Recognizing the trend of rapidly updating technology of young people,
+                    We aim to bring new and unique experiences to everyone with instant photography and
+                    instant photo printing at weddings and events. to sue. Not only do we provide photo services,
+                    We will help you to keep the happy moments and give them to each
+                    guest instead of just posting and being forgotten quickly.
                 </p>
                 <p>
-                    Với đội ngũ nhân viên chuyên nghiệp, thân thiện, máy móc hiện đại và dịch vụ đa dạng, Chúng tôi đã và đang được rất nhiều khách hàng tin tưởng lựa chọn trong những dịp đặc biệt như đám cưới, đính hôn, tiệc liên hoan và các sự kiện lớn khác.
+
+                    With a staff of professional, friendly, modern machines and diverse services,
+                    we have been trusted by many customers in special occasions such as weddings,
+                    engagements, parties. and other major events.
                 </p>
                 <p>
-                    Với dịch vụ in ảnh từ photobooth, instagram, điện thoại, phông xanh, GIF booth và quay video tương tác, hiệu ứng độc đáo 180 và 360 cùng những bộ sưu tập đạo cụ vui nhộn và phông nền đa dạng, Printaphy sẵn sàng đáp ứng mọi nhu cầu của bạn để sự kiện của bạn trở nên đáng nhớ và vui vẻ nhất.
+                    With photo printing services from photobooth, instagram, phone, green screen,
+                    GIF booth and interactive video recording,
+                    unique effects 180 and 360 with a collection of fun props and diverse backgrounds,
+                    Printaphy is ready to meet Meet all your needs to make your event the most memorable and fun.
                 </p>
             </div>
         );

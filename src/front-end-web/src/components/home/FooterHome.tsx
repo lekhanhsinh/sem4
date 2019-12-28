@@ -8,26 +8,25 @@ class FooterHome extends React.Component {
 
         return (
             <div className="footer-home container">
-                <h3>Bạn vẫn còn đang phần vân vì . . .</h3>
+                <h3>You are still wondering because. . .</h3>
                 <p>
-                    Bạn đang muốn in những kiểu ảnh hiện đại như cỡ Polaroid và Instagram theo xu hướng mới nhất ?
+                    Are you looking to print modern photo styles like Polaroid and Instagram sizes according to the latest trends?
                 </p>
                 <p>
-                    Bạn không biết tiệm ảnh nào tiện đường nhất, giá cả tốt nhất và chất lượng xuất sắc nhất ?
+                    You don't know which photo shop is the most convenient, the best price and the best quality?
                 </p>
                 <p>
-                    Bạn muốn in số lượng ít nhưng ngại chạy đi xa gửi hình?
+                    Want to print a small number but are afraid to run away from sending pictures?
                 </p>
                 <p>
-                    Bạn đang đắn đo nên in cỡ to hay cỡ nhỏ vì chi phí in khác nhau?
+                    Are you considering printing large or small sizes because of different printing costs?
                 </p>
                 <p>
-                    Đừng lo lắng, TIỆM IN ẢNH sẽ giúp bạn có được những bức ảnh xinh xắn bằng dịch vụ in ảnh
-                     vô cùng tiện lợi, nhanh chóng với mức giá vô cùng hạt dẻ!
+                    Don't worry, PHOTO PRINTING SHOP will help you get lovely photos by photo printing service extremely convenient, fast at extremely cheap prices!
                 </p>
                 <p>
-                    Hãy đến với chúng tôi để có được đáp án.
-                    Cảm ơn đã sử dụng dịch vụ của chúng tôi.
+                    Come with us to get the answer.
+                    Thanks for using our service.
                 </p>
             </div>
         );

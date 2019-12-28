@@ -5,7 +5,7 @@ import getUser from '../service/GetSelf';
 import { connect } from 'react-redux';
 import EditPass from './EditPass';
 import EditUser from './EditUser';
-import OrderDetail from './OrderDetail';
+import OrderSelfDetail from './OrderSelfDetail';
 
 
 class User extends React.Component<any, any> {
@@ -61,7 +61,7 @@ class User extends React.Component<any, any> {
                 </div>
                 <div className="user-div">
                   <div className="witdh-div">
-                    <p>Date of birth : {data.dateOfBirth}</p>
+                    <p>Date of birth : {new Date(data.dateOfBirth).toLocaleDateString()}</p>
                   </div>
                   <div className="witdh-div">
                     <p>Gender : {data.gender}</p>
@@ -79,7 +79,7 @@ class User extends React.Component<any, any> {
             </div>
           </div>
         )}
-        <OrderDetail />
+        <OrderSelfDetail />
       </div>
     );
   }
