@@ -1474,7 +1474,7 @@
         "signature": "94e2d339c11397839a8b1f6d03243b3ae43bccbb6bc1a7bd9383943337d39643"
       },
       "../src/graphql/typedefs/image.ts": {
-        "version": "1ca99f94f87f433357615b0228e79a2e1e9f5ad6cbc5434f76a65e0ec98c2c4a",
+        "version": "cf297dc7971e1d36428327fb7304c27dd133185bbb488383eb685f12cb7d0639",
         "signature": "1c1df02b47f705d3744d74cf4cea5931fffd2124126c0c592aaa80bae8c67f7f"
       },
       "../src/graphql/typedefs/cart.ts": {
@@ -1482,7 +1482,7 @@
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {
-        "version": "afee1b157fac36b4dc30656943d9fed6dda746695474ee9bb1131b3fccf8d745",
+        "version": "df88050d0269d220e73dcc59a4eb28bf171e66a1a8f3e7aeb14663267d6d1c4b",
         "signature": "460fe4cf786bbe62efa013080df67ce30b155f84e557c8d5b471fa79b31596ed"
       },
       "../src/graphql/typedefs/index.ts": {
@@ -1582,7 +1582,7 @@
         "signature": "a26e734f139d6477d8ddc3be86fb0e20a8cf3c0c9b8a62579648596e2375aa5b"
       },
       "../src/graphql/resolvers/image.ts": {
-        "version": "5a9109540e41b74758a41029a40cc5929fef4d80c989923e97894c4f84907cf7",
+        "version": "3fc7e1614cd1262b48e35a1e66d7aeceda3b1cf70fe02d22bc59510adeb16c51",
         "signature": "0dfa365953eb5aedc2ebbf108f873e6b1e3d1df8c7d3ac01e4bfdac68d1a1370"
       },
       "../src/graphql/resolvers/cart.ts": {

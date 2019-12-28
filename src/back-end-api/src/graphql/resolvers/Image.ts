@@ -18,6 +18,15 @@ const imageResolvers: IResolvers = {
             }
             return Repositories.imageRepository.getMany();
         },
+        getImagesbyUserId: (obj, args, context, info): Promise<ImageDocument[]> => {
+            const { userId } = args;
+            const { req } = context;
+            const { employee } = req.session;
+            if (!employee || !employee.logged) {
+                throw new Error("Access Denied.");
+            }
+            return Repositories.imageRepository.getManybyUserId(userId);
+        },
         getSelfImages: (obj, args, context, info): Promise<ImageDocument[]> => {
             const { } = args;
             const { req } = context;

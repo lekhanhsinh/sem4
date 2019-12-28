@@ -6,6 +6,7 @@ const ImageTypeDefs = gql`
         getImage(id: String!): ImageType
         getImages(sort: SortInputType, searchs: [SearchInputType]): [ImageType]
         getSelfImages: [ImageType]
+        getOrdersbyUserId(userId: String!): [ImageType]
     }
 
     extend type Mutation {

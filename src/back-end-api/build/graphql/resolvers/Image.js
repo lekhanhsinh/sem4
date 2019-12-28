@@ -16,6 +16,15 @@ var imageResolvers = {
             }
             return _back_end_database_1.Repositories.imageRepository.getMany();
         },
+        getImagesbyUserId: function (obj, args, context, info) {
+            var userId = args.userId;
+            var req = context.req;
+            var employee = req.session.employee;
+            if (!employee || !employee.logged) {
+                throw new Error("Access Denied.");
+            }
+            return _back_end_database_1.Repositories.imageRepository.getManybyUserId(userId);
+        },
         getSelfImages: function (obj, args, context, info) {
             var _a = args;
             var req = context.req;

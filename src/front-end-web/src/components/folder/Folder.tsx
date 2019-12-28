@@ -22,7 +22,7 @@ class Folder extends React.Component<any, any> {
     this.fetchImage()
   }
 
-  fetchImage=()=>{
+  fetchImage = () => {
     getSelfImages().then(images => {
       this.setState({
         datas: images
@@ -44,10 +44,10 @@ class Folder extends React.Component<any, any> {
     const showImg = datas.map((data: any, index: any) => {
       return <div key={index} className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <div className="col-folder">
-          <img src={`http://herebedragon.com:4000/public/images/${data.path}`} />
+          <img src={`/public/images/${data.path}`} />
           <p className="text-folder">{data.name}</p>
-          <AddToCart item={data} fetchImage={this.fetchImage}/>
-          
+          <AddToCart item={data} fetchImage={this.fetchImage} />
+
         </div>
       </div>;
     })
@@ -55,7 +55,7 @@ class Folder extends React.Component<any, any> {
     return (
       <div className="container">
         <h1>Your Images</h1>
-          <AddImage fetchImage={this.fetchImage}/>
+        <AddImage fetchImage={this.fetchImage} />
 
         <div className="row">
           {showImg}
