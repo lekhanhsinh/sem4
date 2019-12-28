@@ -8,16 +8,14 @@ const DELETEIMAGE = gql`
     }
 `
 const deleteImage = (id: string) => {
-  return client.mutate({
-    mutation: DELETEIMAGE,
-    variables: { id }
-  }
-  ).then(res => {
-    return res.data.deleteImage
-  }).catch(err => {
-    message.info(err.message)
-  }).catch(err => {
-    message.info(err.message);
-  })
+    return client.mutate({
+        mutation: DELETEIMAGE,
+        variables: { id }
+    }
+    ).then(res => {
+        return res.data.deleteImage
+    }).catch(err => {
+        message.info(err.message)
+    })
 }
 export default deleteImage

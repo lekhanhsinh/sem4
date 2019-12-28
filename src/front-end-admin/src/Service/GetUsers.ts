@@ -12,6 +12,8 @@ const GETUSERS = gql`
                 address
                 phoneNumber
                 dateOfBirth
+                createdAt
+                updatedAt
           }
     }
 `

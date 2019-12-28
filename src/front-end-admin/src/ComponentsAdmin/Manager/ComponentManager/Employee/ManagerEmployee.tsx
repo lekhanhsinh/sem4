@@ -1,4 +1,4 @@
-import { Table, Input, Button, Popconfirm, Form, Icon, Menu } from "antd";
+import { Table, Input, Button, Popconfirm, Form, Icon, Menu, Tag } from "antd";
 import React from "react";
 import { ColumnProps } from "antd/es/table";
 import { FormComponentProps } from "antd/lib/form";
@@ -48,6 +48,13 @@ class EditableCell extends React.Component<any, any> {
     const { children, dataIndex, record, title } = this.props;
     const { editing } = this.state;
     this.form = form;
+    if (title === "Role") {
+      return (
+        <div ref={node => (this.input = node)}>
+          <Tag color="blue">{record["role"]}</Tag>
+        </div>
+      );
+    }
     return editing ? (
       <Form.Item style={{ margin: 0 }}>
         {form.getFieldDecorator(dataIndex, {
@@ -126,7 +133,8 @@ class EditableTable extends React.Component<any, any> {
       },
       {
         title: "Role",
-        dataIndex: "role"
+        dataIndex: "role",
+        editable: true
       },
       {
         title: "Action",
@@ -167,7 +175,6 @@ class EditableTable extends React.Component<any, any> {
           role: items[str].role
         });
       }
-      console.log(items);
 
       this.setState({
         collapsed: false,
@@ -182,7 +189,6 @@ class EditableTable extends React.Component<any, any> {
     this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
   };
   handleClick = (e: any) => {
-    console.log("click ", e);
     this.setState({
       current: e.key
     });
@@ -263,7 +269,7 @@ class EditableTable extends React.Component<any, any> {
             <Link to="/ManagerImage"></Link>
           </Menu.Item>
           <Menu.Item key="6">
-            <Icon type="file-image" />
+            <Icon type="api" />
             <span>ManagerService</span>
             <Link to="/ManagerService"></Link>
           </Menu.Item>

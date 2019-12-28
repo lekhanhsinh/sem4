@@ -87,7 +87,6 @@ class Demo extends React.Component<any, any> {
     e.preventDefault();
     this.props.form.validateFields((err: any, values: any) => {
       if (!err) {
-        console.log(values);
 
         setPrice(values.price.number, values.method.currency)
           .then(() => {
@@ -146,7 +145,7 @@ class Demo extends React.Component<any, any> {
             <Link to="/ManagerImage"></Link>
           </Menu.Item>
           <Menu.Item key="6">
-            <Icon type="file-image" />
+            <Icon type="api" />
             <span>ManagerService</span>
             <Link to="/ManagerService"></Link>
           </Menu.Item>

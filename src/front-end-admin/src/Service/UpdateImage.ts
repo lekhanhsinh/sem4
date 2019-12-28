@@ -34,7 +34,7 @@ const updateImage = (id: string, detail: any) => {
             detail,
         }
     }).then(res => {
-        return console.log(res.data.updateImage);
+        return res.data.updateImage;
 
     }).catch(err => {
         message.info(err.message);

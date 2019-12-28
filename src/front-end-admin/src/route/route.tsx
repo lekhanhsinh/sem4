@@ -27,12 +27,20 @@ const routes = [
     component: Register
   },
   {
+    path: "/ManagerUser/:id",
+    component: EditableTable
+  },
+  {
     path: "/ManagerUser",
     component: EditableTable
   },
   {
     path: "/404",
     component: NotFoundPage
+  },
+  {
+    path: "/ManagerImage/:id",
+    component: ManagerImage
   },
   {
     path: "/ManagerImage",

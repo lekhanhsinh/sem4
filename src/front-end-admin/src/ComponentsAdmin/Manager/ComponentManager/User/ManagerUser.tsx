@@ -18,9 +18,8 @@ import getUsers from "../../../../Service/GetUsers";
 import deleteUser from "../../../../Service/DeleteUser";
 import updateUser from "../../../../Service/UpdateUsers";
 import moment from "moment";
-import { Link } from "react-router-dom";
-import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
-import getOrders from "../../../../Service/GetOrders";
+import { Link, withRouter } from "react-router-dom";
+import getUser from "../../../../Service/GetUser";
 interface Props extends FormComponentProps, ColumnProps<any> {}
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
@@ -72,6 +71,7 @@ class EditableCell extends React.Component<any, any> {
       return (
         <div ref={node => (this.input = node)}>
           <Radio.Group
+            style={{ width: "70px" }}
             onChange={e => {
               this.onChange(e, record);
             }}
@@ -85,7 +85,7 @@ class EditableCell extends React.Component<any, any> {
     }
     if (title === "Id") {
       return (
-        <div ref={node => (this.input = node)}>
+        <div ref={node => (this.input = node)} style={{ width: "100px" }}>
           <Link to={`/ManagerOrder/${record["id"]}`}>
             <p>{record["id"]}</p>
           </Link>
@@ -96,6 +96,7 @@ class EditableCell extends React.Component<any, any> {
       return (
         <div ref={node => (this.input = node)}>
           <DatePicker
+            style={{ width: "120px" }}
             value={record["DateOfBirth"]}
             format={dateFormatList}
             onChange={e => {
@@ -202,19 +203,27 @@ class EditableTableUser extends React.Component<any, any> {
         editable: true
       },
       {
+        title: "CreatedAt",
+        dataIndex: "createdAt",
+        editable: true
+      },
+      {
+        title: "UpdatedAt",
+        dataIndex: "updatedAt",
+        editable: true
+      },
+
+      {
         title: "Action",
         dataIndex: "action",
         render: (text: any, record: any) => {
           return this.state.dataSource.length > 0 ? (
             <>
-              <Popconfirm
-                title="Sure to delete?"
-                onConfirm={() => this.handleDelete(record.key, record.id)}
-              >
-                <Button type="danger">Delete</Button>
-              </Popconfirm>
-              <Button type="primary" onClick={this.showModal}>
-                Detail
+              <Button type="primary">
+                <Link to={`/ManagerOrder/${record["id"]}`}>{`Order`}</Link>
+              </Button>
+              <Button type="primary">
+                <Link to={`/ManagerImage/${record["id"]}`}>{`Image`}</Link>
               </Button>
             </>
           ) : null;
@@ -222,7 +231,6 @@ class EditableTableUser extends React.Component<any, any> {
       }
     ];
     this.state = {
-      visible: false,
       current: "1",
       dataSource: [],
       count: 0,
@@ -230,27 +238,64 @@ class EditableTableUser extends React.Component<any, any> {
       checkAll: false
     };
   }
+  getUser = () => {
+    const userId = this.props.match.params.id;
 
-  componentDidMount() {
-    getUsers().then(items => {
-      const arr = [];
-      for (const str in items) {
+    if (userId) {
+      getUser(userId).then(item => {
+        const arr = [];
         arr.push({
-          key: parseInt(str, 10),
-          id: items[str].id,
-          name: items[str].name,
-          email: items[str].email,
-          address: items[str].address,
-          gender: items[str].gender,
-          phonenumber: items[str].phoneNumber,
-          DateOfBirth: moment(items[str].dateOfBirth)
+          key: 1,
+          id: item.id,
+          name: item.name,
+          email: item.email,
+          address: item.address,
+          gender: item.gender,
+          phonenumber: item.phoneNumber,
+          DateOfBirth: moment(item.dateOfBirth),
+          createdAt: new Date(item.createdAt).toLocaleDateString("en-US"),
+          updatedAt: new Date(item.updatedAt).toLocaleDateString("en-US")
         });
-      }
-      this.setState({
-        dataSource: arr,
-        count: arr.length
+        this.setState({
+          dataSource: arr,
+          count: arr.length
+        });
       });
-    });
+    } else {
+      getUsers().then(items => {
+        const arr = [];
+        for (const str in items) {
+          arr.push({
+            key: parseInt(str, 10),
+            id: items[str].id,
+            name: items[str].name,
+            email: items[str].email,
+            address: items[str].address,
+            gender: items[str].gender,
+            phonenumber: items[str].phoneNumber,
+            DateOfBirth: moment(items[str].dateOfBirth),
+            createdAt: new Date(items[str].createdAt).toLocaleDateString(
+              "en-US"
+            ),
+            updatedAt: new Date(items[str].updatedAt).toLocaleDateString(
+              "en-US"
+            )
+          });
+        }
+        this.setState({
+          dataSource: arr,
+          count: arr.length
+        });
+      });
+    }
+  };
+  componentWillReceiveProps(nextProps: any) {
+    if (nextProps.location.state === this.props.location.state) {
+      this.getUser();
+    }
+  }
+  componentDidMount() {
+    this.getUser();
   }
   handleDelete = (key: any, id: string) => {
     deleteUser(id);
@@ -331,12 +376,7 @@ class EditableTableUser extends React.Component<any, any> {
     return (
       <div>
         <h1 style={{ textAlign: "center" }}>UserInfo</h1>
-        <Modal
-          title="Detail"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        ></Modal>
+
         <Menu
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
@@ -369,7 +409,7 @@ class EditableTableUser extends React.Component<any, any> {
             <Link to="/ManagerImage"></Link>
           </Menu.Item>
           <Menu.Item key="6">
-            <Icon type="file-image" />
+            <Icon type="api" />
             <span>ManagerService</span>
             <Link to="/ManagerService"></Link>
           </Menu.Item>
@@ -386,4 +426,4 @@ class EditableTableUser extends React.Component<any, any> {
   }
 }
 
-export default EditableTableUser;
+export default withRouter<any, any>(EditableTableUser);

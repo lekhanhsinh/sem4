@@ -53,8 +53,8 @@ const orderResolvers: IResolvers = {
         updateOrder: (obj, args, context, info): Promise<OrderDocument> => {
             const { id, detail } = args;
             const { req } = context;
-            const { order } = req.session;
-            if (!order) {
+            const { employee } = req.session;
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.orderRepository.update(id, detail).then(order => {
@@ -64,8 +64,8 @@ const orderResolvers: IResolvers = {
         deleteOrder: (obj, args, context, info): Promise<string> => {
             const { id } = args;
             const { req } = context;
-            const { order } = req.session;
-            if (!order) {
+            const { employee } = req.session;
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return Repositories.orderRepository.delete(id).then(order => {

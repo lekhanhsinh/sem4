@@ -14,7 +14,6 @@ const SETPRICE = gql`
         }
 `
 const setPrice = (price: string, method: "PERCM" | "PERPIC") => {
-    console.log(price);
 
     return client.mutate({
         mutation: SETPRICE,
@@ -23,7 +22,7 @@ const setPrice = (price: string, method: "PERCM" | "PERPIC") => {
             method,
         }
     }).then(res => {
-        return console.log(res.data.setPrice);
+        return res.data.setPrice;
 
     })
 }

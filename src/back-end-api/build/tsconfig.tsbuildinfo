@@ -1590,7 +1590,7 @@
         "signature": "60d6d75e92eeb08f4b9c9051b88ef222c36b27a52cb12505638d443f7c944277"
       },
       "../src/graphql/resolvers/order.ts": {
-        "version": "a7567be9de92226bfd7322708583379a8be9ed6c3f860928c07ba8be97a7ce0b",
+        "version": "f86b8adaa741048da8acd947201523cdc69c792197539537356840492e1170b6",
         "signature": "e6134f172d086ac9973db76251ab6a62294690115b4fbadfe4d6d203e6481959"
       },
       "../src/graphql/resolvers/index.ts": {

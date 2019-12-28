@@ -38,7 +38,7 @@ const updateOrder = (id: string, detail: any) => {
             detail,
         }
     }).then(res => {
-        return console.log(res.data.updateOrder);
+        return res.data.updateOrder;
 
     }).catch(err => {
         message.info(err.message);

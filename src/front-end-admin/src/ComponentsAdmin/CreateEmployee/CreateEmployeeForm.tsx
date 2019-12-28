@@ -53,7 +53,6 @@ const Register: FunctionComponent<Props> = props => {
           detail
         )
           .then(register => {
-            console.log(`register resut`, register);
             notification.success({
               message: `Đăng ký thành công`
             });

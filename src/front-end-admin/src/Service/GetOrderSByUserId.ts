@@ -6,6 +6,7 @@ const GETORDERSBYUSERID = gql`
 query 
     GetOrdersbyUserId($userId:String!) {
         getOrdersbyUserId(userId:$userId){
+          id
           items {
               quantity
               size

@@ -4,22 +4,38 @@ import { message } from "antd";
 
 const GETERODERS = gql`
     query GetOrders {
-        getOrders{
-            items{
-              quantity
-              size
-              image{
-                id
-                name
-                description
-                path
-              }
-              totalPrice
-            }
-            totalPrice
-            address
-            status  
+      getOrders{
+        id
+        user{
+          id
+          email
+          name
+          gender
+          address
+          phoneNumber
+          dateOfBirth
+          createdAt
+          updatedAt
+        }
+        items{
+          quantity
+          size
+          material
+          image{
+            id
+            name
+            description
+            path
+            createdAt
+            updatedAt
           }
+          totalPrice
+        }
+        totalPrice
+        address
+        description
+        status
+      }
     }
 `
 const getOrders = () => {
@@ -28,8 +44,6 @@ const getOrders = () => {
   }).then(res => {
 
     return res.data.getOrders
-  }).catch(err => {
-
   }).catch(err => {
     message.info(err.message);
   })

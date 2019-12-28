@@ -3,11 +3,11 @@ import React from "react";
 import { ColumnProps } from "antd/es/table";
 import { FormComponentProps } from "antd/lib/form";
 import "antd/dist/antd.css";
-import deleteUser from "../../../../Service/DeleteUser";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import getImages from "../../../../Service/GetImages";
 import updateImage from "../../../../Service/UpdateImage";
 import deleteImage from "../../../../Service/DeleteImage";
+import getImagesbyUserId from "../../../../Service/GetImagesByUserId";
 interface Props extends FormComponentProps, ColumnProps<any> { }
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
@@ -56,6 +56,15 @@ class EditableCell extends React.Component<any, any> {
             style={{ width: "80px", height: "80px" }}
             src={`/public/images/${record["path"]}`}
           ></img>
+        </div>
+      );
+    }
+    if (title === "UserId") {
+      return (
+        <div ref={node => (this.input = node)} style={{ width: "100px" }}>
+          <Link to={`/ManagerUser/${record["userId"]}`}>
+            <p>{record["userId"]}</p>
+          </Link>
         </div>
       );
     }
@@ -119,12 +128,18 @@ class EditableTable extends React.Component<any, any> {
     this.formRef = formRef;
   };
   columns: any[] = [];
-  constructor(props: Props) {
+  constructor(props: any) {
     super(props);
+
     this.columns = [
       {
-        title: "Id",
-        dataIndex: "id",
+        title: "UserId",
+        dataIndex: "userId",
+        editable: true
+      },
+      {
+        title: "ImageId",
+        dataIndex: "imageId",
         editable: false
       },
       {
@@ -142,11 +157,6 @@ class EditableTable extends React.Component<any, any> {
         dataIndex: "description",
         editable: true
       },
-      {
-        title: "User",
-        dataIndex: "user"
-      },
-
       {
         title: "CreatedAt",
         dataIndex: "createdAt"
@@ -181,28 +191,70 @@ class EditableTable extends React.Component<any, any> {
       checkAll: false
     };
   }
+  componentWillReceiveProps(nextProps: any) {
+    if (nextProps.location.state === this.props.location.state) {
+      this.getImage();
+    }
+  }
+  getImage() {
+    const userId = this.props.match.params.id;
 
-  componentDidMount() {
-    getImages().then(items => {
-      const arr = [];
-      console.log(items);
-      for (const str in items) {
-        arr.push({
-          key: parseInt(str, 10),
-          id: items[str].id,
-          name: items[str].name,
-          path: items[str].path,
-          description: items[str].description,
-          user: items[str].user.id,
-          createdAt: new Date(items[str].createdAt).toLocaleDateString("en-US"),
-          updatedAt: new Date(items[str].updatedAt).toLocaleDateString("en-US")
+    if (userId) {
+
+
+      getImagesbyUserId(userId).then(items => {
+        const arr = [];
+        for (const str in items) {
+          arr.push({
+            key: parseInt(str, 10),
+            userId: items[str].user.id,
+            imageId: items[str].id,
+            name: items[str].name,
+            path: items[str].path,
+            description: items[str].description,
+            user: items[str].user.id,
+            createdAt: new Date(items[str].createdAt).toLocaleDateString(
+              "en-US"
+            ),
+            updatedAt: new Date(items[str].updatedAt).toLocaleDateString(
+              "en-US"
+            )
+          });
+        }
+        this.setState({
+          dataSource: arr,
+          count: arr.length
         });
-      }
-      this.setState({
-        dataSource: arr,
-        count: arr.length
       });
-    });
+    } else {
+      getImages().then(items => {
+        const arr = [];
+        for (const str in items) {
+          arr.push({
+            key: parseInt(str, 10),
+            userId: items[str].user.id,
+            imageId: items[str].id,
+            name: items[str].name,
+            path: items[str].path,
+            description: items[str].description,
+            user: items[str].user.id,
+            createdAt: new Date(items[str].createdAt).toLocaleDateString(
+              "en-US"
+            ),
+            updatedAt: new Date(items[str].updatedAt).toLocaleDateString(
+              "en-US"
+            )
+          });
+        }
+        this.setState({
+          dataSource: arr,
+          count: arr.length
+        });
+      });
+    }
+  }
+  componentDidMount() {
+    this.getImage();
   }
   handleDelete = (key: any, id: string) => {
     deleteImage(id);
@@ -296,7 +348,7 @@ class EditableTable extends React.Component<any, any> {
             <Link to="/ManagerImage"></Link>
           </Menu.Item>
           <Menu.Item key="6">
-            <Icon type="file-image" />
+            <Icon type="api" />
             <span>ManagerService</span>
             <Link to="/ManagerService"></Link>
           </Menu.Item>
@@ -313,4 +365,4 @@ class EditableTable extends React.Component<any, any> {
   }
 }
 
-export default EditableTable;
+export default withRouter(EditableTable);

@@ -6,19 +6,20 @@ import {
   Form,
   Select,
   Icon,
-  Menu
+  Menu,
+  Modal,
+  Row
 } from "antd";
+import OrderDetails from "./OrderDetails";
 import { withRouter } from "react-router-dom";
 import React from "react";
-import { ColumnProps } from "antd/es/table";
-import { FormComponentProps } from "antd/lib/form";
 import "antd/dist/antd.css";
 import { Link } from "react-router-dom";
 import deleteOrder from "../../../../Service/DeleteOrder";
-import getOders from "../../../../Service/GetOrders";
+import getOrders from "../../../../Service/GetOrders";
 import updateOrder from "../../../../Service/UpdateOrder";
 import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
-interface Props extends FormComponentProps, ColumnProps<any> {}
+const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -59,6 +60,31 @@ class EditableCell extends React.Component<any, any> {
     const { children, dataIndex, record, title } = this.props;
     const { editing } = this.state;
     this.form = form;
+    if (title === "Status") {
+      return (
+        <Select
+          defaultValue={record["status"]}
+          style={{ width: 120 }}
+          onChange={(value: any) => {
+            record.status = value;
+            this.props.handleSave(record);
+          }}
+        >
+          <Option value="Ongoing">Ongoing</Option>
+          <Option value="Done">Done</Option>
+          <Option value="Denied">Denied</Option>
+        </Select>
+      );
+    }
+    if (title === "UserId") {
+      return (
+        <div ref={node => (this.input = node)} style={{ width: "100px" }}>
+          <Link to={`/ManagerUser/${record["userId"]}`}>
+            <p>{record["userId"]}</p>
+          </Link>
+        </div>
+      );
+    }
     return editing ? (
       <Form.Item style={{ margin: 0 }}>
         {form.getFieldDecorator(dataIndex, {
@@ -119,34 +145,32 @@ class EditableTable extends React.Component<any, any> {
     this.formRef = formRef;
   };
   columns: any[] = [];
-  constructor(props: Props) {
+  constructor(props: any) {
     super(props);
     this.columns = [
       {
-        title: "Image",
-        dataIndex: "image"
-      },
-      {
-        title: "Quantity",
-        dataIndex: "quantity",
+        title: "UserId",
+        dataIndex: "userId",
         editable: true
       },
       {
-        title: "Size",
-        dataIndex: "size",
-        editable: true
-      },
-      {
-        title: "TotalPirce",
+        title: "TotalPrice",
         dataIndex: "totalPrice"
       },
       {
-        title: "Material",
-        dataIndex: "material"
+        title: "Address",
+        dataIndex: "address",
+        editable: true
+      },
+      {
+        title: "Description",
+        dataIndex: "description",
+        editable: true
       },
       {
         title: "Status",
-        dataIndex: "status"
+        dataIndex: "status",
+        editable: true
       },
       {
         title: "Action",
@@ -161,12 +185,25 @@ class EditableTable extends React.Component<any, any> {
               >
                 <Button type="danger">Delete</Button>
               </Popconfirm>
+              <Button type="primary" onClick={() => this.showModal(record.id)}>
+                Detail
+              </Button>
+              <Modal
+                key={record.key}
+                title="Detail"
+                visible={this.state.visible === record.id}
+                onOk={this.handleOk}
+                onCancel={this.handleCancel}
+              >
+                <OrderDetails record={record} />
+              </Modal>
             </>
           ) : null;
         }
       }
     ];
     this.state = {
+      visible: false,
       current: "2",
       dataSource: [],
       count: 0,
@@ -174,22 +211,44 @@ class EditableTable extends React.Component<any, any> {
       checkAll: false
     };
   }
+  handleClick = (e: any) => {
+    this.setState({
+      current: e.key
+    });
+  };
+  showModal = (id: string) => {
+    this.setState({
+      visible: id
+    });
+  };
 
-  componentDidMount() {
+  handleOk = (e: any) => {
+    this.setState({
+      visible: false
+    });
+  };
+
+  handleCancel = (e: any) => {
+    this.setState({
+      visible: false
+    });
+  };
+  getOrder = () => {
     const userId = this.props.match.params.id;
-    if (userId) {
-      getOrdersbyUserId(userId).then(items => {
-        const arr = [];
 
-        for (const str in items) {
+    if (userId) {
+      getOrdersbyUserId(userId).then(orders => {
+        const arr = [];
+        for (const str in orders) {
           arr.push({
             key: parseInt(str, 10),
-            image: items[str].items[0].image.path,
-            quantity: items[str].items[0].quantity,
-            size: items[str].items[0].size,
-            totalPrice: items[str].items[0].totalPrice,
-            status: items[str].items[0].status,
-            material: items[str].items[0].material
+            id: orders[str].id,
+            userId: orders[str].user.id,
+            totalPrice: orders[str].totalPrice,
+            address: orders[str].address,
+            description: orders[str].description,
+            status: orders[str].status,
+            items: orders[str].items
           });
         }
         this.setState({
@@ -198,18 +257,18 @@ class EditableTable extends React.Component<any, any> {
         });
       });
     } else {
-      getOders().then(items => {
+      getOrders().then(orders => {
         const arr = [];
-
-        for (const str in items) {
+        for (const str in orders) {
           arr.push({
             key: parseInt(str, 10),
-            image: items[str].items[0].image.path,
-            quantity: items[str].items[0].quantity,
-            size: items[str].items[0].size,
-            totalPrice: items[str].items[0].totalPrice,
-            status: items[str].items[0].status,
-            material: items[str].items[0].material
+            id: orders[str].id,
+            userId: orders[str].user.id,
+            totalPrice: orders[str].totalPrice,
+            address: orders[str].address,
+            description: orders[str].description,
+            status: orders[str].status,
+            items: orders[str].items
           });
         }
         this.setState({
@@ -217,6 +276,14 @@ class EditableTable extends React.Component<any, any> {
           count: arr.length
         });
       });
+    }
+  };
+  componentDidMount() {
+    this.getOrder();
+  }
+  componentWillReceiveProps(nextProps: any) {
+    if (nextProps.location.state === this.props.location.state) {
+      this.getOrder();
     }
   }
   handleDelete = (key: any, id: string) => {
@@ -236,17 +303,15 @@ class EditableTable extends React.Component<any, any> {
 
     const user = {
       id: row.id,
-      detail: { name: row.name, address: row.address }
+      detail: {
+        description: row.description,
+        address: row.address,
+        status: row.status
+      }
     };
 
     updateOrder(user.id, user.detail);
     this.setState({ dataSource: newData });
-  };
-  handleClick = (e: any) => {
-    console.log("click ", e);
-    this.setState({
-      current: e.key
-    });
   };
   render() {
     const { dataSource } = this.state;
@@ -308,7 +373,7 @@ class EditableTable extends React.Component<any, any> {
             <Link to="/ManagerImage"></Link>
           </Menu.Item>
           <Menu.Item key="6">
-            <Icon type="file-image" />
+            <Icon type="api" />
             <span>ManagerService</span>
             <Link to="/ManagerService"></Link>
           </Menu.Item>

@@ -62,8 +62,8 @@ var orderResolvers = {
         updateOrder: function (obj, args, context, info) {
             var id = args.id, detail = args.detail;
             var req = context.req;
-            var order = req.session.order;
-            if (!order) {
+            var employee = req.session.employee;
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.orderRepository.update(id, detail).then(function (order) {
@@ -73,8 +73,8 @@ var orderResolvers = {
         deleteOrder: function (obj, args, context, info) {
             var id = args.id;
             var req = context.req;
-            var order = req.session.order;
-            if (!order) {
+            var employee = req.session.employee;
+            if (!employee || !employee.logged) {
                 throw new Error("Access Denied.");
             }
             return _back_end_database_1.Repositories.orderRepository.delete(id).then(function (order) {

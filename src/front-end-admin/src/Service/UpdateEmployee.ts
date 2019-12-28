@@ -19,7 +19,6 @@ const UPDATEEMPLOYEE = gql`
     }
 `
 const updateEmployee = (id: string, detail: any) => {
-    console.log(id);
 
     return client.mutate({
         mutation: UPDATEEMPLOYEE,
@@ -28,7 +27,7 @@ const updateEmployee = (id: string, detail: any) => {
             detail,
         }
     }).then(res => {
-        return console.log(res.data.updateEmployee);
+        return res.data.updateEmployee;
 
     }).catch(err => {
         message.info(err.message);
