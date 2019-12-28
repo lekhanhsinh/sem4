@@ -36,7 +36,7 @@ const getSelfOrders = () => {
   }).then(res => {
     return res.data.getSelfOrders
   }).catch(err => {
-    message.error(err.message)
+    // message.error(err.message)
   })
 }
 

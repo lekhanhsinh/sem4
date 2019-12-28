@@ -27,21 +27,25 @@ const checkFilter = str => {
 
 const filterDependencies = packageJSON => {
     let dependencies = [];
-    for (const name of Object.keys(packageJSON.dependencies)) {
-        if (checkFilter(name)) {
-            dependencies = {
-                ...dependencies,
-                [name]: packageJSON.dependencies[name]
-            };
+    if (packageJSON.dependencies) {
+        for (const name of Object.keys(packageJSON.dependencies)) {
+            if (checkFilter(name)) {
+                dependencies = {
+                    ...dependencies,
+                    [name]: packageJSON.dependencies[name]
+                };
+            }
         }
     }
     let devDependencies = [];
-    for (const name of Object.keys(packageJSON.devDependencies)) {
-        if (checkFilter(name)) {
-            devDependencies = {
-                ...devDependencies,
-                [name]: packageJSON.devDependencies[name]
-            };
+    if (packageJSON.devDependencies) {
+        for (const name of Object.keys(packageJSON.devDependencies)) {
+            if (checkFilter(name)) {
+                devDependencies = {
+                    ...devDependencies,
+                    [name]: packageJSON.devDependencies[name]
+                };
+            }
         }
     }
     packageJSON.dependencies = dependencies;

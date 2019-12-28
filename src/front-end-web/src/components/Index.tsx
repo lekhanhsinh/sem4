@@ -32,6 +32,8 @@ class Index extends React.Component<any> {
                     this.props.setOrders(orders)
                 }
             })
+        }).catch(err => {
+            history.push('/login');
         })
     }
 

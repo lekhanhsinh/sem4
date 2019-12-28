@@ -25,15 +25,15 @@ query{
 `
 
 const getCart = () => {
-    return client.query({
-        query: GETCART,
-        fetchPolicy: "no-cache"
-    }).then(res => {
-        // console.log(res.data.getCart);
-        return res.data.getCart;
-    }).catch(err => {
-        message.error(err.message);
-    })
+  return client.query({
+    query: GETCART,
+    fetchPolicy: "no-cache"
+  }).then(res => {
+    // console.log(res.data.getCart);
+    return res.data.getCart;
+  }).catch(err => {
+    // message.error(err.message);
+  })
 }
 
 export default getCart;
