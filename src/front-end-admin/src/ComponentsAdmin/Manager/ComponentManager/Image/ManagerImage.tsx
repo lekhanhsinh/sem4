@@ -197,7 +197,7 @@ class EditableTable extends React.Component<any, any> {
     }
   }
   getImage() {
-    if (this.props.match.params) {
+    if (this.props.match.params && this.props.match.params.id) {
       const userId = this.props.match.params.id;
       getImagesbyUserId(userId).then(items => {
         const arr = [];

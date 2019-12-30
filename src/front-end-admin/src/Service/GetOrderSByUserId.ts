@@ -7,6 +7,17 @@ query
     GetOrdersbyUserId($userId:String!) {
         getOrdersbyUserId(userId:$userId){
           id
+          user{
+      id
+      email
+      name
+      gender
+      address
+      phoneNumber
+      dateOfBirth
+      createdAt
+      updatedAt
+    }
           items {
               quantity
               size

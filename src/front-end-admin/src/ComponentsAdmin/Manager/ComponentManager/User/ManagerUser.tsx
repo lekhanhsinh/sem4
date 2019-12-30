@@ -167,80 +167,25 @@ class EditableTableUser extends React.Component<any, any> {
   columns: any[] = [];
   constructor(props: Props) {
     super(props);
-    this.columns = [
-      {
-        title: "Id",
-        dataIndex: "id",
-        editable: true
-      },
-      {
-        title: "Name",
-        dataIndex: "name",
-        editable: true
-      },
-      {
-        title: "Email",
-        dataIndex: "email"
-      },
-      {
-        title: "Gender",
-        dataIndex: "gender",
-        editable: true
-      },
-      {
-        title: "Address",
-        dataIndex: "address",
-        editable: true
-      },
-      {
-        title: "PhoneNumber",
-        dataIndex: "phonenumber",
-        editable: true
-      },
-      {
-        title: "DateOfBirth",
-        dataIndex: "DateOfBirth",
-        editable: true
-      },
-      {
-        title: "CreatedAt",
-        dataIndex: "createdAt",
-        editable: true
-      },
-      {
-        title: "UpdatedAt",
-        dataIndex: "updatedAt",
-        editable: true
-      },
 
-      {
-        title: "Action",
-        dataIndex: "action",
-        render: (text: any, record: any) => {
-          return this.state.dataSource.length > 0 ? (
-            <>
-              <Button type="primary">
-                <Link to={`/ManagerOrder/${record["id"]}`}>{`Order`}</Link>
-              </Button>
-              <Button type="primary">
-                <Link to={`/ManagerImage/${record["id"]}`}>{`Image`}</Link>
-              </Button>
-            </>
-          ) : null;
-        }
-      }
-    ];
     this.state = {
       current: "1",
       dataSource: [],
       count: 0,
       indeterminate: true,
-      checkAll: false
+      checkAll: false,
+      sortedInfo: null
     };
   }
+  handleSort = (a: any, b: any, sorter: any) => {
+    this.setState({
+      sortedInfo: sorter,
+    });
+  };
   getUser = () => {
-    if (this.props.match.params) {
+    if (this.props.match.params && this.props.match.params.id) {
       const userId = this.props.match.params.id;
+
       getUser(userId).then(item => {
         const arr = [];
         arr.push({
@@ -349,7 +294,75 @@ class EditableTableUser extends React.Component<any, any> {
   };
   render() {
     const { dataSource } = this.state;
+    let { sortedInfo } = this.state;
+    sortedInfo = sortedInfo || {};
+    console.log(sortedInfo);
 
+    this.columns = [
+      {
+        title: "Id",
+        dataIndex: "id",
+        sorter: (a: any, b: any) => ('' + a.id).localeCompare(b.id),
+        sortOrder: sortedInfo.columnKey === 'id' && sortedInfo.order,
+        ellipsis: true,
+      },
+      {
+        title: "Name",
+        dataIndex: "name",
+        editable: true
+      },
+      {
+        title: "Email",
+        dataIndex: "email"
+      },
+      {
+        title: "Gender",
+        dataIndex: "gender",
+        editable: true
+      },
+      {
+        title: "Address",
+        dataIndex: "address",
+        editable: true
+      },
+      {
+        title: "PhoneNumber",
+        dataIndex: "phonenumber",
+        editable: true
+      },
+      {
+        title: "DateOfBirth",
+        dataIndex: "DateOfBirth",
+        editable: true
+      },
+      {
+        title: "CreatedAt",
+        dataIndex: "createdAt",
+        editable: true
+      },
+      {
+        title: "UpdatedAt",
+        dataIndex: "updatedAt",
+        editable: true
+      },
+
+      {
+        title: "Action",
+        dataIndex: "action",
+        render: (text: any, record: any) => {
+          return this.state.dataSource.length > 0 ? (
+            <>
+              <Button type="primary">
+                <Link to={`/ManagerOrder/${record["id"]}`}>{`Order`}</Link>
+              </Button>
+              <Button type="primary">
+                <Link to={`/ManagerImage/${record["id"]}`}>{`Image`}</Link>
+              </Button>
+            </>
+          ) : null;
+        }
+      }
+    ];
     const components = {
       body: {
         row: EditableFormRow,
@@ -419,6 +432,7 @@ class EditableTableUser extends React.Component<any, any> {
           bordered
           dataSource={dataSource}
           columns={columns}
+          onChange={this.handleSort}
         />
       </div>
     );

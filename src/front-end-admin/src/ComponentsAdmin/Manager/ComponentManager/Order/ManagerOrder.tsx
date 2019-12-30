@@ -19,6 +19,8 @@ import deleteOrder from "../../../../Service/DeleteOrder";
 import getOrders from "../../../../Service/GetOrders";
 import updateOrder from "../../../../Service/UpdateOrder";
 import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
+
+export { }
 const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
@@ -61,19 +63,32 @@ class EditableCell extends React.Component<any, any> {
     const { editing } = this.state;
     this.form = form;
     if (title === "Status") {
+     
       return (
-        <Select
-          defaultValue={record["status"]}
-          style={{ width: 120 }}
-          onChange={(value: any) => {
-            record.status = value;
-            this.props.handleSave(record);
-          }}
-        >
-          <Option value="Ongoing">Ongoing</Option>
-          <Option value="Done">Done</Option>
-          <Option value="Denied">Denied</Option>
-        </Select>
+        <div>
+          {form.getFieldDecorator("status", {
+            initialValue: record["status"]
+          })
+            (<Select
+              ref={select}
+              style={{ width: 120 }}
+              onSelect={(value: any) => {
+                const c = window.confirm("Are you sure want to change status?");
+                if (c) {
+                  record.status = value
+                  this.props.handleSave(record)
+                }
+                else {
+                  this.form.resetFields("status");
+                }
+              }}
+            >
+              <Option value="Ongoing">Ongoing</Option>
+              <Option value="Done">Done</Option>
+              <Option value="Denied">Denied</Option>
+            </Select>)
+          }
+        </div>
       );
     }
     if (title === "UserId") {
@@ -147,69 +162,20 @@ class EditableTable extends React.Component<any, any> {
   columns: any[] = [];
   constructor(props: any) {
     super(props);
-    this.columns = [
-      {
-        title: "UserId",
-        dataIndex: "userId",
-        editable: true
-      },
-      {
-        title: "TotalPrice",
-        dataIndex: "totalPrice"
-      },
-      {
-        title: "Address",
-        dataIndex: "address",
-        editable: true
-      },
-      {
-        title: "Description",
-        dataIndex: "description",
-        editable: true
-      },
-      {
-        title: "Status",
-        dataIndex: "status",
-        editable: true
-      },
-      {
-        title: "Action",
-        dataIndex: "action",
-        render: (text: any, record: any) => {
-          return this.state.dataSource.length > 0 ? (
-            <>
-              <Popconfirm
-                style={{}}
-                title="Sure to delete?"
-                onConfirm={() => this.handleDelete(record.key, record.id)}
-              >
-                <Button type="danger">Delete</Button>
-              </Popconfirm>
-              <Button type="primary" onClick={() => this.showModal(record.id)}>
-                Detail
-              </Button>
-              <Modal
-                key={record.key}
-                title="Detail"
-                visible={this.state.visible === record.id}
-                onOk={this.handleOk}
-                onCancel={this.handleCancel}
-              >
-                <OrderDetails record={record} />
-              </Modal>
-            </>
-          ) : null;
-        }
-      }
-    ];
     this.state = {
       visible: false,
       current: "2",
       dataSource: [],
       count: 0,
       indeterminate: true,
-      checkAll: false
+      checkAll: false,
+      filteredInfo: null,
+      sortedInfo: {
+        order: 'descend',
+      }
     };
+    let { sortedInfo } = this.state;
+
   }
   handleClick = (e: any) => {
     this.setState({
@@ -233,8 +199,13 @@ class EditableTable extends React.Component<any, any> {
       visible: false
     });
   };
+  handleSort = (a: any, b: any, sorter: any) => {
+    this.setState({
+      sortedInfo: sorter,
+    });
+  };
   getOrder = () => {
-    if (this.props.match.params) {
+    if (this.props.match.params && this.props.match.params.id) {
       const userId = this.props.match.params.id;
       getOrdersbyUserId(userId).then(orders => {
         const arr = [];
@@ -313,7 +284,70 @@ class EditableTable extends React.Component<any, any> {
     this.setState({ dataSource: newData });
   };
   render() {
+
+
     const { dataSource } = this.state;
+    let { sortedInfo } = this.state;
+    sortedInfo = sortedInfo || {};
+    console.log(sortedInfo);
+    this.columns = [
+      {
+        title: "UserId",
+        dataIndex: "userId",
+        sorter: (a: any, b: any) => a.userId.length - b.userId.length,
+        sortOrder: sortedInfo.columnKey === 'userId' && sortedInfo.order,
+        ellipsis: true,
+        editable: true
+      },
+      {
+        title: "TotalPrice",
+        dataIndex: "totalPrice"
+      },
+      {
+        title: "Address",
+        dataIndex: "address",
+        editable: true
+      },
+      {
+        title: "Description",
+        dataIndex: "description",
+        editable: true
+      },
+      {
+        title: "Status",
+        dataIndex: "status",
+        editable: true
+      },
+      {
+        title: "Action",
+        dataIndex: "action",
+        render: (text: any, record: any) => {
+          return this.state.dataSource.length > 0 ? (
+            <>
+              <Popconfirm
+                style={{}}
+                title="Sure to delete?"
+                onConfirm={() => this.handleDelete(record.key, record.id)}
+              >
+                <Button type="danger">Delete</Button>
+              </Popconfirm>
+              <Button type="primary" onClick={() => this.showModal(record.id)}>
+                Detail
+              </Button>
+              <Modal
+                key={record.key}
+                title="Detail"
+                visible={this.state.visible === record.id}
+                onOk={this.handleOk}
+                onCancel={this.handleCancel}
+              >
+                <OrderDetails record={record} />
+              </Modal>
+            </>
+          ) : null;
+        }
+      }
+    ];
 
     const components = {
       body: {
@@ -378,6 +412,7 @@ class EditableTable extends React.Component<any, any> {
           </Menu.Item>
         </Menu>
         <Table
+          onChange={this.handleSort}
           components={components}
           rowClassName={() => "editable-row"}
           bordered
