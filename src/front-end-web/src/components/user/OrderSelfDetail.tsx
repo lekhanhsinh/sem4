@@ -101,7 +101,7 @@ class OrderDetail extends React.Component<any, any> {
 
       },
       {
-        title: 'Total Price',
+        title: 'Total Price($)',
         dataIndex: 'totalPrice',
 
       },

@@ -34,8 +34,6 @@ const Login: FunctionComponent<any> = props => {
             }
           })
           .catch(err => {
-            console.log(err);
-            
             notification.error({
               message: "Đăng nhập thất bại",
               description: `Something wrong`

@@ -65,19 +65,33 @@ const CollectionCreateForm = Form.create<any>({ name: 'form_in_modal' })(
                                 ]
                             })(<Input />)}
                         </Form.Item>
-                        {/* <Form.Item label="Payment :">
+
+                        <Form.Item label="Payment :">
                             {getFieldDecorator('payment', {
-                                initialValue: 'creditCart',
+                                initialValue: 'VNPAY',
                             })(
                                 <Select placeholder="Please select a material" >
-                                    <Option value="creditCart">Credit Cart</Option>
-                                    <Option value="cash">Cash</Option>
+                                    <Option value="VNPAY">VNPAY</Option>
 
                                 </Select>,
                             )}
-                        </Form.Item> */}
+                        </Form.Item>
+                        <Form.Item label="Credit Card :">
+                            {getFieldDecorator("creditCardNunber", {
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: "Please input your Credit Card Number"
+                                    },
+                                    {
+                                        max: 14,
+                                        message: "Character number is greater than allowed!"
+                                    }
+                                ]
+                            })(<Input />)}
+                        </Form.Item>
                         <div>
-                            <p>Total Price : {totalPriceAll}</p>
+                            <p>Total Price : ${totalPriceAll}</p>
 
                         </div>
 
@@ -114,10 +128,8 @@ class Order extends React.Component<any, any> {
                 address: values.address,
                 description: values.description
             }
-            console.log(values);
             createOrder(values.creditCardNumber, detail).then(add => {
                 getSelfOrders().then(orders => {
-                    console.log(orders);
                     if (orders) {
                         this.props.setOrders(orders)
                     }

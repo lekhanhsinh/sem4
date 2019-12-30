@@ -23,7 +23,7 @@ class TableOrderDetails extends React.Component<any, any> {
                 dataIndex: 'material',
             },
             {
-                title: 'Total Price',
+                title: 'Total Price($)',
                 dataIndex: 'totalPrice',
             },
         ];
@@ -35,7 +35,6 @@ class TableOrderDetails extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        console.log(this.props.record);
         this.setState({
             dataSource: this.props.record.items
 

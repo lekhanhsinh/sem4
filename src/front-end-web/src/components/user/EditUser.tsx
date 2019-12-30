@@ -133,7 +133,6 @@ class EditUser extends React.Component<any, any> {
                     dateOfBirth : values.dateOfBirth.toDate()
                     // dateOfBirth : date
                 }
-                console.log(detail);
                 updateSelfDetail(detail)
                     .then(edit => {
                         fetchSelf().then(()=> {

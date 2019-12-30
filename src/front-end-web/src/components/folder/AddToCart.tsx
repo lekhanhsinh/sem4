@@ -89,11 +89,9 @@ class AddToCart extends React.Component<any, any> {
     const { item, setCart, cart } = this.props;
     const { form } = this.formRef.props;
     form.validateFields((err: any, values: any) => {
-      console.log(err);
       if (err) {
         return;
       }
-      console.log(cart);
 
       const temp = [{ ...values, image: item.id, totalPrice: undefined, __typename: undefined }]
       for (const t of temp) {
@@ -107,9 +105,8 @@ class AddToCart extends React.Component<any, any> {
           cart.items.splice(cart.items.indexOf(i), 1);
         }
       }
-      console.log(temp);
       updateCart(temp).then(i => {
-        console.log(i);
+
         setCart(i);
       });
       form.resetFields();
