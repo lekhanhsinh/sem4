@@ -20,7 +20,7 @@ import updateUser from "../../../../Service/UpdateUsers";
 import moment from "moment";
 import { Link, withRouter } from "react-router-dom";
 import getUser from "../../../../Service/GetUser";
-interface Props extends FormComponentProps, ColumnProps<any> {}
+interface Props extends FormComponentProps, ColumnProps<any> { }
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -126,14 +126,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-      <div
-        className="editable-cell-value-wrap"
-        style={{ paddingRight: 24, width: "100%", height: "30px" }}
-        onClick={this.toggleEdit}
-      >
-        {children}
-      </div>
-    );
+        <div
+          className="editable-cell-value-wrap"
+          style={{ paddingRight: 24, width: "100%", height: "30px" }}
+          onClick={this.toggleEdit}
+        >
+          {children}
+        </div>
+      );
   };
 
   render() {
@@ -153,8 +153,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-          children
-        )}
+            children
+          )}
       </td>
     );
   }
@@ -239,9 +239,8 @@ class EditableTableUser extends React.Component<any, any> {
     };
   }
   getUser = () => {
-    const userId = this.props.match.params.id;
-
-    if (userId) {
+    if (this.props.match.params) {
+      const userId = this.props.match.params.id;
       getUser(userId).then(item => {
         const arr = [];
         arr.push({

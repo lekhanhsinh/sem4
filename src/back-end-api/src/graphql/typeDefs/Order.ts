@@ -24,6 +24,8 @@ const OrderTypeDefs = gql`
         address: String
         description: String
         status: String
+        createdAt: DateTime
+        updatedAt: DateTime
     }
 
     input OrderDetailInputType{

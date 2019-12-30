@@ -105,14 +105,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-      <div
-        className="editable-cell-value-wrap"
-        style={{ paddingRight: 24, width: "100%", height: "30px" }}
-        onClick={this.toggleEdit}
-      >
-        {children}
-      </div>
-    );
+        <div
+          className="editable-cell-value-wrap"
+          style={{ paddingRight: 24, width: "100%", height: "30px" }}
+          onClick={this.toggleEdit}
+        >
+          {children}
+        </div>
+      );
   };
 
   render() {
@@ -133,8 +133,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-          children
-        )}
+            children
+          )}
       </td>
     );
   }
@@ -234,9 +234,8 @@ class EditableTable extends React.Component<any, any> {
     });
   };
   getOrder = () => {
-    const userId = this.props.match.params.id;
-
-    if (userId) {
+    if (this.props.match.params) {
+      const userId = this.props.match.params.id;
       getOrdersbyUserId(userId).then(orders => {
         const arr = [];
         for (const str in orders) {

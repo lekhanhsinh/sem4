@@ -1482,7 +1482,7 @@
         "signature": "30176ce282f70659d052a306f79ac60a02dbce4bee9837f57d279969419d4aff"
       },
       "../src/graphql/typedefs/order.ts": {
-        "version": "df88050d0269d220e73dcc59a4eb28bf171e66a1a8f3e7aeb14663267d6d1c4b",
+        "version": "0c075b7811970ef90962e20a3bf0a3cedca6f41aacb10d14028f474309d2d383",
         "signature": "460fe4cf786bbe62efa013080df67ce30b155f84e557c8d5b471fa79b31596ed"
       },
       "../src/graphql/typedefs/index.ts": {
