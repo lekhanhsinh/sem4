@@ -1330,7 +1330,7 @@
         "signature": "4bd85c7eeaceccc938121fcbd580883f6bb84d8326eb0db9c79a9961551a2bc5"
       },
       "../src/utils/logger.ts": {
-        "version": "a097e75b7ce7f2b4807e299fc931b48570793add26438762eab04b0914ce4ffb",
+        "version": "c8bceabad7d7eada9dfbe9b0915701929e7e1045839f5eaa589a21d93d1e9875",
         "signature": "4b6ee634ad0721383e886ab29b2e500a5c41059c1f5351ef18e168963592e376"
       },
       "../src/utils/secrets.ts": {
