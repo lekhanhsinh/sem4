@@ -6,6 +6,8 @@ const GETORDERSBYUSERID = gql`
 query 
     GetOrdersbyUserId($userId:String!) {
         getOrdersbyUserId(userId:$userId){
+          createdAt
+          updatedAt
           id
           user{
       id

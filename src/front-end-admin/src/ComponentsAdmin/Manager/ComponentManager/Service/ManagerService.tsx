@@ -30,6 +30,7 @@ class PriceInput extends React.Component<any, any> {
     return (
       <span>
         <Input
+          prefix="$"
           type="text"
           size={size}
           value={value.number}
@@ -87,7 +88,6 @@ class Demo extends React.Component<any, any> {
     e.preventDefault();
     this.props.form.validateFields((err: any, values: any) => {
       if (!err) {
-
         setPrice(values.price.number, values.method.currency)
           .then(() => {
             notification.success({

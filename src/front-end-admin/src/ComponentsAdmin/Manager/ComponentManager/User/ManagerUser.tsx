@@ -20,7 +20,7 @@ import updateUser from "../../../../Service/UpdateUsers";
 import moment from "moment";
 import { Link, withRouter } from "react-router-dom";
 import getUser from "../../../../Service/GetUser";
-interface Props extends FormComponentProps, ColumnProps<any> { }
+interface Props extends FormComponentProps, ColumnProps<any> {}
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -126,14 +126,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-        <div
-          className="editable-cell-value-wrap"
-          style={{ paddingRight: 24, width: "100%", height: "30px" }}
-          onClick={this.toggleEdit}
-        >
-          {children}
-        </div>
-      );
+      <div
+        className="editable-cell-value-wrap"
+        style={{ paddingRight: 24, width: "100%", height: "30px" }}
+        onClick={this.toggleEdit}
+      >
+        {children}
+      </div>
+    );
   };
 
   render() {
@@ -153,8 +153,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-            children
-          )}
+          children
+        )}
       </td>
     );
   }
@@ -179,7 +179,7 @@ class EditableTableUser extends React.Component<any, any> {
   }
   handleSort = (a: any, b: any, sorter: any) => {
     this.setState({
-      sortedInfo: sorter,
+      sortedInfo: sorter
     });
   };
   getUser = () => {
@@ -302,9 +302,9 @@ class EditableTableUser extends React.Component<any, any> {
       {
         title: "Id",
         dataIndex: "id",
-        sorter: (a: any, b: any) => ('' + a.id).localeCompare(b.id),
-        sortOrder: sortedInfo.columnKey === 'id' && sortedInfo.order,
-        ellipsis: true,
+        // sorter: (a: any, b: any) => ("" + a.id).localeCompare(b.id),
+        // sortOrder: sortedInfo.columnKey === "id" && sortedInfo.order,
+        editable: true
       },
       {
         title: "Name",
@@ -338,12 +338,16 @@ class EditableTableUser extends React.Component<any, any> {
       {
         title: "CreatedAt",
         dataIndex: "createdAt",
-        editable: true
+        sorter: (a: any, b: any) =>
+          ("" + a.createdAt).localeCompare(b.createdAt),
+        sortOrder: sortedInfo.columnKey === "createdAt" && sortedInfo.order
       },
       {
         title: "UpdatedAt",
         dataIndex: "updatedAt",
-        editable: true
+        sorter: (a: any, b: any) =>
+          ("" + a.updatedAt).localeCompare(b.updatedAt),
+        sortOrder: sortedInfo.columnKey === "updatedAt" && sortedInfo.order
       },
 
       {

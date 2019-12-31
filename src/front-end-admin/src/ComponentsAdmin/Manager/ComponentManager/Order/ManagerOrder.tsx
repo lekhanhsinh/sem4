@@ -20,7 +20,7 @@ import getOrders from "../../../../Service/GetOrders";
 import updateOrder from "../../../../Service/UpdateOrder";
 import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
 
-export { }
+export {};
 const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
@@ -63,22 +63,19 @@ class EditableCell extends React.Component<any, any> {
     const { editing } = this.state;
     this.form = form;
     if (title === "Status") {
-     
       return (
         <div>
           {form.getFieldDecorator("status", {
             initialValue: record["status"]
-          })
-            (<Select
-              ref={select}
+          })(
+            <Select
               style={{ width: 120 }}
               onSelect={(value: any) => {
                 const c = window.confirm("Are you sure want to change status?");
                 if (c) {
-                  record.status = value
-                  this.props.handleSave(record)
-                }
-                else {
+                  record.status = value;
+                  this.props.handleSave(record);
+                } else {
                   this.form.resetFields("status");
                 }
               }}
@@ -86,8 +83,8 @@ class EditableCell extends React.Component<any, any> {
               <Option value="Ongoing">Ongoing</Option>
               <Option value="Done">Done</Option>
               <Option value="Denied">Denied</Option>
-            </Select>)
-          }
+            </Select>
+          )}
         </div>
       );
     }
@@ -120,14 +117,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-        <div
-          className="editable-cell-value-wrap"
-          style={{ paddingRight: 24, width: "100%", height: "30px" }}
-          onClick={this.toggleEdit}
-        >
-          {children}
-        </div>
-      );
+      <div
+        className="editable-cell-value-wrap"
+        style={{ paddingRight: 24, width: "100%", height: "30px" }}
+        onClick={this.toggleEdit}
+      >
+        {children}
+      </div>
+    );
   };
 
   render() {
@@ -148,8 +145,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-            children
-          )}
+          children
+        )}
       </td>
     );
   }
@@ -171,11 +168,10 @@ class EditableTable extends React.Component<any, any> {
       checkAll: false,
       filteredInfo: null,
       sortedInfo: {
-        order: 'descend',
+        order: "descend"
       }
     };
     let { sortedInfo } = this.state;
-
   }
   handleClick = (e: any) => {
     this.setState({
@@ -201,7 +197,7 @@ class EditableTable extends React.Component<any, any> {
   };
   handleSort = (a: any, b: any, sorter: any) => {
     this.setState({
-      sortedInfo: sorter,
+      sortedInfo: sorter
     });
   };
   getOrder = () => {
@@ -218,7 +214,13 @@ class EditableTable extends React.Component<any, any> {
             address: orders[str].address,
             description: orders[str].description,
             status: orders[str].status,
-            items: orders[str].items
+            items: orders[str].items,
+            createdAt: new Date(orders[str].createdAt).toLocaleDateString(
+              "en-US"
+            ),
+            updatedAt: new Date(orders[str].updatedAt).toLocaleDateString(
+              "en-US"
+            )
           });
         }
         this.setState({
@@ -229,6 +231,8 @@ class EditableTable extends React.Component<any, any> {
     } else {
       getOrders().then(orders => {
         const arr = [];
+        console.log(orders);
+
         for (const str in orders) {
           arr.push({
             key: parseInt(str, 10),
@@ -238,7 +242,13 @@ class EditableTable extends React.Component<any, any> {
             address: orders[str].address,
             description: orders[str].description,
             status: orders[str].status,
-            items: orders[str].items
+            items: orders[str].items,
+            createdAt: new Date(orders[str].createdAt).toLocaleDateString(
+              "en-US"
+            ),
+            updatedAt: new Date(orders[str].updatedAt).toLocaleDateString(
+              "en-US"
+            )
           });
         }
         this.setState({
@@ -284,8 +294,6 @@ class EditableTable extends React.Component<any, any> {
     this.setState({ dataSource: newData });
   };
   render() {
-
-
     const { dataSource } = this.state;
     let { sortedInfo } = this.state;
     sortedInfo = sortedInfo || {};
@@ -295,7 +303,7 @@ class EditableTable extends React.Component<any, any> {
         title: "UserId",
         dataIndex: "userId",
         sorter: (a: any, b: any) => a.userId.length - b.userId.length,
-        sortOrder: sortedInfo.columnKey === 'userId' && sortedInfo.order,
+        sortOrder: sortedInfo.columnKey === "userId" && sortedInfo.order,
         ellipsis: true,
         editable: true
       },
@@ -317,6 +325,20 @@ class EditableTable extends React.Component<any, any> {
         title: "Status",
         dataIndex: "status",
         editable: true
+      },
+      {
+        title: "CreatedAt",
+        dataIndex: "createdAt",
+        sorter: (a: any, b: any) =>
+          ("" + b.createdAt).localeCompare(a.createdAt),
+        sortOrder: sortedInfo.columnKey === "createdAt" && sortedInfo.order
+      },
+      {
+        title: "UpdatedAt",
+        dataIndex: "updatedAt",
+        sorter: (a: any, b: any) =>
+          ("" + b.updatedAt).localeCompare(a.updatedAt),
+        sortOrder: sortedInfo.columnKey === "updatedAt" && sortedInfo.order
       },
       {
         title: "Action",

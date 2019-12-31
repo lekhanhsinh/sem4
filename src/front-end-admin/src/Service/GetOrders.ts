@@ -5,6 +5,8 @@ import { message } from "antd";
 const GETERODERS = gql`
     query GetOrders {
       getOrders{
+        createdAt
+        updatedAt
         id
         user{
           id

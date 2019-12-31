@@ -8,7 +8,7 @@ import getImages from "../../../../Service/GetImages";
 import updateImage from "../../../../Service/UpdateImage";
 import deleteImage from "../../../../Service/DeleteImage";
 import getImagesbyUserId from "../../../../Service/GetImagesByUserId";
-interface Props extends FormComponentProps, ColumnProps<any> { }
+interface Props extends FormComponentProps, ColumnProps<any> {}
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -88,14 +88,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-        <div
-          className="editable-cell-value-wrap"
-          style={{ paddingRight: 24, width: "100%", height: "30px" }}
-          onClick={this.toggleEdit}
-        >
-          {children}
-        </div>
-      );
+      <div
+        className="editable-cell-value-wrap"
+        style={{ paddingRight: 24, width: "100%", height: "30px" }}
+        onClick={this.toggleEdit}
+      >
+        {children}
+      </div>
+    );
   };
 
   render() {
@@ -116,8 +116,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-            children
-          )}
+          children
+        )}
       </td>
     );
   }
@@ -131,66 +131,22 @@ class EditableTable extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
 
-    this.columns = [
-      {
-        title: "UserId",
-        dataIndex: "userId",
-        editable: true
-      },
-      {
-        title: "ImageId",
-        dataIndex: "imageId",
-        editable: false
-      },
-      {
-        title: "Name",
-        dataIndex: "name",
-        editable: true
-      },
-      {
-        title: "Path",
-        dataIndex: "path",
-        editable: true
-      },
-      {
-        title: "Description",
-        dataIndex: "description",
-        editable: true
-      },
-      {
-        title: "CreatedAt",
-        dataIndex: "createdAt"
-      },
-      {
-        title: "UpdatedAt",
-        dataIndex: "updatedAt"
-      },
-      {
-        title: "Action",
-        dataIndex: "action",
-        render: (text: any, record: any) => {
-          return this.state.dataSource.length > 0 ? (
-            <>
-              <Popconfirm
-                style={{}}
-                title="Sure to delete?"
-                onConfirm={() => this.handleDelete(record.key, record.id)}
-              >
-                <Button type="danger">Delete</Button>
-              </Popconfirm>
-            </>
-          ) : null;
-        }
-      }
-    ];
     this.state = {
       current: "5",
       dataSource: [],
       count: 0,
       indeterminate: true,
-      checkAll: false
+      checkAll: false,
+      sortedInfo: {
+        order: "descend"
+      }
     };
   }
+  handleSort = (a: any, b: any, sorter: any) => {
+    this.setState({
+      sortedInfo: sorter
+    });
+  };
   componentWillReceiveProps(nextProps: any) {
     if (nextProps.location.state === this.props.location.state) {
       this.getImage();
@@ -288,7 +244,66 @@ class EditableTable extends React.Component<any, any> {
   };
   render() {
     const { dataSource } = this.state;
-
+    let { sortedInfo } = this.state;
+    sortedInfo = sortedInfo || {};
+    this.columns = [
+      {
+        title: "UserId",
+        dataIndex: "userId",
+        editable: true
+      },
+      {
+        title: "ImageId",
+        dataIndex: "imageId",
+        editable: false
+      },
+      {
+        title: "Name",
+        dataIndex: "name",
+        editable: true
+      },
+      {
+        title: "Path",
+        dataIndex: "path",
+        editable: true
+      },
+      {
+        title: "Description",
+        dataIndex: "description",
+        editable: true
+      },
+      {
+        title: "CreatedAt",
+        dataIndex: "createdAt",
+        sorter: (a: any, b: any) =>
+          ("" + b.createdAt).localeCompare(a.createdAt),
+        sortOrder: sortedInfo.columnKey === "createdAt" && sortedInfo.order
+      },
+      {
+        title: "UpdatedAt",
+        dataIndex: "updatedAt",
+        sorter: (a: any, b: any) =>
+          ("" + b.updatedAt).localeCompare(a.updatedAt),
+        sortOrder: sortedInfo.columnKey === "updatedAt" && sortedInfo.order
+      },
+      {
+        title: "Action",
+        dataIndex: "action",
+        render: (text: any, record: any) => {
+          return this.state.dataSource.length > 0 ? (
+            <>
+              <Popconfirm
+                style={{}}
+                title="Sure to delete?"
+                onConfirm={() => this.handleDelete(record.key, record.id)}
+              >
+                <Button type="danger">Delete</Button>
+              </Popconfirm>
+            </>
+          ) : null;
+        }
+      }
+    ];
     const components = {
       body: {
         row: EditableFormRow,
@@ -351,6 +366,7 @@ class EditableTable extends React.Component<any, any> {
           </Menu.Item>
         </Menu>
         <Table
+        onChange={this.handleSort}
           components={components}
           rowClassName={() => "editable-row"}
           bordered
