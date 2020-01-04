@@ -1,7 +1,7 @@
 import { gql } from "apollo-boost";
 import client from './UrlClient';
 import { message } from 'antd';
-export{}
+export { }
 
 
 const GETSELFIMAGES = gql`
@@ -19,12 +19,12 @@ const GETSELFIMAGES = gql`
 
 const getSelfImages = () => {
     return client.query({
-        query : GETSELFIMAGES,
-        fetchPolicy:"no-cache"
+        query: GETSELFIMAGES,
+        fetchPolicy: "no-cache"
     }).then(res => {
         return res.data.getSelfImages;
     }).catch(err => {
-        message.error(err.message);
+        // message.error(err.message);
     })
 }
 

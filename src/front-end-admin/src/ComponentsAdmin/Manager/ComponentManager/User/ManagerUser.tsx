@@ -20,7 +20,7 @@ import updateUser from "../../../../Service/UpdateUsers";
 import moment from "moment";
 import { Link, withRouter } from "react-router-dom";
 import getUser from "../../../../Service/GetUser";
-interface Props extends FormComponentProps, ColumnProps<any> {}
+interface Props extends FormComponentProps, ColumnProps<any> { }
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
   <EditableContext.Provider value={form}>
@@ -71,7 +71,7 @@ class EditableCell extends React.Component<any, any> {
       return (
         <div ref={node => (this.input = node)}>
           <Radio.Group
-            style={{ width: "70px" }}
+            style={{ width: "80px" }}
             onChange={e => {
               this.onChange(e, record);
             }}
@@ -85,7 +85,7 @@ class EditableCell extends React.Component<any, any> {
     }
     if (title === "Id") {
       return (
-        <div ref={node => (this.input = node)} style={{ width: "100px" }}>
+        <div ref={node => (this.input = node)} style={{ width: "50px" }}>
           <Link to={`/ManagerOrder/${record["id"]}`}>
             <p>{record["id"]}</p>
           </Link>
@@ -96,7 +96,7 @@ class EditableCell extends React.Component<any, any> {
       return (
         <div ref={node => (this.input = node)}>
           <DatePicker
-            style={{ width: "120px" }}
+            style={{ width: "110px" }}
             value={record["DateOfBirth"]}
             format={dateFormatList}
             onChange={e => {
@@ -119,6 +119,7 @@ class EditableCell extends React.Component<any, any> {
           initialValue: record[dataIndex]
         })(
           <Input
+            style={{}}
             ref={node => (this.input = node)}
             onPressEnter={this.save}
             onBlur={this.save}
@@ -126,14 +127,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-      <div
-        className="editable-cell-value-wrap"
-        style={{ paddingRight: 24, width: "100%", height: "30px" }}
-        onClick={this.toggleEdit}
-      >
-        {children}
-      </div>
-    );
+        <div
+          className="editable-cell-value-wrap"
+          style={{ paddingRight: 24, width: "100%", height: "30px" }}
+          onClick={this.toggleEdit}
+        >
+          {children}
+        </div>
+      );
   };
 
   render() {
@@ -153,8 +154,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-          children
-        )}
+            children
+          )}
       </td>
     );
   }

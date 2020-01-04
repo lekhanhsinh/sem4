@@ -20,7 +20,7 @@ import getOrders from "../../../../Service/GetOrders";
 import updateOrder from "../../../../Service/UpdateOrder";
 import getOrdersbyUserId from "../../../../Service/GetOrderSByUserId";
 
-export {};
+export { };
 const { Option } = Select;
 const EditableContext = React.createContext("");
 const EditableRow = ({ form, index, ...props }: { form: any; index: any }) => (
@@ -117,14 +117,14 @@ class EditableCell extends React.Component<any, any> {
         )}
       </Form.Item>
     ) : (
-      <div
-        className="editable-cell-value-wrap"
-        style={{ paddingRight: 24, width: "100%", height: "30px" }}
-        onClick={this.toggleEdit}
-      >
-        {children}
-      </div>
-    );
+        <div
+          className="editable-cell-value-wrap"
+          style={{ paddingRight: 24, width: "100%", height: "30px" }}
+          onClick={this.toggleEdit}
+        >
+          {children}
+        </div>
+      );
   };
 
   render() {
@@ -145,8 +145,8 @@ class EditableCell extends React.Component<any, any> {
         {editable ? (
           <EditableContext.Consumer>{this.renderCell}</EditableContext.Consumer>
         ) : (
-          children
-        )}
+            children
+          )}
       </td>
     );
   }
@@ -302,9 +302,9 @@ class EditableTable extends React.Component<any, any> {
       {
         title: "UserId",
         dataIndex: "userId",
-        sorter: (a: any, b: any) => a.userId.length - b.userId.length,
-        sortOrder: sortedInfo.columnKey === "userId" && sortedInfo.order,
-        ellipsis: true,
+        // sorter: (a: any, b: any) => a.userId.length - b.userId.length,
+        // sortOrder: sortedInfo.columnKey === "userId" && sortedInfo.order,
+        // ellipsis: true,
         editable: true
       },
       {
