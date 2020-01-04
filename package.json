@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node build/back-end-server/index.js",
     "build": "yarn workspaces run build & node scripts/assembleBuild.js",
     "seed": "node build/back-end-database/seeders/index.js"
   },
