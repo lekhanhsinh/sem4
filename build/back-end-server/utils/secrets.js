@@ -10,6 +10,10 @@ if (fs_1.default.existsSync(".env")) {
     logger_1.default.debug("Using .env file to supply config environment variables");
     dotenv_1.default.config({ path: ".env" });
 }
+else if (fs_1.default.existsSync(".env.example")) {
+    logger_1.default.debug("Using .env.example file to supply config environment variables");
+    dotenv_1.default.config({ path: ".env.example" });
+}
 exports.ENVIRONMENT = process.env.NODE_ENV === "production" ? "production" : "development";
 exports.DOMAIN = process.env["DOMAIN"] ? process.env["DOMAIN"] : "";
 exports.PORT = process.env["PORT"] ? parseInt(process.env["PORT"]) : undefined;

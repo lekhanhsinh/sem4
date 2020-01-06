@@ -350,8 +350,8 @@
         "signature": "4b6ee634ad0721383e886ab29b2e500a5c41059c1f5351ef18e168963592e376"
       },
       "../src/utils/secrets.ts": {
-        "version": "b537dd5ea7e42c3ae9f86aa826b0d9302d296e572b692b39c5bbd03c3734a0b6",
-        "signature": "00edc664dd0003e6536e6c62e487a860359e1149b97878bb47a571ec57ddc968"
+        "version": "c4a8e0f1488eaff0e541184d5fad397beef812458944f74c79f2b6dd00c0e35b",
+        "signature": "78d2722b235949f92eb3709106ba293a8d2cf785a79088af33f77023fb1f5843"
       },
       "../../../node_modules/@types/bcryptjs/index.d.ts": {
         "version": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f",

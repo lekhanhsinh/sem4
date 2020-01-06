@@ -1334,7 +1334,7 @@
         "signature": "4b6ee634ad0721383e886ab29b2e500a5c41059c1f5351ef18e168963592e376"
       },
       "../src/utils/secrets.ts": {
-        "version": "9958ccdf02ff2c0741f7e459d6a7cb3684008baecbf2539ed9260053bae93873",
+        "version": "d515f9c8e8c590ca816eb747dc1c2a1025aaf53f292b4d4030f85aa605f707b4",
         "signature": "d328bb041d24eb4c5f7c44e3cd0a5311ee5ca3403cdd01173bae5ee4bc08514d"
       },
       "../src/utils/middleware.ts": {

@@ -7,6 +7,11 @@ if (fs.existsSync(".env")) {
     logger.debug("Using .env file to supply config environment variables");
     dotenv.config({ path: ".env" });
 }
+else if (fs.existsSync(".env.example")) {
+    logger.debug("Using .env.example file to supply config environment variables");
+    dotenv.config({ path: ".env.example" });
+
+}
 
 export const ENVIRONMENT = process.env.NODE_ENV === "production" ? "production" : "development";
 export const DOMAIN = process.env["DOMAIN"] ? process.env["DOMAIN"] : "";
